@@ -1,0 +1,155 @@
+{
+  "properties": [
+    {
+      "id": "cvr-001",
+      "slug": "3br-house-dasma-cavite",
+
+      "identity": {
+        "title": "3-Bedroom House in Dasmariñas, Cavite",
+        "status": "for-sale",
+        "type": "house",
+        "featured": true
+      },
+
+      "pricing": {
+        "price": 4500000,
+        "currency": "PHP",
+        "priceLabel": "₱4.5M",
+        "monthlyAmortization": 22000,
+        "priceNegotiable": true
+      },
+
+      "location": {
+        "address": "Blk 12 Lot 5, Greenfield Subd.",
+        "barangay": "Paliparan III",
+        "city": "Dasmariñas",
+        "province": "Cavite",
+        "region": "CALABARZON",
+        "lat": 14.3294,
+        "lng": 120.9367
+      },
+
+      "details": {
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "floorArea": 80,
+        "lotArea": 120,
+        "floorAreaUnit": "sqm",
+        "lotAreaUnit": "sqm",
+        "floors": 2,
+        "parking": 1,
+        "furnished": "semi-furnished",
+        "yearBuilt": 2021,
+        "carport": true
+      },
+
+      "media": {
+        "thumbnail": "/images/cvr-001/thumb.jpg",
+        "images": [
+          "/images/cvr-001/front.jpg",
+          "/images/cvr-001/living.jpg",
+          "/images/cvr-001/kitchen.jpg",
+          "/images/cvr-001/bedroom1.jpg",
+          "/images/cvr-001/bathroom.jpg"
+        ],
+        "videoUrl": null
+      },
+
+      "metadata": {
+        "description": "A well-maintained 3-bedroom, 2-bathroom house in a gated community in Dasmariñas, Cavite. Newly painted, with tiled floors and a carport. Near schools, markets, and major highways.",
+        "amenities": [
+          "gated-community",
+          "24hr-security",
+          "near-school",
+          "near-market"
+        ],
+        "tags": ["house", "cavite", "dasma", "affordable", "gated"],
+        "agent": {
+          "name": "Mayeth Valencia",
+          "phone": "+639171234567",
+          "email": "maria@cvrrealty.com",
+          "viberNumber": "+639171234567"
+        },
+        "datePosted": "2025-03-01",
+        "dateUpdated": "2025-03-10",
+        "views": 0
+      }
+    },
+
+    {
+      "id": "cvr-002",
+      "slug": "studio-condo-bacoor-cavite",
+
+      "identity": {
+        "title": "Studio Condo Unit in Bacoor, Cavite",
+        "status": "for-rent",
+        "type": "condo",
+        "featured": false
+      },
+
+      "pricing": {
+        "price": 12000,
+        "currency": "PHP",
+        "priceLabel": "₱12,000/mo",
+        "monthlyAmortization": null,
+        "priceNegotiable": false
+      },
+
+      "location": {
+        "address": "Unit 4B, Avida Towers, Molino Blvd.",
+        "barangay": "Molino IV",
+        "city": "Bacoor",
+        "province": "Cavite",
+        "region": "CALABARZON",
+        "lat": 14.4347,
+        "lng": 120.9717
+      },
+
+      "details": {
+        "bedrooms": 0,
+        "bathrooms": 1,
+        "floorArea": 24,
+        "lotArea": null,
+        "floorAreaUnit": "sqm",
+        "lotAreaUnit": null,
+        "floors": null,
+        "parking": 0,
+        "furnished": "fully-furnished",
+        "yearBuilt": 2019,
+        "carport": false
+      },
+
+      "media": {
+        "thumbnail": "/images/cvr-002/thumb.jpg",
+        "images": [
+          "/images/cvr-002/unit.jpg",
+          "/images/cvr-002/bathroom.jpg",
+          "/images/cvr-002/view.jpg"
+        ],
+        "videoUrl": "https://youtube.com/embed/example"
+      },
+
+      "metadata": {
+        "description": "Cozy studio unit on the 4th floor of Avida Towers Bacoor. Fully furnished with aircon, bed, and ref. Walking distance to Molino public market and jeepney routes.",
+        "amenities": ["pool", "gym", "elevator", "24hr-security", "cctv"],
+        "tags": [
+          "condo",
+          "studio",
+          "bacoor",
+          "cavite",
+          "furnished",
+          "for-rent"
+        ],
+        "agent": {
+          "name": "Peter Valencia",
+          "phone": "+639281234567",
+          "email": "jose@cvrrealty.com",
+          "viberNumber": "+639281234567"
+        },
+        "datePosted": "2025-02-15",
+        "dateUpdated": "2025-03-05",
+        "views": 0
+      }
+    }
+  ]
+}

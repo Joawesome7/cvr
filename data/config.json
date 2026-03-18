@@ -1,0 +1,25 @@
+{
+  "site": {
+    "name": "CVR",
+    "fullName": "Carbo Valencia Realty",
+    "tagline": "Find Your Home in Cavite",
+    "description": "CVR is a trusted residential real estate company in Cavite, Philippines. We help families find homes and condos that fit their life.",
+    "phone": "+63 967 048 6568",
+    "email": "carbovalenciarealtyinc@gmail.com",
+    "address": "Villa Luisa Phs. 1 San Agustin 3, Dasmariñas, Philippines, 4114",
+    "facebook": "https://www.facebook.com/CarboValenciaRealty",
+    "viber": "+63 967 048 6568"
+  },
+  "filters": {
+    "types": ["house", "condo", "lot", "townhouse"],
+    "statuses": ["for-sale", "for-rent"],
+    "cities": ["Dasmariñas", "Bacoor", "Imus", "General Trias", "Kawit"],
+    "priceRanges": [
+      { "label": "Under ₱1M", "min": 0, "max": 1000000 },
+      { "label": "₱1M – ₱3M", "min": 1000000, "max": 3000000 },
+      { "label": "₱3M – ₱6M", "min": 3000000, "max": 6000000 },
+      { "label": "₱6M – ₱10M", "min": 6000000, "max": 10000000 },
+      { "label": "Above ₱10M", "min": 10000000, "max": null }
+    ]
+  }
+}
