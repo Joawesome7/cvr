@@ -1,9 +1,10 @@
 {
+  "cleanUrls": true,
   "rewrites": [
     { "source": "/property", "destination": "/pages/property.html" },
     { "source": "/listings", "destination": "/pages/listings.html" },
     { "source": "/about", "destination": "/pages/about.html" },
     { "source": "/contact", "destination": "/pages/contact.html" }
   ],
-  "routes": [{ "src": "/(.*)", "status": 404, "dest": "/pages/404.html" }]
+  "errors": [{ "statusCode": 404, "destination": "/pages/404.html" }]
 }
