@@ -1,0 +1,946 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Contact Us — CVR | Get in Touch</title>
+    <meta
+      name="description"
+      content="Contact CVR — Carbo Valencia Realty. Call, Viber, or email our agents in Dasmariñas, Cavite. We respond fast."
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="images/ico/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <link rel="stylesheet" href="../assets/css/main.css" />
+
+    <style>
+      /* ── Page header ── */
+      .contact-hero {
+        background-color: var(--color-blue);
+        padding: var(--space-16) 0 var(--space-12);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact-hero::after {
+        content: "";
+        position: absolute;
+        bottom: -30px;
+        left: -40px;
+        width: 300px;
+        height: 300px;
+        border-radius: var(--radius-full);
+        background-color: rgba(212, 160, 23, 0.06);
+        pointer-events: none;
+      }
+
+      .contact-hero__inner {
+        position: relative;
+        z-index: 1;
+        max-width: 580px;
+      }
+
+      .contact-hero__title {
+        font-family: var(--font-heading);
+        font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+        font-weight: var(--weight-bold);
+        color: var(--color-white);
+        line-height: 1.2;
+        margin-bottom: var(--space-4);
+      }
+
+      .contact-hero__sub {
+        font-size: var(--text-lg);
+        color: rgba(248, 247, 244, 0.7);
+      }
+
+      /* ── Direct contact cards ── */
+      .direct-contact {
+        background-color: var(--color-light);
+        padding: var(--space-12) 0;
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .contact-cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-4);
+      }
+
+      .contact-card {
+        background-color: var(--color-bg-card);
+        border-radius: var(--radius-lg);
+        padding: var(--space-6);
+        text-align: center;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-3);
+        box-shadow: var(--shadow-sm);
+        border: 1.5px solid transparent;
+        transition:
+          border-color var(--transition-base),
+          box-shadow var(--transition-base),
+          transform var(--transition-base);
+      }
+
+      .contact-card:hover {
+        border-color: var(--color-yellow);
+        box-shadow: var(--shadow-md);
+        transform: translateY(-3px);
+      }
+
+      .contact-card__icon {
+        font-size: 32px;
+        line-height: 1;
+      }
+
+      .contact-card__method {
+        font-size: var(--text-xs);
+        font-weight: var(--weight-bold);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--color-text-muted);
+      }
+
+      .contact-card__value {
+        font-family: var(--font-heading);
+        font-size: var(--text-base);
+        font-weight: var(--weight-bold);
+        color: var(--color-blue);
+        line-height: var(--leading-snug);
+      }
+
+      .contact-card__note {
+        font-size: var(--text-xs);
+        color: var(--color-text-muted);
+      }
+
+      /* ── Main contact layout ── */
+      .contact-main {
+        padding: var(--space-16) 0 var(--space-20);
+      }
+
+      .contact-layout {
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: var(--space-12);
+        align-items: start;
+      }
+
+      /* ── Form ── */
+      .contact-form-wrap {
+        background-color: var(--color-bg-card);
+        border-radius: var(--radius-xl);
+        padding: var(--space-10);
+        box-shadow: var(--shadow-md);
+      }
+
+      .contact-form-wrap h2 {
+        font-size: var(--text-2xl);
+        color: var(--color-blue);
+        margin-bottom: var(--space-2);
+      }
+
+      .contact-form-wrap > p {
+        font-size: var(--text-sm);
+        color: var(--color-text-muted);
+        margin-bottom: var(--space-8);
+      }
+
+      .form-row-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-4);
+      }
+
+      /* Form success */
+      .form-success {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: var(--space-12) var(--space-6);
+        gap: var(--space-4);
+      }
+
+      .form-success.visible {
+        display: flex;
+      }
+
+      .form-success__icon {
+        font-size: 52px;
+        line-height: 1;
+      }
+
+      .form-success__title {
+        font-family: var(--font-heading);
+        font-size: var(--text-2xl);
+        color: var(--color-blue);
+      }
+
+      /* ── Sidebar info ── */
+      .contact-sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-6);
+      }
+
+      .info-box {
+        background-color: var(--color-bg-card);
+        border-radius: var(--radius-xl);
+        padding: var(--space-7);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .info-box__title {
+        font-family: var(--font-heading);
+        font-size: var(--text-xl);
+        font-weight: var(--weight-bold);
+        color: var(--color-blue);
+        margin-bottom: var(--space-5);
+        padding-bottom: var(--space-4);
+        border-bottom: 2px solid var(--color-yellow);
+      }
+
+      .info-row {
+        display: flex;
+        gap: var(--space-4);
+        align-items: flex-start;
+        padding: var(--space-3) 0;
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .info-row:last-child {
+        border-bottom: none;
+      }
+
+      .info-row__icon {
+        font-size: 18px;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      .info-row__label {
+        font-size: var(--text-xs);
+        font-weight: var(--weight-bold);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--color-text-muted);
+        margin-bottom: var(--space-1);
+      }
+
+      .info-row__value {
+        font-size: var(--text-sm);
+        font-weight: var(--weight-medium);
+        color: var(--color-text-primary);
+      }
+
+      .info-row__value a {
+        color: var(--color-blue);
+        transition: color var(--transition-fast);
+      }
+
+      .info-row__value a:hover {
+        color: var(--color-yellow-dark);
+      }
+
+      /* Map placeholder */
+      .map-wrap {
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        background-color: var(--color-light);
+        aspect-ratio: 4/3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-4);
+        text-align: center;
+        padding: var(--space-8);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .map-wrap__icon {
+        font-size: 40px;
+        opacity: 0.5;
+      }
+
+      .map-wrap__text {
+        font-size: var(--text-sm);
+        color: var(--color-text-muted);
+        max-width: 220px;
+        line-height: var(--leading-normal);
+      }
+
+      /* Office hours */
+      .hours-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-2) var(--space-6);
+      }
+
+      .hours-item__day {
+        font-size: var(--text-sm);
+        color: var(--color-text-muted);
+      }
+
+      .hours-item__time {
+        font-size: var(--text-sm);
+        font-weight: var(--weight-bold);
+        color: var(--color-text-primary);
+      }
+
+      .hours-item--closed .hours-item__time {
+        color: var(--color-text-muted);
+        font-weight: var(--weight-regular);
+      }
+
+      /* Facebook CTA box */
+      .fb-box {
+        background: linear-gradient(135deg, #1877f2 0%, #0d5dbd 100%);
+        border-radius: var(--radius-xl);
+        padding: var(--space-7);
+        text-align: center;
+        color: #fff;
+      }
+
+      .fb-box__icon {
+        font-size: 36px;
+        margin-bottom: var(--space-3);
+      }
+      .fb-box__title {
+        font-family: var(--font-heading);
+        font-size: var(--text-xl);
+        font-weight: var(--weight-bold);
+        margin-bottom: var(--space-2);
+      }
+
+      .fb-box__text {
+        font-size: var(--text-sm);
+        opacity: 0.85;
+        margin-bottom: var(--space-5);
+        line-height: var(--leading-normal);
+      }
+
+      .btn--facebook {
+        background-color: #fff;
+        color: #1877f2;
+        font-weight: var(--weight-bold);
+        font-size: var(--text-sm);
+        padding: var(--space-3) var(--space-6);
+        border-radius: var(--radius-md);
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-2);
+        transition: opacity var(--transition-fast);
+        text-decoration: none;
+      }
+
+      .btn--facebook:hover {
+        opacity: 0.9;
+      }
+
+      /* ── Responsive ── */
+      @media (max-width: 960px) {
+        .contact-layout {
+          grid-template-columns: 1fr;
+        }
+        .contact-cards {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 540px) {
+        .contact-cards {
+          grid-template-columns: 1fr 1fr;
+        }
+        .form-row-2 {
+          grid-template-columns: 1fr;
+        }
+        .contact-form-wrap {
+          padding: var(--space-6);
+        }
+      }
+
+      @media (max-width: 380px) {
+        .contact-cards {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ═══════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════ -->
+    <header>
+      <nav class="nav">
+        <div class="container nav__inner">
+          <a href="/" class="nav__logo">
+            <img
+              src="/images/brand/cvr-logo.png"
+              alt="CVR"
+              width="40"
+              height="40"
+              onerror="this.style.display = 'none'"
+            />
+            <div>
+              <div class="nav__logo-text">CVR</div>
+              <div class="nav__logo-sub">Carbo Valencia Realty</div>
+            </div>
+          </a>
+          <ul class="nav__links" id="navLinks">
+            <li><a href="/" class="nav__link">Home</a></li>
+            <li>
+              <a href="/pages/listings.html" class="nav__link">Listings</a>
+            </li>
+            <li><a href="/pages/about.html" class="nav__link">About</a></li>
+            <li>
+              <a href="/pages/contact.html" class="nav__link active">Contact</a>
+            </li>
+          </ul>
+          <div class="flex items-center gap-4">
+            <a href="tel:+639670486568" class="btn btn--primary btn--sm"
+              >📞 Call Us</a
+            >
+            <button class="nav__toggle" id="navToggle" aria-label="Open menu">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ═══════════════════════════════════
+       HERO
+  ═══════════════════════════════════ -->
+    <section class="contact-hero">
+      <div class="container">
+        <div class="contact-hero__inner">
+          <div class="section-label" style="color: var(--color-yellow-light)">
+            We'd love to hear from you
+          </div>
+          <h1 class="contact-hero__title">Let's find the right home for you</h1>
+          <p class="contact-hero__sub">
+            Call, Viber, or fill out the form. Our agents are based right here
+            in Cavite and we reply fast — usually within the hour.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+       DIRECT CONTACT CARDS
+  ═══════════════════════════════════ -->
+    <section class="direct-contact">
+      <div class="container">
+        <div class="contact-cards">
+          <a href="tel:+639670486568" class="contact-card">
+            <div class="contact-card__icon">📞</div>
+            <div class="contact-card__method">Call us</div>
+            <div class="contact-card__value">+63 967 048 6568</div>
+            <div class="contact-card__note">Mon–Sat, 8am–6pm</div>
+          </a>
+
+          <a href="viber://chat?number=%2B639171234567" class="contact-card">
+            <div class="contact-card__icon">📱</div>
+            <div class="contact-card__method">Viber</div>
+            <div class="contact-card__value">+63 967 048 6568</div>
+            <div class="contact-card__note">Fastest response</div>
+          </a>
+
+          <a
+            href="mailto:carbovalenciarealtyinc@gmail.com"
+            class="contact-card"
+          >
+            <div class="contact-card__icon">✉️</div>
+            <div class="contact-card__method">Email</div>
+            <div class="contact-card__value">
+              carbovalenciarealtyinc@gmail.com
+            </div>
+            <div class="contact-card__note">Reply within 24hrs</div>
+          </a>
+
+          <a
+            href="https://www.facebook.com/CarboValenciaRealty"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-card"
+          >
+            <div class="contact-card__icon">📘</div>
+            <div class="contact-card__method">Facebook</div>
+            <div class="contact-card__value">CVR</div>
+            <div class="contact-card__note">DM or comment</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+       MAIN: form + sidebar
+  ═══════════════════════════════════ -->
+    <section class="contact-main">
+      <div class="container">
+        <div class="contact-layout">
+          <!-- ── Contact form ── -->
+          <div class="contact-form-wrap">
+            <h2>Send us a message</h2>
+            <p>
+              Tell us what you're looking for and we'll point you in the right
+              direction.
+            </p>
+
+            <!-- Replace YOUR_FORM_ID with your Formspree form ID -->
+            <form
+              id="contactForm"
+              action="https://formspree.io/f/xzdjkkjo"
+              method="POST"
+            >
+              <div class="form-row-2" style="margin-bottom: var(--space-4)">
+                <div class="form-group">
+                  <label class="form-label" for="contactName"
+                    >Your name *</label
+                  >
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="contactName"
+                    name="name"
+                    placeholder="Juan dela Cruz"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contactPhone"
+                    >Phone / Viber *</label
+                  >
+                  <input
+                    class="form-input"
+                    type="tel"
+                    id="contactPhone"
+                    name="phone"
+                    placeholder="+63 912 345 6789"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group" style="margin-bottom: var(--space-4)">
+                <label class="form-label" for="contactEmail"
+                  >Email (optional)</label
+                >
+                <input
+                  class="form-input"
+                  type="email"
+                  id="contactEmail"
+                  name="email"
+                  placeholder="juan@email.com"
+                />
+              </div>
+
+              <!-- What are they looking for -->
+              <div class="form-row-2" style="margin-bottom: var(--space-4)">
+                <div class="form-group">
+                  <label class="form-label" for="contactInterest"
+                    >I'm looking to…</label
+                  >
+                  <select
+                    class="form-select"
+                    id="contactInterest"
+                    name="interest"
+                  >
+                    <option value="">Select one</option>
+                    <option value="buy">Buy a property</option>
+                    <option value="rent">Rent a property</option>
+                    <option value="sell">Sell my property</option>
+                    <option value="invest">Invest in real estate</option>
+                    <option value="other">Other inquiry</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contactBudget"
+                    >Budget range</label
+                  >
+                  <select class="form-select" id="contactBudget" name="budget">
+                    <option value="">Not sure yet</option>
+                    <option value="below-1m">Below ₱1M</option>
+                    <option value="1m-3m">₱1M – ₱3M</option>
+                    <option value="3m-6m">₱3M – ₱6M</option>
+                    <option value="6m-10m">₱6M – ₱10M</option>
+                    <option value="above-10m">Above ₱10M</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group" style="margin-bottom: var(--space-6)">
+                <label class="form-label" for="contactMessage">Message *</label>
+                <textarea
+                  class="form-textarea"
+                  id="contactMessage"
+                  name="message"
+                  required
+                  placeholder="Tell us more — preferred city, number of bedrooms, timeline, or anything else that helps us find the right property for you."
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn--primary btn--full btn--lg"
+                id="contactSubmit"
+              >
+                Send message
+              </button>
+
+              <p
+                style="
+                  font-size: var(--text-xs);
+                  color: var(--color-text-muted);
+                  margin-top: var(--space-4);
+                  text-align: center;
+                "
+              >
+                We'll never share your info. You'll hear back within 24 hours.
+              </p>
+            </form>
+
+            <!-- Success state -->
+            <div class="form-success" id="formSuccess">
+              <div class="form-success__icon">🎉</div>
+              <h3 class="form-success__title">Message received!</h3>
+              <p
+                class="text-muted"
+                style="max-width: 320px; text-align: center"
+              >
+                Thank you for reaching out! Our team will contact you within 24
+                hours. For faster response, message us on Viber.
+              </p>
+              <div
+                style="
+                  display: flex;
+                  gap: 12px;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                "
+              >
+                <a
+                  href="viber://chat?number=%2B639171234567"
+                  class="btn btn--viber"
+                  >📱 Message on Viber</a
+                >
+                <a href="/pages/listings.html" class="btn btn--secondary"
+                  >Browse listings</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Sidebar ── -->
+          <aside class="contact-sidebar">
+            <!-- Contact info -->
+            <div class="info-box" style="padding: 30px">
+              <div class="info-box__title">Our office</div>
+
+              <div class="info-row">
+                <div class="info-row__icon">📍</div>
+                <div>
+                  <div class="info-row__label">Address</div>
+                  <div class="info-row__value">
+                    Dasmariñas, Cavite, Philippines<br />
+                    <span
+                      style="
+                        font-size: var(--text-xs);
+                        color: var(--color-text-muted);
+                      "
+                    >
+                      Villa Luisa Phs. 1 San Agustin 3
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-row">
+                <div class="info-row__icon">📞</div>
+                <div>
+                  <div class="info-row__label">Phone / Viber</div>
+                  <div class="info-row__value">
+                    <a href="tel:+639670486568">+63 967 048 6568</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-row">
+                <div class="info-row__icon">✉️</div>
+                <div>
+                  <div class="info-row__label">Email</div>
+                  <div class="info-row__value">
+                    <a href="mailto:carbovalenciarealtyinc@gmail.com"
+                      >carbovalenciarealtyinc@gmail.com</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-row">
+                <div class="info-row__icon">📘</div>
+                <div>
+                  <div class="info-row__label">Facebook</div>
+                  <div class="info-row__value">
+                    <a
+                      href="https://www.facebook.com/CarboValenciaRealty"
+                      target="_blank"
+                      rel="noopener"
+                      >facebook.com/CarboValenciaRealty</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Office hours -->
+            <div class="info-box" style="padding: 30px">
+              <div class="info-box__title">Office hours</div>
+              <div class="hours-grid">
+                <div class="hours-item">
+                  <div class="hours-item__day">Monday – Friday</div>
+                  <div class="hours-item__time">8:00am – 6:00pm</div>
+                </div>
+                <div class="hours-item">
+                  <div class="hours-item__day">Saturday</div>
+                  <div class="hours-item__time">9:00am – 4:00pm</div>
+                </div>
+                <div class="hours-item hours-item--closed">
+                  <div class="hours-item__day">Sunday</div>
+                  <div class="hours-item__time">By appointment</div>
+                </div>
+                <div class="hours-item">
+                  <div class="hours-item__day">Viber / Facebook</div>
+                  <div class="hours-item__time">Always open</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Map placeholder -->
+            <!-- To embed a real Google Map:
+               1. Go to maps.google.com
+               2. Search your address
+               3. Click Share → Embed a map → Copy HTML
+               4. Replace this div with the <iframe> tag -->
+            <div class="map-wrap">
+              <div class="map-wrap__icon">🗺️</div>
+              <p class="map-wrap__text">
+                Based in Dasmariñas, Cavite.<br />
+                Serving all of CALABARZON.
+              </p>
+              <a
+                href="https://maps.google.com/?q=Dasmariñas,+Cavite,+Philippines"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--secondary btn--sm"
+              >
+                Open in Google Maps
+              </a>
+            </div>
+
+            <!-- Facebook follow box -->
+            <div class="fb-box" style="padding: 30px">
+              <div class="fb-box__icon">📘</div>
+              <div class="fb-box__title">Follow us on Facebook</div>
+              <p class="fb-box__text">
+                See our latest listings, client stories, and real estate tips —
+                all on our Facebook page.
+              </p>
+              <a
+                href="https://www.facebook.com/CarboValenciaRealty"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn--facebook"
+              >
+                📘 Visit CVR on Facebook
+              </a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <div class="nav__logo-text" style="font-size: var(--text-2xl)">
+              CVR
+            </div>
+            <p>
+              Carbo Valencia Realty — helping Cavite families find the home they
+              deserve since 2015.
+            </p>
+            <a
+              href="https://facebook.com/cvr"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn--ghost btn--sm"
+              style="margin-top: 16px; width: fit-content"
+            >
+              📘 Follow us on Facebook
+            </a>
+          </div>
+          <div>
+            <div class="footer__heading">Explore</div>
+            <ul class="footer__links">
+              <li>
+                <a href="/pages/listings.html" class="footer__link"
+                  >All listings</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/pages/listings.html?status=for-sale"
+                  class="footer__link"
+                  >For sale</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/pages/listings.html?status=for-rent"
+                  class="footer__link"
+                  >For rent</a
+                >
+              </li>
+              <li>
+                <a href="/pages/about.html" class="footer__link">About CVR</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div class="footer__heading">Areas we serve</div>
+            <ul class="footer__links">
+              <li>
+                <a
+                  href="/pages/listings.html?city=Dasma%C3%B1as"
+                  class="footer__link"
+                  >Dasmariñas</a
+                >
+              </li>
+              <li>
+                <a href="/pages/listings.html?city=Bacoor" class="footer__link"
+                  >Bacoor</a
+                >
+              </li>
+              <li>
+                <a href="/pages/listings.html?city=Imus" class="footer__link"
+                  >Imus</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/pages/listings.html?city=General+Trias"
+                  class="footer__link"
+                  >General Trias</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div class="footer__heading">Get in touch</div>
+            <ul class="footer__links">
+              <li>
+                <a href="tel:+639670486568" class="footer__link"
+                  >📞 +63 967 048 6568</a
+                >
+              </li>
+              <li>
+                <a
+                  href="mailto:carbovalenciarealtyinc@gmail.com"
+                  class="footer__link"
+                  style="word-break: break-all"
+                  >✉️ carbovalenciarealtyinc@gmail.com</a
+                >
+              </li>
+              <li>
+                <a
+                  href="viber://chat?number=%2B639171234567"
+                  class="footer__link"
+                  >📱 Viber</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>© 2025 Carbo Valencia Realty. All rights reserved.</span>
+          <span>With God all things are possible.</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      /* Mobile nav */
+      const navToggle = document.getElementById("navToggle");
+      const navLinks = document.getElementById("navLinks");
+      navToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("open");
+        const spans = navToggle.querySelectorAll("span");
+        const isOpen = navLinks.classList.contains("open");
+        spans[0].style.transform = isOpen
+          ? "translateY(7px) rotate(45deg)"
+          : "";
+        spans[1].style.opacity = isOpen ? "0" : "1";
+        spans[2].style.transform = isOpen
+          ? "translateY(-7px) rotate(-45deg)"
+          : "";
+      });
+
+      /* Contact form */
+      const form = document.getElementById("contactForm");
+      const success = document.getElementById("formSuccess");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const btn = document.getElementById("contactSubmit");
+        btn.textContent = "Sending…";
+        btn.disabled = true;
+
+        try {
+          const res = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { Accept: "application/json" },
+          });
+
+          if (res.ok) {
+            form.style.display = "none";
+            success.classList.add("visible");
+            // Scroll to success message
+            success.scrollIntoView({ behavior: "smooth", block: "center" });
+          } else {
+            btn.textContent = "Send message";
+            btn.disabled = false;
+            alert("Something went wrong. Please call or Viber us directly.");
+          }
+        } catch (err) {
+          btn.textContent = "Send message";
+          btn.disabled = false;
+          alert("Could not send. Please call or Viber us directly.");
+        }
+      });
+    </script>
+  </body>
+</html>

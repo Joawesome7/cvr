@@ -1,0 +1,898 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO basics -->
+    <title>CVR — Find Your Home in Cavite</title>
+    <meta
+      name="description"
+      content="Carbo Valencia Realty is a trusted residential real estate company in Cavite, Philippines. Browse houses, condos, and lots for sale and for rent."
+    />
+
+    <!-- Open Graph — controls how the link looks when shared on Facebook -->
+    <meta property="og:title" content="CVR — Find Your Home in Cavite" />
+    <meta
+      property="og:description"
+      content="Browse houses and condos for sale and for rent in Cavite, Philippines."
+    />
+    <meta property="og:image" content="/images/og-image.jpg" />
+    <meta property="og:type" content="website" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="images/ico/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <style>
+      /* ── Page-specific styles (only what main.css doesn't cover) ── */
+
+      /* Hero */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        background-color: var(--color-blue);
+        overflow: hidden;
+      }
+
+      .hero__bg {
+        position: absolute;
+        inset: 0;
+        background-image: url("/images/brand/hero-bg.jpg");
+        background-size: cover;
+        background-position: center;
+        opacity: 0.25;
+      }
+
+      /* Subtle geometric accent — no image needed */
+      .hero__bg-pattern {
+        position: absolute;
+        inset: 0;
+        background-image: repeating-linear-gradient(
+          45deg,
+          rgba(212, 160, 23, 0.04) 0px,
+          rgba(212, 160, 23, 0.04) 1px,
+          transparent 1px,
+          transparent 60px
+        );
+      }
+
+      .hero__content {
+        position: relative;
+        z-index: 1;
+        max-width: 720px;
+      }
+
+      .hero__label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: var(--text-xs);
+        font-weight: var(--weight-bold);
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--color-yellow-light);
+        margin-bottom: var(--space-5);
+      }
+
+      .hero__label::before {
+        content: "";
+        display: block;
+        width: 32px;
+        height: 2px;
+        background-color: var(--color-yellow);
+      }
+
+      .hero__title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.25rem, 5vw, 3.5rem);
+        font-weight: var(--weight-bold);
+        color: var(--color-white);
+        line-height: 1.15;
+        margin-bottom: var(--space-5);
+      }
+
+      .hero__title span {
+        color: var(--color-yellow);
+      }
+
+      .hero__subtitle {
+        font-size: var(--text-lg);
+        color: rgba(248, 247, 244, 0.75);
+        line-height: var(--leading-normal);
+        max-width: 520px;
+        margin-bottom: var(--space-8);
+      }
+
+      .hero__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-4);
+        margin-bottom: var(--space-12);
+      }
+
+      /* Search bar overlapping hero bottom */
+      .hero__search {
+        background-color: var(--color-bg-card);
+        border-radius: var(--radius-lg);
+        padding: var(--space-4) var(--space-5);
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-3);
+        align-items: center;
+        box-shadow: var(--shadow-lg);
+        max-width: 680px;
+      }
+
+      .hero__search select,
+      .hero__search input {
+        flex: 1;
+        min-width: 140px;
+        padding: var(--space-3) var(--space-4);
+        font-size: var(--text-sm);
+        color: var(--color-text-primary);
+        background-color: var(--color-light);
+        border: 1.5px solid transparent;
+        border-radius: var(--radius-md);
+        appearance: none;
+        transition: border-color var(--transition-fast);
+      }
+
+      .hero__search select:focus,
+      .hero__search input:focus {
+        outline: none;
+        border-color: var(--color-yellow);
+      }
+
+      /* Stats strip */
+      .stats {
+        background-color: var(--color-yellow);
+        padding: var(--space-6) 0;
+      }
+
+      .stats__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-4);
+        text-align: center;
+      }
+
+      .stats__item-number {
+        font-family: var(--font-heading);
+        font-size: var(--text-3xl);
+        font-weight: var(--weight-bold);
+        color: var(--color-blue);
+        line-height: 1;
+      }
+
+      .stats__item-label {
+        font-size: var(--text-sm);
+        font-weight: var(--weight-medium);
+        color: var(--color-blue);
+        opacity: 0.75;
+        margin-top: var(--space-1);
+      }
+
+      /* Featured listings */
+      .featured {
+        padding: var(--space-20) 0;
+      }
+
+      .featured__header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-bottom: var(--space-10);
+        flex-wrap: wrap;
+        gap: var(--space-4);
+      }
+
+      /* Why CVR */
+      .why {
+        background-color: var(--color-light);
+        padding: var(--space-20) 0;
+      }
+
+      .why__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-8);
+        margin-top: var(--space-12);
+      }
+
+      .why__item {
+        text-align: center;
+        padding: var(--space-8);
+        background-color: var(--color-bg-card);
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-sm);
+        transition:
+          box-shadow var(--transition-base),
+          transform var(--transition-base);
+      }
+
+      .why__item:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-4px);
+      }
+
+      .why__icon {
+        width: 56px;
+        height: 56px;
+        border-radius: var(--radius-full);
+        background-color: var(--color-yellow-bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto var(--space-5);
+        font-size: 24px;
+      }
+
+      .why__title {
+        font-family: var(--font-heading);
+        font-size: var(--text-xl);
+        font-weight: var(--weight-bold);
+        color: var(--color-blue);
+        margin-bottom: var(--space-3);
+      }
+
+      .why__desc {
+        font-size: var(--text-sm);
+        color: var(--color-text-muted);
+        line-height: var(--leading-normal);
+      }
+
+      /* CTA Banner */
+      .cta-banner {
+        background-color: var(--color-blue);
+        padding: var(--space-16) 0;
+      }
+
+      .cta-banner__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-8);
+        flex-wrap: wrap;
+      }
+
+      .cta-banner__title {
+        font-family: var(--font-heading);
+        font-size: var(--text-3xl);
+        font-weight: var(--weight-bold);
+        color: var(--color-white);
+        line-height: var(--leading-snug);
+        max-width: 500px;
+      }
+
+      .cta-banner__title span {
+        color: var(--color-yellow-light);
+      }
+
+      .cta-banner__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-4);
+        flex-shrink: 0;
+      }
+
+      /* Loading skeleton for cards */
+      .skeleton {
+        background: linear-gradient(
+          90deg,
+          #f0ede6 25%,
+          #e8e4dc 50%,
+          #f0ede6 75%
+        );
+        background-size: 200% 100%;
+        animation: shimmer 1.5s infinite;
+        border-radius: var(--radius-md);
+      }
+
+      @keyframes shimmer {
+        0% {
+          background-position: 200% 0;
+        }
+        100% {
+          background-position: -200% 0;
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero {
+          min-height: 90vh;
+          padding-top: var(--space-12);
+        }
+        .hero__search {
+          flex-direction: column;
+        }
+        .hero__search select,
+        .hero__search input {
+          min-width: 100%;
+        }
+        .stats__grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: var(--space-6);
+        }
+        .why__grid {
+          grid-template-columns: 1fr;
+        }
+        .cta-banner__inner {
+          flex-direction: column;
+          text-align: center;
+        }
+        .cta-banner__actions {
+          justify-content: center;
+        }
+        .featured__header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero__actions {
+          flex-direction: column;
+        }
+        .hero__actions .btn {
+          width: 100%;
+          justify-content: center;
+        }
+        .stats__grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ═══════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════ -->
+    <header>
+      <nav class="nav">
+        <div class="container nav__inner">
+          <!-- Logo -->
+          <a href="/" class="nav__logo">
+            <img
+              src="/images/brand/cvr-logo.png"
+              alt="CVR logo"
+              width="40"
+              height="40"
+              onerror="this.style.display = 'none'"
+            />
+            <div>
+              <div class="nav__logo-text">CVR</div>
+              <div class="nav__logo-sub">Carbo Valencia Realty</div>
+            </div>
+          </a>
+
+          <!-- Links -->
+          <ul class="nav__links" id="navLinks">
+            <li><a href="/" class="nav__link active">Home</a></li>
+            <li>
+              <a href="/pages/listings.html" class="nav__link">Listings</a>
+            </li>
+            <li><a href="/pages/about.html" class="nav__link">About</a></li>
+            <li><a href="/pages/contact.html" class="nav__link">Contact</a></li>
+          </ul>
+
+          <!-- CTA + hamburger -->
+          <div class="flex items-center gap-4">
+            <a href="tel:+639171234567" class="btn btn--primary btn--sm">
+              📞 Call Us
+            </a>
+            <button class="nav__toggle" id="navToggle" aria-label="Open menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ═══════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════ -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__bg-pattern" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero__content">
+          <div class="hero__label">Trusted in Cavite since 2015</div>
+
+          <h1 class="hero__title">
+            Find Your <span>Dream Home</span><br />
+            in Cavite
+          </h1>
+
+          <p class="hero__subtitle">
+            Browse houses, condos, and lots for sale and for rent across
+            Dasmariñas, Bacoor, Imus, and beyond. CVR Realty makes finding your
+            next home simple.
+          </p>
+
+          <div class="hero__actions">
+            <a href="/pages/listings.html" class="btn btn--primary btn--lg">
+              Browse Listings
+            </a>
+            <a href="/pages/contact.html" class="btn btn--ghost btn--lg">
+              Talk to an Agent
+            </a>
+          </div>
+
+          <!-- Quick search bar -->
+          <div class="hero__search" role="search">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search by city, barangay, or keyword…"
+              aria-label="Search properties"
+            />
+            <select id="searchType" aria-label="Property type">
+              <option value="">All types</option>
+              <option value="house">House</option>
+              <option value="condo">Condo</option>
+              <option value="lot">Lot</option>
+              <option value="townhouse">Townhouse</option>
+            </select>
+            <select id="searchStatus" aria-label="Listing status">
+              <option value="">For sale or rent</option>
+              <option value="for-sale">For sale</option>
+              <option value="for-rent">For rent</option>
+            </select>
+            <button class="btn btn--primary" id="searchBtn">Search</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+       STATS STRIP
+  ═══════════════════════════════════════ -->
+    <section class="stats" aria-label="CVR by the numbers">
+      <div class="container">
+        <div class="stats__grid">
+          <div>
+            <div class="stats__item-number">150+</div>
+            <div class="stats__item-label">Properties listed</div>
+          </div>
+          <div>
+            <div class="stats__item-number">8</div>
+            <div class="stats__item-label">Cities in Cavite</div>
+          </div>
+          <div>
+            <div class="stats__item-number">9</div>
+            <div class="stats__item-label">Years in business</div>
+          </div>
+          <div>
+            <div class="stats__item-number">500+</div>
+            <div class="stats__item-label">Families helped</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+       FEATURED LISTINGS
+       Cards are rendered by main.js from properties.json
+  ═══════════════════════════════════════ -->
+    <section class="featured" id="featured">
+      <div class="container">
+        <div class="featured__header">
+          <div>
+            <div class="section-label">Hand-picked for you</div>
+            <h2>Featured Properties</h2>
+          </div>
+          <a href="/pages/listings.html" class="btn btn--secondary">
+            View all listings →
+          </a>
+        </div>
+
+        <!-- JS renders cards here -->
+        <div class="grid grid--3" id="featuredGrid">
+          <!-- Loading skeletons shown before JS runs -->
+          <div class="card">
+            <div class="skeleton" style="height: 220px"></div>
+            <div class="card__body" style="gap: 12px">
+              <div class="skeleton" style="height: 20px; width: 80%"></div>
+              <div class="skeleton" style="height: 14px; width: 50%"></div>
+              <div class="skeleton" style="height: 14px; width: 65%"></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="skeleton" style="height: 220px"></div>
+            <div class="card__body" style="gap: 12px">
+              <div class="skeleton" style="height: 20px; width: 80%"></div>
+              <div class="skeleton" style="height: 14px; width: 50%"></div>
+              <div class="skeleton" style="height: 14px; width: 65%"></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="skeleton" style="height: 220px"></div>
+            <div class="card__body" style="gap: 12px">
+              <div class="skeleton" style="height: 20px; width: 80%"></div>
+              <div class="skeleton" style="height: 14px; width: 50%"></div>
+              <div class="skeleton" style="height: 14px; width: 65%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+       WHY CVR
+  ═══════════════════════════════════════ -->
+    <section class="why" aria-label="Why choose CVR">
+      <div class="container">
+        <div class="text-center">
+          <div class="section-label">Why choose us</div>
+          <h2>The CVR Difference</h2>
+          <p
+            style="
+              max-width: 520px;
+              margin: 16px auto 0;
+              font-size: var(--text-lg);
+            "
+          >
+            We're from Cavite. We know these streets, these communities, and
+            what families here actually need.
+          </p>
+        </div>
+
+        <div class="why__grid">
+          <div class="why__item">
+            <div class="why__icon" aria-hidden="true">🏡</div>
+            <h3 class="why__title">Local expertise</h3>
+            <p class="why__desc">
+              Based in Dasmariñas, we know every barangay, subdivision, and
+              development in Cavite — so we find the right fit faster.
+            </p>
+          </div>
+
+          <div class="why__item">
+            <div class="why__icon" aria-hidden="true">🤝</div>
+            <h3 class="why__title">Trusted agents</h3>
+            <p class="why__desc">
+              Our agents are PRC-licensed brokers and accredited salespersons.
+              You deal with real professionals, not random fixers.
+            </p>
+          </div>
+
+          <div class="why__item">
+            <div class="why__icon" aria-hidden="true">✅</div>
+            <h3 class="why__title">Smooth process</h3>
+            <p class="why__desc">
+              From viewing to transfer of title, we guide you through every step
+              — financing, paperwork, and coordination included.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+       CTA BANNER
+  ═══════════════════════════════════════ -->
+    <section class="cta-banner">
+      <div class="container">
+        <div class="cta-banner__inner">
+          <h2 class="cta-banner__title">
+            Ready to find your<br />
+            <span>next home?</span>
+          </h2>
+
+          <div class="cta-banner__actions">
+            <a href="/pages/contact.html" class="btn btn--primary btn--lg">
+              Contact an agent
+            </a>
+            <a
+              href="viber://chat?number=%2B639171234567"
+              class="btn btn--viber btn--lg"
+            >
+              📱 Message on Viber
+            </a>
+            <a href="/pages/listings.html" class="btn btn--ghost btn--lg">
+              Browse listings
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <!-- Brand col -->
+          <div class="footer__brand">
+            <div class="nav__logo-text" style="font-size: var(--text-2xl)">
+              CVR
+            </div>
+            <p>
+              Carbo Valencia Realty — helping Cavite families find the home they
+              deserve since 2015.
+            </p>
+            <a
+              href="https://www.facebook.com/CarboValenciaRealty"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn--ghost btn--sm"
+              style="margin-top: 16px; width: fit-content"
+            >
+              📘 Follow us on Facebook
+            </a>
+          </div>
+
+          <!-- Quick links -->
+          <div>
+            <div class="footer__heading">Explore</div>
+            <ul class="footer__links">
+              <li>
+                <a href="/pages/listings.html" class="footer__link"
+                  >All listings</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/pages/listings.html?status=for-sale"
+                  class="footer__link"
+                  >For sale</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/pages/listings.html?status=for-rent"
+                  class="footer__link"
+                  >For rent</a
+                >
+              </li>
+              <li>
+                <a href="/pages/about.html" class="footer__link">About CVR</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Cities -->
+          <div>
+            <div class="footer__heading">Areas we serve</div>
+            <ul class="footer__links">
+              <li>
+                <a
+                  href="/pages/listings.html?city=Dasmariñas"
+                  class="footer__link"
+                  >Dasmariñas</a
+                >
+              </li>
+              <li>
+                <a href="/pages/listings.html?city=Bacoor" class="footer__link"
+                  >Bacoor</a
+                >
+              </li>
+              <li>
+                <a href="/pages/listings.html?city=Imus" class="footer__link"
+                  >Imus</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/pages/listings.html?city=General+Trias"
+                  class="footer__link"
+                  >General Trias</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <div class="footer__heading">Get in touch</div>
+            <ul class="footer__links">
+              <li>
+                <a href="tel:+639670486568" class="footer__link"
+                  >📞 +63 967 048 6568</a
+                >
+              </li>
+              <li>
+                <a
+                  href="mailto:carbovalenciarealtyinc@gmail.com"
+                  class="footer__link"
+                  style="word-break: break-all"
+                  >✉️ carbovalenciarealtyinc@gmail.com</a
+                >
+              </li>
+              <li>
+                <a
+                  href="viber://chat?number=%2B639171234567"
+                  class="footer__link"
+                  >📱 Viber</a
+                >
+              </li>
+              <li>
+                <span class="footer__link" style="cursor: default"
+                  >📍 Dasmariñas, Cavite</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="footer__bottom">
+          <span>© 2026 Carbo Valencia Realty. All rights reserved.</span>
+          <span>With God all things are possible.</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════
+       JAVASCRIPT
+  ═══════════════════════════════════════ -->
+    <script>
+      /* ── 1. Mobile nav toggle ── */
+      const navToggle = document.getElementById("navToggle");
+      const navLinks = document.getElementById("navLinks");
+
+      navToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("open");
+        // Animate hamburger to X
+        const spans = navToggle.querySelectorAll("span");
+        const isOpen = navLinks.classList.contains("open");
+        spans[0].style.transform = isOpen
+          ? "translateY(7px) rotate(45deg)"
+          : "";
+        spans[1].style.opacity = isOpen ? "0" : "1";
+        spans[2].style.transform = isOpen
+          ? "translateY(-7px) rotate(-45deg)"
+          : "";
+      });
+
+      /* ── 2. Search bar ── */
+      document.getElementById("searchBtn").addEventListener("click", () => {
+        const keyword = document.getElementById("searchInput").value.trim();
+        const type = document.getElementById("searchType").value;
+        const status = document.getElementById("searchStatus").value;
+
+        const params = new URLSearchParams();
+        if (keyword) params.set("q", keyword);
+        if (type) params.set("type", type);
+        if (status) params.set("status", status);
+
+        window.location.href = `/pages/listings.html?${params.toString()}`;
+      });
+
+      // Allow Enter key on search input
+      document
+        .getElementById("searchInput")
+        .addEventListener("keydown", (e) => {
+          if (e.key === "Enter") document.getElementById("searchBtn").click();
+        });
+
+      /* ── 3. Featured listings — loaded from properties.json ── */
+      async function loadFeatured() {
+        try {
+          const res = await fetch("/data/properties.json");
+          const data = await res.json();
+
+          // Only show featured properties, max 3
+          const featured = data.properties
+            .filter((p) => p.identity.featured)
+            .slice(0, 3);
+
+          // If no featured, fall back to first 3
+          const toShow =
+            featured.length > 0 ? featured : data.properties.slice(0, 3);
+
+          renderCards(toShow);
+        } catch (err) {
+          // If fetch fails (e.g. opening file directly), show a friendly message
+          document.getElementById("featuredGrid").innerHTML = `
+          <p class="text-muted text-sm" style="grid-column: 1/-1; padding: 24px 0;">
+            Could not load listings. Make sure the site is served from a local server.
+          </p>
+        `;
+        }
+      }
+
+      function renderCards(properties) {
+        const grid = document.getElementById("featuredGrid");
+        grid.innerHTML = properties.map((p) => cardHTML(p)).join("");
+      }
+
+      function cardHTML(p) {
+        const { identity, pricing, location, details, media, metadata } = p;
+
+        const statusClass =
+          identity.status === "for-sale"
+            ? "badge--for-sale"
+            : identity.status === "for-rent"
+              ? "badge--for-rent"
+              : "badge--sold";
+
+        const statusLabel =
+          identity.status === "for-sale"
+            ? "For Sale"
+            : identity.status === "for-rent"
+              ? "For Rent"
+              : "Sold";
+
+        const beds =
+          details.bedrooms > 0
+            ? `${details.bedrooms} Bed${details.bedrooms > 1 ? "s" : ""}`
+            : "Studio";
+        const baths = `${details.bathrooms} Bath${details.bathrooms > 1 ? "s" : ""}`;
+        const area = details.floorArea ? `${details.floorArea} sqm` : "";
+
+        const monthly = pricing.monthlyAmortization
+          ? `<div class="price-monthly">~₱${pricing.monthlyAmortization.toLocaleString()}/mo</div>`
+          : "";
+
+        return `
+        <article class="card">
+          <a href="/pages/property.html?id=${p.id}" class="card__image-wrap">
+            <img
+              class="card__image"
+              src="${media.thumbnail}"
+              alt="${identity.title}"
+              loading="lazy"
+              onerror="this.src='/images/brand/placeholder.jpg'"
+            />
+            <div class="card__badges">
+              <span class="badge ${statusClass}">${statusLabel}</span>
+              ${identity.featured ? '<span class="badge badge--featured">★ Featured</span>' : ""}
+            </div>
+          </a>
+          <div class="card__body">
+            <h3 class="card__title">
+              <a href="/pages/property.html?id=${p.id}">${identity.title}</a>
+            </h3>
+            <div class="card__location">
+              📍 ${location.barangay}, ${location.city}
+            </div>
+            <div class="card__specs">
+              <div class="card__spec">
+                <span class="card__spec-icon">🛏</span> ${beds}
+              </div>
+              <div class="card__spec">
+                <span class="card__spec-icon">🚿</span> ${baths}
+              </div>
+              ${area ? `<div class="card__spec"><span class="card__spec-icon">📐</span> ${area}</div>` : ""}
+            </div>
+            <div class="card__footer">
+              <div>
+                <div class="price">${pricing.priceLabel}</div>
+                ${monthly}
+              </div>
+              <a href="/pages/property.html?id=${p.id}" class="btn btn--primary btn--sm">
+                View
+              </a>
+            </div>
+          </div>
+        </article>
+      `;
+      }
+
+      // Run on page load
+      loadFeatured();
+    </script>
+  </body>
+</html>

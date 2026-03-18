@@ -1,0 +1,1014 @@
+/* ============================================================
+   CVR REALTY — main.css
+   Carbo Valencia Realty | Dasmariñas, Cavite
+
+   TABLE OF CONTENTS
+   1. Brand tokens (colors, spacing, type scale, shadows)
+   2. Reset & base
+   3. Typography
+   4. Layout utilities
+   5. Navigation
+   6. Buttons
+   7. Property card
+   8. Badge / tag
+   9. Forms
+   10. Footer
+   11. Responsive breakpoints
+   ============================================================ */
+
+/* ============================================================
+   1. BRAND TOKENS
+   These are the only colors you should ever use.
+   Change them here → changes everywhere.
+   ============================================================ */
+
+:root {
+  /* — Brand colors — */
+  --color-yellow: #d4a017;
+  --color-yellow-dark: #b8861a; /* hover states */
+  --color-yellow-light: #f0c84a; /* accents */
+  --color-yellow-bg: #fbf4e0; /* subtle yellow backgrounds */
+
+  --color-blue: #1e3a5f;
+  --color-blue-mid: #2a5080; /* hover, borders */
+  --color-blue-light: #e8eef5; /* subtle blue backgrounds */
+
+  --color-white: #f8f7f4; /* off-white, not pure white */
+  --color-light: #f1efe9; /* section backgrounds */
+  --color-gray: #6b7280;
+  --color-gray-light: #d1d5db; /* borders, dividers */
+  --color-gray-dark: #374151; /* secondary text */
+  --color-black: #111827; /* body text */
+
+  /* — Semantic aliases (use these in components, not raw colors) — */
+  --color-text-primary: var(--color-black);
+  --color-text-secondary: var(--color-gray-dark);
+  --color-text-muted: var(--color-gray);
+  --color-text-inverse: var(--color-white);
+
+  --color-bg-page: var(--color-white);
+  --color-bg-section: var(--color-light);
+  --color-bg-card: #ffffff;
+  --color-bg-nav: var(--color-blue);
+
+  --color-border: var(--color-gray-light);
+  --color-border-focus: var(--color-yellow);
+
+  --color-accent: var(--color-yellow);
+  --color-accent-hover: var(--color-yellow-dark);
+  --color-brand: var(--color-blue);
+
+  /* — Status colors — */
+  --color-for-sale: #1e3a5f;
+  --color-for-sale-bg: #e8eef5;
+  --color-for-rent: #065f46;
+  --color-for-rent-bg: #d1fae5;
+  --color-sold: #6b7280;
+  --color-sold-bg: #f3f4f6;
+
+  /* — Spacing scale (multiples of 4px) — */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* — Type scale — */
+  --text-xs: 0.75rem; /* 12px — labels, captions */
+  --text-sm: 0.875rem; /* 14px — secondary text, tags */
+  --text-base: 1rem; /* 16px — body */
+  --text-lg: 1.125rem; /* 18px — lead text */
+  --text-xl: 1.25rem; /* 20px — card titles */
+  --text-2xl: 1.5rem; /* 24px — section headings */
+  --text-3xl: 1.875rem; /* 30px — page headings */
+  --text-4xl: 2.25rem; /* 36px — hero headings */
+  --text-5xl: 3rem; /* 48px — large hero */
+
+  /* — Font families — */
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+  --font-mono: "Fira Code", monospace;
+
+  /* — Font weights — */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+
+  /* — Line heights — */
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.6;
+
+  /* — Border radius — */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* — Shadows — */
+  --shadow-sm:
+    0 1px 3px rgba(30, 58, 95, 0.08), 0 1px 2px rgba(30, 58, 95, 0.04);
+  --shadow-md:
+    0 4px 12px rgba(30, 58, 95, 0.1), 0 2px 4px rgba(30, 58, 95, 0.06);
+  --shadow-lg:
+    0 10px 30px rgba(30, 58, 95, 0.12), 0 4px 8px rgba(30, 58, 95, 0.08);
+  --shadow-card-hover: 0 8px 24px rgba(30, 58, 95, 0.14);
+
+  /* — Transitions — */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* — Layout — */
+  --container-max: 1200px;
+  --container-wide: 1400px;
+  --nav-height: 72px;
+}
+
+/* ============================================================
+   2. RESET & BASE
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* ============================================================
+   3. TYPOGRAPHY
+   ============================================================ */
+
+/* Google Fonts import — put this at the very top of any HTML <head>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  color: var(--color-text-primary);
+}
+
+h1 {
+  font-size: var(--text-4xl);
+}
+h2 {
+  font-size: var(--text-3xl);
+}
+h3 {
+  font-size: var(--text-2xl);
+}
+h4 {
+  font-size: var(--text-xl);
+}
+h5 {
+  font-size: var(--text-lg);
+}
+h6 {
+  font-size: var(--text-base);
+}
+
+p {
+  line-height: var(--leading-normal);
+  color: var(--color-text-secondary);
+}
+
+.text-xs {
+  font-size: var(--text-xs);
+}
+.text-sm {
+  font-size: var(--text-sm);
+}
+.text-base {
+  font-size: var(--text-base);
+}
+.text-lg {
+  font-size: var(--text-lg);
+}
+.text-xl {
+  font-size: var(--text-xl);
+}
+.text-2xl {
+  font-size: var(--text-2xl);
+}
+.text-3xl {
+  font-size: var(--text-3xl);
+}
+
+.text-primary {
+  color: var(--color-text-primary);
+}
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+.text-muted {
+  color: var(--color-text-muted);
+}
+.text-accent {
+  color: var(--color-accent);
+}
+.text-brand {
+  color: var(--color-brand);
+}
+.text-inverse {
+  color: var(--color-text-inverse);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-regular {
+  font-weight: var(--weight-regular);
+}
+.font-medium {
+  font-weight: var(--weight-medium);
+}
+.font-bold {
+  font-weight: var(--weight-bold);
+}
+
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+/* Section label — small uppercase text above headings */
+.section-label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-yellow);
+  margin-bottom: var(--space-3);
+}
+
+/* Price text — used on cards and detail page */
+.price {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-blue);
+}
+
+.price-monthly {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+/* ============================================================
+   4. LAYOUT UTILITIES
+   ============================================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
+}
+
+.container--wide {
+  max-width: var(--container-wide);
+}
+
+/* Section vertical spacing */
+.section {
+  padding-top: var(--space-20);
+  padding-bottom: var(--space-20);
+}
+
+.section--sm {
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
+}
+
+.section--light {
+  background-color: var(--color-bg-section);
+}
+
+.section--dark {
+  background-color: var(--color-blue);
+  color: var(--color-text-inverse);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Auto-fit grid — cards wrap naturally */
+.grid--auto {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+/* Flex utilities */
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-center {
+  align-items: center;
+}
+.items-start {
+  align-items: flex-start;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-center {
+  justify-content: center;
+}
+.gap-2 {
+  gap: var(--space-2);
+}
+.gap-3 {
+  gap: var(--space-3);
+}
+.gap-4 {
+  gap: var(--space-4);
+}
+.gap-6 {
+  gap: var(--space-6);
+}
+.gap-8 {
+  gap: var(--space-8);
+}
+
+/* Spacing helpers */
+.mt-4 {
+  margin-top: var(--space-4);
+}
+.mt-6 {
+  margin-top: var(--space-6);
+}
+.mt-8 {
+  margin-top: var(--space-8);
+}
+.mb-4 {
+  margin-bottom: var(--space-4);
+}
+.mb-6 {
+  margin-bottom: var(--space-6);
+}
+.mb-8 {
+  margin-bottom: var(--space-8);
+}
+
+/* Divider */
+.divider {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: var(--space-8) 0;
+}
+
+/* ============================================================
+   5. NAVIGATION
+   ============================================================ */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  background-color: var(--color-blue);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.nav__logo-text {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-white);
+  letter-spacing: 0.02em;
+}
+
+.nav__logo-sub {
+  font-size: var(--text-xs);
+  color: var(--color-yellow-light);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.nav__link {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: rgba(248, 247, 244, 0.8);
+  letter-spacing: 0.03em;
+  transition: color var(--transition-fast);
+  position: relative;
+}
+
+.nav__link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-yellow);
+  transition: width var(--transition-base);
+}
+
+.nav__link:hover,
+.nav__link.active {
+  color: var(--color-white);
+}
+
+.nav__link:hover::after,
+.nav__link.active::after {
+  width: 100%;
+}
+
+/* Hamburger — mobile only */
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: var(--space-2);
+}
+
+.nav__toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-white);
+  border-radius: var(--radius-full);
+  transition:
+    transform var(--transition-base),
+    opacity var(--transition-base);
+}
+
+/* ============================================================
+   6. BUTTONS
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.04em;
+  border-radius: var(--radius-md);
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* Primary — yellow, used for main CTAs */
+.btn--primary {
+  background-color: var(--color-yellow);
+  color: var(--color-blue);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-yellow-dark);
+  box-shadow: var(--shadow-md);
+}
+
+/* Secondary — outlined blue */
+.btn--secondary {
+  background-color: transparent;
+  color: var(--color-blue);
+  border: 2px solid var(--color-blue);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-blue-light);
+}
+
+/* Ghost — for use on dark backgrounds */
+.btn--ghost {
+  background-color: transparent;
+  color: var(--color-white);
+  border: 2px solid rgba(248, 247, 244, 0.4);
+}
+
+.btn--ghost:hover {
+  background-color: rgba(248, 247, 244, 0.1);
+  border-color: var(--color-white);
+}
+
+/* Sizes */
+.btn--sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-xs);
+}
+
+.btn--lg {
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--text-base);
+}
+
+.btn--full {
+  width: 100%;
+}
+
+/* Viber CTA — brand green */
+.btn--viber {
+  background-color: #7360f2;
+  color: #ffffff;
+}
+
+.btn--viber:hover {
+  background-color: #5a4ad1;
+  box-shadow: var(--shadow-md);
+}
+
+/* ============================================================
+   7. PROPERTY CARD
+   ============================================================ */
+
+.card {
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition:
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-3px);
+}
+
+.card__image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: var(--color-light);
+}
+
+.card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.card:hover .card__image {
+  transform: scale(1.04);
+}
+
+.card__badges {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  display: flex;
+  gap: var(--space-2);
+}
+
+.card__body {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  flex: 1;
+}
+
+.card__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+  line-height: var(--leading-snug);
+}
+
+.card__location {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* Property specs row: beds / baths / sqm */
+.card__specs {
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.card__spec {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.card__spec-icon {
+  font-size: 14px;
+  color: var(--color-yellow);
+}
+
+.card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+/* ============================================================
+   8. BADGE / TAG
+   ============================================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+}
+
+.badge--for-sale {
+  background-color: var(--color-for-sale-bg);
+  color: var(--color-for-sale);
+}
+
+.badge--for-rent {
+  background-color: var(--color-for-rent-bg);
+  color: var(--color-for-rent);
+}
+
+.badge--sold {
+  background-color: var(--color-sold-bg);
+  color: var(--color-sold);
+}
+
+.badge--featured {
+  background-color: var(--color-yellow);
+  color: var(--color-blue);
+}
+
+/* Property type tag */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  background-color: var(--color-blue-light);
+  color: var(--color-blue);
+  border-radius: var(--radius-sm);
+}
+
+/* ============================================================
+   9. FORMS
+   ============================================================ */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form-label {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-primary);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-card);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+  appearance: none;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--color-border-focus);
+  box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.15);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: var(--leading-normal);
+}
+
+/* Filter bar — used on listings page */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding: var(--space-5) var(--space-6);
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.filter-bar .form-select {
+  flex: 1;
+  min-width: 160px;
+}
+
+/* ============================================================
+   10. FOOTER
+   ============================================================ */
+
+.footer {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-8);
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--space-12);
+  padding-bottom: var(--space-10);
+  border-bottom: 1px solid rgba(248, 247, 244, 0.12);
+}
+
+.footer__brand p {
+  font-size: var(--text-sm);
+  color: rgba(248, 247, 244, 0.65);
+  margin-top: var(--space-4);
+  line-height: var(--leading-normal);
+  max-width: 280px;
+}
+
+.footer__heading {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-yellow-light);
+  margin-bottom: var(--space-5);
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer__link {
+  font-size: var(--text-sm);
+  color: rgba(248, 247, 244, 0.65);
+  transition: color var(--transition-fast);
+}
+
+.footer__link:hover {
+  color: var(--color-white);
+}
+
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-8);
+  font-size: var(--text-xs);
+  color: rgba(248, 247, 244, 0.4);
+}
+
+/* ============================================================
+   11. RESPONSIVE BREAKPOINTS
+   ============================================================ */
+
+/* Tablet — 768px and below */
+@media (max-width: 768px) {
+  :root {
+    --text-4xl: 2rem;
+    --text-3xl: 1.625rem;
+    --text-2xl: 1.375rem;
+  }
+
+  .container {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+
+  .section {
+    padding-top: var(--space-12);
+    padding-bottom: var(--space-12);
+  }
+
+  /* Nav collapses to hamburger */
+  .nav__links {
+    display: none;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: var(--color-blue);
+    padding: var(--space-6);
+    gap: var(--space-5);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .nav__links.open {
+    display: flex;
+  }
+
+  .nav__toggle {
+    display: flex;
+  }
+
+  .grid--3,
+  .grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+}
+
+/* Mobile — 480px and below */
+@media (max-width: 480px) {
+  :root {
+    --text-4xl: 1.75rem;
+    --text-5xl: 2.25rem;
+  }
+
+  .grid--2,
+  .grid--3,
+  .grid--4 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid--auto {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-bar {
+    flex-direction: column;
+  }
+
+  .filter-bar .form-select {
+    min-width: 100%;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    gap: var(--space-3);
+    text-align: center;
+  }
+
+  .btn--lg {
+    width: 100%;
+  }
+
+  .card__specs {
+    gap: var(--space-3);
+  }
+}
