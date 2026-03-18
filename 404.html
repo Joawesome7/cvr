@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Found — CVR</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/assets/css/main.css" />
+
+    <style>
+      .not-found {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .not-found__body {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: var(--space-16) var(--space-6);
+      }
+
+      .not-found__inner {
+        text-align: center;
+        max-width: 480px;
+      }
+
+      .not-found__number {
+        font-family: var(--font-heading);
+        font-size: clamp(5rem, 18vw, 9rem);
+        font-weight: var(--weight-bold);
+        color: var(--color-blue);
+        line-height: 1;
+        opacity: 0.12;
+        margin-bottom: -20px;
+        user-select: none;
+      }
+
+      .not-found__icon {
+        font-size: 56px;
+        line-height: 1;
+        margin-bottom: var(--space-5);
+      }
+
+      .not-found__title {
+        font-family: var(--font-heading);
+        font-size: var(--text-3xl);
+        color: var(--color-blue);
+        margin-bottom: var(--space-4);
+      }
+
+      .not-found__text {
+        font-size: var(--text-base);
+        color: var(--color-text-muted);
+        line-height: var(--leading-normal);
+        margin-bottom: var(--space-8);
+      }
+
+      .not-found__actions {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: var(--space-4);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav class="nav">
+        <div class="container nav__inner">
+          <a href="/" class="nav__logo">
+            <div>
+              <div class="nav__logo-text">CVR</div>
+              <div class="nav__logo-sub">Carbo Valencia Realty</div>
+            </div>
+          </a>
+          <ul class="nav__links" id="navLinks">
+            <li><a href="/" class="nav__link">Home</a></li>
+            <li>
+              <a href="/pages/listings.html" class="nav__link">Listings</a>
+            </li>
+            <li><a href="/pages/about.html" class="nav__link">About</a></li>
+            <li><a href="/pages/contact.html" class="nav__link">Contact</a></li>
+          </ul>
+          <div class="flex items-center gap-4">
+            <a href="tel:+639171234567" class="btn btn--primary btn--sm"
+              >📞 Call Us</a
+            >
+            <button class="nav__toggle" id="navToggle" aria-label="Open menu">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="not-found__body">
+      <div class="not-found__inner">
+        <div class="not-found__number" aria-hidden="true">404</div>
+        <div class="not-found__icon">🏚️</div>
+        <h1 class="not-found__title">This page moved out</h1>
+        <p class="not-found__text">
+          The page you're looking for doesn't exist or may have been removed.
+          Don't worry — there are plenty of great homes still available.
+        </p>
+        <div class="not-found__actions">
+          <a href="/" class="btn btn--primary btn--lg">Go home</a>
+          <a href="/pages/listings.html" class="btn btn--secondary btn--lg"
+            >Browse listings</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div
+          class="footer__bottom"
+          style="
+            padding-top: var(--space-6);
+            border-top: 1px solid rgba(248, 247, 244, 0.12);
+          "
+        >
+          <span>© 2025 Carbo Valencia Realty. All rights reserved.</span>
+          <span>With God all things are possible.</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const navToggle = document.getElementById("navToggle");
+      const navLinks = document.getElementById("navLinks");
+      navToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("open");
+        const spans = navToggle.querySelectorAll("span");
+        const isOpen = navLinks.classList.contains("open");
+        spans[0].style.transform = isOpen
+          ? "translateY(7px) rotate(45deg)"
+          : "";
+        spans[1].style.opacity = isOpen ? "0" : "1";
+        spans[2].style.transform = isOpen
+          ? "translateY(-7px) rotate(-45deg)"
+          : "";
+      });
+    </script>
+  </body>
+</html>
