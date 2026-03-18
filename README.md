@@ -20,11 +20,10 @@ A static frontend website built as a client prototype for CVR Inc. It allows pot
 - [Formspree](https://formspree.io) — contact and inquiry form handling
 - [Google Fonts](https://fonts.google.com) — Playfair Display + DM Sans
 - [Vercel](https://vercel.com) — hosting and URL redirects
-- Data is stored in `/data/properties.json` — no database required
 
 ## Client
 Carbo-Valencia Realty Inc. — Dasmariñas, Cavite, Philippines
-Facebook: [CVR Realty](https://facebook.com/cvrrealty)
+Facebook: [CVR Inc.](https://www.facebook.com/CarboValenciaRealty)
 
 ## License
 This project was built for Carbo-Valencia Realty Inc. All rights reserved.
