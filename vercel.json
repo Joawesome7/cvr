@@ -1,11 +1,11 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/property", "destination": "/pages/property.html" },
-    { "source": "/listings", "destination": "/pages/listings.html" },
-    { "source": "/services", "destination": "/pages/services.html" },
-    { "source": "/about", "destination": "/pages/about.html" },
-    { "source": "/contact", "destination": "/pages/contact.html" },
-    { "source": "/developers", "destination": "/pages/developers.html" }
+    { "source": "/property", "destination": "/pages/property" },
+    { "source": "/listings", "destination": "/pages/listings" },
+    { "source": "/services", "destination": "/pages/services" },
+    { "source": "/about", "destination": "/pages/about" },
+    { "source": "/contact", "destination": "/pages/contact" },
+    { "source": "/developers", "destination": "/pages/developers" }
   ]
 }
