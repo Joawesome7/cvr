@@ -29,383 +29,21 @@
 
     <link
       rel="shortcut icon"
-      href="images/ico/favicon.ico"
+      href="images/brand/cvr-logo.png"
       type="image/x-icon"
     />
 
     <!-- Stylesheet -->
+    <link rel="stylesheet" href="/assets/css/services.css" />
+    <link rel="stylesheet" href="/assets/css/home.css" />
     <link rel="stylesheet" href="/assets/css/main.css" />
-
-    <style>
-      /* ── Page-specific styles (only what main.css doesn't cover) ── */
-
-      /* Hero */
-      .hero {
-        position: relative;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        background-color: var(--color-blue);
-        overflow: hidden;
-      }
-
-      .hero__bg {
-        position: absolute;
-        inset: 0;
-        background-image: url("/images/brand/hero-bg.jpg");
-        background-size: cover;
-        background-position: center;
-        opacity: 0.25;
-      }
-
-      /* Subtle geometric accent — no image needed */
-      .hero__bg-pattern {
-        position: absolute;
-        inset: 0;
-        background-image: repeating-linear-gradient(
-          45deg,
-          rgba(212, 160, 23, 0.04) 0px,
-          rgba(212, 160, 23, 0.04) 1px,
-          transparent 1px,
-          transparent 60px
-        );
-      }
-
-      .hero__content {
-        position: relative;
-        z-index: 1;
-        max-width: 720px;
-      }
-
-      .hero__label {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        font-size: var(--text-xs);
-        font-weight: var(--weight-bold);
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--color-yellow-light);
-        margin-bottom: var(--space-5);
-      }
-
-      .hero__label::before {
-        content: "";
-        display: block;
-        width: 32px;
-        height: 2px;
-        background-color: var(--color-yellow);
-      }
-
-      .hero__title {
-        font-family: var(--font-heading);
-        font-size: clamp(2.25rem, 5vw, 3.5rem);
-        font-weight: var(--weight-bold);
-        color: var(--color-white);
-        line-height: 1.15;
-        margin-bottom: var(--space-5);
-      }
-
-      .hero__title span {
-        color: var(--color-yellow);
-      }
-
-      .hero__subtitle {
-        font-size: var(--text-lg);
-        color: rgba(248, 247, 244, 0.75);
-        line-height: var(--leading-normal);
-        max-width: 520px;
-        margin-bottom: var(--space-8);
-      }
-
-      .hero__actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--space-4);
-        margin-bottom: var(--space-12);
-      }
-
-      /* Search bar overlapping hero bottom */
-      .hero__search {
-        background-color: var(--color-bg-card);
-        border-radius: var(--radius-lg);
-        padding: var(--space-4) var(--space-5);
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--space-3);
-        align-items: center;
-        box-shadow: var(--shadow-lg);
-        max-width: 680px;
-      }
-
-      .hero__search select,
-      .hero__search input {
-        flex: 1;
-        min-width: 140px;
-        padding: var(--space-3) var(--space-4);
-        font-size: var(--text-sm);
-        color: var(--color-text-primary);
-        background-color: var(--color-light);
-        border: 1.5px solid transparent;
-        border-radius: var(--radius-md);
-        appearance: none;
-        transition: border-color var(--transition-fast);
-      }
-
-      .hero__search select:focus,
-      .hero__search input:focus {
-        outline: none;
-        border-color: var(--color-yellow);
-      }
-
-      /* Stats strip */
-      .stats {
-        background-color: var(--color-yellow);
-        padding: var(--space-6) 0;
-      }
-
-      .stats__grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: var(--space-4);
-        text-align: center;
-      }
-
-      .stats__item-number {
-        font-family: var(--font-heading);
-        font-size: var(--text-3xl);
-        font-weight: var(--weight-bold);
-        color: var(--color-blue);
-        line-height: 1;
-      }
-
-      .stats__item-label {
-        font-size: var(--text-sm);
-        font-weight: var(--weight-medium);
-        color: var(--color-blue);
-        opacity: 0.75;
-        margin-top: var(--space-1);
-      }
-
-      /* Featured listings */
-      .featured {
-        padding: var(--space-20) 0;
-      }
-
-      .featured__header {
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-        margin-bottom: var(--space-10);
-        flex-wrap: wrap;
-        gap: var(--space-4);
-      }
-
-      /* Why CVR */
-      .why {
-        background-color: var(--color-light);
-        padding: var(--space-20) 0;
-      }
-
-      .why__grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: var(--space-8);
-        margin-top: var(--space-12);
-      }
-
-      .why__item {
-        text-align: center;
-        padding: var(--space-8);
-        background-color: var(--color-bg-card);
-        border-radius: var(--radius-xl);
-        box-shadow: var(--shadow-sm);
-        transition:
-          box-shadow var(--transition-base),
-          transform var(--transition-base);
-      }
-
-      .why__item:hover {
-        box-shadow: var(--shadow-md);
-        transform: translateY(-4px);
-      }
-
-      .why__icon {
-        width: 56px;
-        height: 56px;
-        border-radius: var(--radius-full);
-        background-color: var(--color-yellow-bg);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto var(--space-5);
-        font-size: 24px;
-      }
-
-      .why__title {
-        font-family: var(--font-heading);
-        font-size: var(--text-xl);
-        font-weight: var(--weight-bold);
-        color: var(--color-blue);
-        margin-bottom: var(--space-3);
-      }
-
-      .why__desc {
-        font-size: var(--text-sm);
-        color: var(--color-text-muted);
-        line-height: var(--leading-normal);
-      }
-
-      /* CTA Banner */
-      .cta-banner {
-        background-color: var(--color-blue);
-        padding: var(--space-16) 0;
-      }
-
-      .cta-banner__inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: var(--space-8);
-        flex-wrap: wrap;
-      }
-
-      .cta-banner__title {
-        font-family: var(--font-heading);
-        font-size: var(--text-3xl);
-        font-weight: var(--weight-bold);
-        color: var(--color-white);
-        line-height: var(--leading-snug);
-        max-width: 500px;
-      }
-
-      .cta-banner__title span {
-        color: var(--color-yellow-light);
-      }
-
-      .cta-banner__actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--space-4);
-        flex-shrink: 0;
-      }
-
-      /* Loading skeleton for cards */
-      .skeleton {
-        background: linear-gradient(
-          90deg,
-          #f0ede6 25%,
-          #e8e4dc 50%,
-          #f0ede6 75%
-        );
-        background-size: 200% 100%;
-        animation: shimmer 1.5s infinite;
-        border-radius: var(--radius-md);
-      }
-
-      @keyframes shimmer {
-        0% {
-          background-position: 200% 0;
-        }
-        100% {
-          background-position: -200% 0;
-        }
-      }
-
-      /* Responsive */
-      @media (max-width: 768px) {
-        .hero {
-          min-height: 90vh;
-          padding-top: var(--space-12);
-        }
-        .hero__search {
-          flex-direction: column;
-        }
-        .hero__search select,
-        .hero__search input {
-          min-width: 100%;
-        }
-        .stats__grid {
-          grid-template-columns: repeat(2, 1fr);
-          gap: var(--space-6);
-        }
-        .why__grid {
-          grid-template-columns: 1fr;
-        }
-        .cta-banner__inner {
-          flex-direction: column;
-          text-align: center;
-        }
-        .cta-banner__actions {
-          justify-content: center;
-        }
-        .featured__header {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .hero__actions {
-          flex-direction: column;
-        }
-        .hero__actions .btn {
-          width: 100%;
-          justify-content: center;
-        }
-        .stats__grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-    </style>
   </head>
 
   <body>
     <!-- ═══════════════════════════════════════
        NAVIGATION
   ═══════════════════════════════════════ -->
-    <header>
-      <nav class="nav">
-        <div class="container nav__inner">
-          <!-- Logo -->
-          <a href="/" class="nav__logo">
-            <img
-              src="/images/brand/cvr-logo.png"
-              alt="CVR logo"
-              width="40"
-              height="40"
-              onerror="this.style.display = 'none'"
-            />
-            <div>
-              <div class="nav__logo-text">CVR</div>
-              <div class="nav__logo-sub">Carbo Valencia Realty</div>
-            </div>
-          </a>
-
-          <!-- Links -->
-          <ul class="nav__links" id="navLinks">
-            <li><a href="/" class="nav__link active">Home</a></li>
-            <li>
-              <a href="/pages/listings.html" class="nav__link">Listings</a>
-            </li>
-            <li><a href="/pages/about.html" class="nav__link">About</a></li>
-            <li><a href="/pages/contact.html" class="nav__link">Contact</a></li>
-          </ul>
-
-          <!-- CTA + hamburger -->
-          <div class="flex items-center gap-4">
-            <a href="tel:+639171234567" class="btn btn--primary btn--sm">
-              📞 Call Us
-            </a>
-            <button class="nav__toggle" id="navToggle" aria-label="Open menu">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-          </div>
-        </div>
-      </nav>
-    </header>
+    <div id="nav-placeholder"></div>
 
     <!-- ═══════════════════════════════════════
        HERO
@@ -416,17 +54,16 @@
 
       <div class="container">
         <div class="hero__content">
-          <div class="hero__label">Trusted in Cavite since 2015</div>
+          <div class="hero__label">Trusted in CALABARZON since 2013</div>
 
           <h1 class="hero__title">
-            Find Your <span>Dream Home</span><br />
-            in Cavite
+            Your Future, <span>Your Home,</span><br />
+            Our Commitment.
           </h1>
 
           <p class="hero__subtitle">
             Browse houses, condos, and lots for sale and for rent across
-            Dasmariñas, Bacoor, Imus, and beyond. CVR Realty makes finding your
-            next home simple.
+            CALABARZON and beyond. CVR makes finding your next home simple.
           </p>
 
           <div class="hero__actions">
@@ -475,17 +112,259 @@
             <div class="stats__item-label">Properties listed</div>
           </div>
           <div>
-            <div class="stats__item-number">8</div>
-            <div class="stats__item-label">Cities in Cavite</div>
+            <div class="stats__item-number">12</div>
+            <div class="stats__item-label">Cities in Cavite & Metro Manila</div>
           </div>
           <div>
-            <div class="stats__item-number">9</div>
+            <div class="stats__item-number">14</div>
             <div class="stats__item-label">Years in business</div>
           </div>
           <div>
             <div class="stats__item-number">500+</div>
             <div class="stats__item-label">Families helped</div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     DEVELOPER LOGOS MARQUEE
+═══════════════════════════════════════ -->
+    <section class="dev-logos" aria-label="Partner developers">
+      <div class="container">
+        <div
+          class="section-label text-center"
+          style="margin-bottom: var(--space-6)"
+        >
+          Our Partner Developers
+        </div>
+      </div>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <!-- Set 1 -->
+          <div class="marquee__item">
+            <img
+              src="/images/developers/PA.png"
+              alt="P.A. Properties Hankyu Hanshin"
+            />
+          </div>
+          <div class="marquee__item">
+            <img src="/images/developers/Amaia.png" alt="Amaia" />
+          </div>
+          <div class="marquee__item">
+            <img src="/images/developers/Camella.png" alt="Camella" />
+          </div>
+          <div class="marquee__item">
+            <img src="/images/developers/Avida.png" alt="Avida" />
+          </div>
+          <div class="marquee__item">
+            <img src="/images/developers/crown-asia.png" alt="Crown Asia" />
+          </div>
+          <div class="marquee__item">
+            <img src="/images/developers/smdc.png" alt="SMDC" />
+          </div>
+          <div class="marquee__item">
+            <img src="/images/developers/axeia.png" alt="Axeia" />
+          </div>
+          <div class="marquee__item">
+            <img src="/images/developers/moldex.png" alt="Moldex Realty" />
+          </div>
+          <div class="marquee__item">
+            <img
+              src="/images/developers/san-miguel.png"
+              alt="San Miguel Properties"
+            />
+          </div>
+          <div class="marquee__item">
+            <img src="/images/developers/mycitihomes.png" alt="MyCiti Homes" />
+          </div>
+          <div class="marquee__item">
+            <img src="/images/developers/antel.png" alt="Antel Land" />
+          </div>
+          <div class="marquee__item">
+            <img src="/images/developers/masaito.png" alt="Masaito" />
+          </div>
+          <div class="marquee__item">
+            <img src="/images/developers/suntrust.png" alt="Suntrust" />
+          </div>
+          <div class="marquee__item">
+            <img src="/images/developers/sta-lucia.png" alt="Sta. Lucia Land" />
+          </div>
+          <div class="marquee__item">
+            <img src="/images/developers/apec-homes.png" alt="APEC Homes" />
+          </div>
+          <div class="marquee__item">
+            <img src="/images/developers/phirst.png" alt="Phirst Park Homes" />
+          </div>
+
+          <!-- Set 2 — exact duplicate for seamless loop -->
+          <div class="marquee__item">
+            <img src="/images/developers/PA.png" alt="" />
+          </div>
+          <div class="marquee__item">
+            <img src="/images/developers/Amaia.png" alt="" />
+          </div>
+          <div class="marquee__item">
+            <img src="/images/developers/Camella.png" alt="" />
+          </div>
+          <div class="marquee__item">
+            <img src="/images/developers/Avida.png" alt="" />
+          </div>
+          <div class="marquee__item">
+            <img src="/images/developers/crown-asia.png" alt="" />
+          </div>
+          <div class="marquee__item">
+            <img src="/images/developers/smdc.png" alt="" />
+          </div>
+          <div class="marquee__item">
+            <img src="/images/developers/axeia.png" alt="" />
+          </div>
+          <div class="marquee__item">
+            <img src="/images/developers/moldex.png" alt="" />
+          </div>
+          <div class="marquee__item">
+            <img src="/images/developers/san-miguel.png" alt="" />
+          </div>
+          <div class="marquee__item">
+            <img src="/images/developers/mycitihomes.png" alt="" />
+          </div>
+          <div class="marquee__item">
+            <img src="/images/developers/antel.png" alt="" />
+          </div>
+          <div class="marquee__item">
+            <img src="/images/developers/masaito.png" alt="" />
+          </div>
+          <div class="marquee__item">
+            <img src="/images/developers/suntrust.png" alt="" />
+          </div>
+          <div class="marquee__item">
+            <img src="/images/developers/sta-lucia.png" alt="" />
+          </div>
+          <div class="marquee__item">
+            <img src="/images/developers/apec-homes.png" alt="" />
+          </div>
+          <div class="marquee__item">
+            <img src="/images/developers/phirst.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+       SERVICES TEASER
+  ═══════════════════════════════════════ -->
+    <section class="services-teaser">
+      <div class="container">
+        <div class="services-teaser__head">
+          <div class="services-teaser__head-left">
+            <span class="section-label" style="margin-bottom: 0">Services</span>
+            <div class="services-teaser__dot"></div>
+            <span class="services-teaser__label">What we offer</span>
+          </div>
+          <a href="pages/services.html" class="services-teaser__see-all">
+            View all
+            <svg
+              width="11"
+              height="11"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="services-teaser__row">
+          <a href="/services#brokerage" class="svc-tile">
+            <div class="svc-tile__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+            </div>
+            <div class="svc-tile__text">
+              <span class="svc-tile__name">Brokerage</span>
+              <span class="svc-tile__sub">Buy · Sell · Lease</span>
+            </div>
+          </a>
+
+          <a href="/services#appraisal" class="svc-tile">
+            <div class="svc-tile__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+              </svg>
+            </div>
+            <div class="svc-tile__text">
+              <span class="svc-tile__name">Appraisal</span>
+              <span class="svc-tile__sub">Valuation · Assessment</span>
+            </div>
+          </a>
+
+          <a href="/services#titling" class="svc-tile">
+            <div class="svc-tile__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="7" width="20" height="14" rx="2" />
+                <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+                <line x1="12" y1="12" x2="12" y2="16" />
+                <line x1="10" y1="14" x2="14" y2="14" />
+              </svg>
+            </div>
+            <div class="svc-tile__text">
+              <span class="svc-tile__name">Title Transfer</span>
+              <span class="svc-tile__sub">Titling · Documentation</span>
+            </div>
+          </a>
+
+          <a href="/services#loans" class="svc-tile">
+            <div class="svc-tile__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="12" y1="1" x2="12" y2="23" />
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+              </svg>
+            </div>
+            <div class="svc-tile__text">
+              <span class="svc-tile__name">Housing Loan</span>
+              <span class="svc-tile__sub">Pag-IBIG · Bank · In-house</span>
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -541,48 +420,120 @@
        WHY CVR
   ═══════════════════════════════════════ -->
     <section class="why" aria-label="Why choose CVR">
-      <div class="container">
-        <div class="text-center">
+      <div class="container" style="padding: 20px">
+        <div class="why__header">
           <div class="section-label">Why choose us</div>
-          <h2>The CVR Difference</h2>
-          <p
-            style="
-              max-width: 520px;
-              margin: 16px auto 0;
-              font-size: var(--text-lg);
-            "
-          >
+          <h2>The <em>CVR</em> Difference</h2>
+          <p class="why__lead">
             We're from Cavite. We know these streets, these communities, and
             what families here actually need.
           </p>
+          <div class="why__rule"></div>
         </div>
 
-        <div class="why__grid">
-          <div class="why__item">
-            <div class="why__icon" aria-hidden="true">🏡</div>
-            <h3 class="why__title">Local expertise</h3>
-            <p class="why__desc">
-              Based in Dasmariñas, we know every barangay, subdivision, and
-              development in Cavite — so we find the right fit faster.
+        <div class="why__panel-grid">
+          <div class="why__panel">
+            <span class="why__panel-num">01</span>
+            <div class="why__panel-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </div>
+            <h3 class="why__panel-title">Client-Centric Approach</h3>
+            <p class="why__panel-desc">
+              Personalized service built around your needs — not just a
+              transaction. We stay responsive and maintain long-term
+              relationships long after the keys are handed over.
             </p>
+            <a href="/pages/about.html" class="why__panel-link">
+              Learn more
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
           </div>
 
-          <div class="why__item">
-            <div class="why__icon" aria-hidden="true">🤝</div>
-            <h3 class="why__title">Trusted agents</h3>
-            <p class="why__desc">
-              Our agents are PRC-licensed brokers and accredited salespersons.
-              You deal with real professionals, not random fixers.
+          <div class="why__panel">
+            <span class="why__panel-num">02</span>
+            <div class="why__panel-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>
+            </div>
+            <h3 class="why__panel-title">Continuous Learning &amp; Growth</h3>
+            <p class="why__panel-desc">
+              We embrace a culture of professional development. Resources,
+              trainings, and growth opportunities are built into how we work —
+              for both our agents and our clients.
             </p>
+            <a href="pages/about.html" class="why__panel-link">
+              Learn more
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
           </div>
 
-          <div class="why__item">
-            <div class="why__icon" aria-hidden="true">✅</div>
-            <h3 class="why__title">Smooth process</h3>
-            <p class="why__desc">
-              From viewing to transfer of title, we guide you through every step
-              — financing, paperwork, and coordination included.
+          <div class="why__panel">
+            <span class="why__panel-num">03</span>
+            <div class="why__panel-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                />
+              </svg>
+            </div>
+            <h3 class="why__panel-title">
+              Open Communication &amp; Transparency
+            </h3>
+            <p class="why__panel-desc">
+              No surprises, no fine print. Communication is at the heart of our
+              culture — honest, direct, and at every level of the process.
             </p>
+            <a href="pages/about.html" class="why__panel-link">
+              Learn more
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
           </div>
         </div>
       </div>
@@ -620,152 +571,12 @@
     <!-- ═══════════════════════════════════════
        FOOTER
   ═══════════════════════════════════════ -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer__grid">
-          <!-- Brand col -->
-          <div class="footer__brand">
-            <div class="nav__logo-text" style="font-size: var(--text-2xl)">
-              CVR
-            </div>
-            <p>
-              Carbo Valencia Realty — helping Cavite families find the home they
-              deserve since 2015.
-            </p>
-            <a
-              href="https://www.facebook.com/CarboValenciaRealty"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn--ghost btn--sm"
-              style="margin-top: 16px; width: fit-content"
-            >
-              📘 Follow us on Facebook
-            </a>
-          </div>
-
-          <!-- Quick links -->
-          <div>
-            <div class="footer__heading">Explore</div>
-            <ul class="footer__links">
-              <li>
-                <a href="/pages/listings.html" class="footer__link"
-                  >All listings</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/pages/listings.html?status=for-sale"
-                  class="footer__link"
-                  >For sale</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/pages/listings.html?status=for-rent"
-                  class="footer__link"
-                  >For rent</a
-                >
-              </li>
-              <li>
-                <a href="/pages/about.html" class="footer__link">About CVR</a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Cities -->
-          <div>
-            <div class="footer__heading">Areas we serve</div>
-            <ul class="footer__links">
-              <li>
-                <a
-                  href="/pages/listings.html?city=Dasmariñas"
-                  class="footer__link"
-                  >Dasmariñas</a
-                >
-              </li>
-              <li>
-                <a href="/pages/listings.html?city=Bacoor" class="footer__link"
-                  >Bacoor</a
-                >
-              </li>
-              <li>
-                <a href="/pages/listings.html?city=Imus" class="footer__link"
-                  >Imus</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/pages/listings.html?city=General+Trias"
-                  class="footer__link"
-                  >General Trias</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Contact -->
-          <div>
-            <div class="footer__heading">Get in touch</div>
-            <ul class="footer__links">
-              <li>
-                <a href="tel:+639670486568" class="footer__link"
-                  >📞 +63 967 048 6568</a
-                >
-              </li>
-              <li>
-                <a
-                  href="mailto:carbovalenciarealtyinc@gmail.com"
-                  class="footer__link"
-                  style="word-break: break-all"
-                  >✉️ carbovalenciarealtyinc@gmail.com</a
-                >
-              </li>
-              <li>
-                <a
-                  href="viber://chat?number=%2B639171234567"
-                  class="footer__link"
-                  >📱 Viber</a
-                >
-              </li>
-              <li>
-                <span class="footer__link" style="cursor: default"
-                  >📍 Dasmariñas, Cavite</span
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Bottom bar -->
-        <div class="footer__bottom">
-          <span>© 2026 Carbo Valencia Realty. All rights reserved.</span>
-          <span>With God all things are possible.</span>
-        </div>
-      </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
     <!-- ═══════════════════════════════════════
        JAVASCRIPT
   ═══════════════════════════════════════ -->
     <script>
-      /* ── 1. Mobile nav toggle ── */
-      const navToggle = document.getElementById("navToggle");
-      const navLinks = document.getElementById("navLinks");
-
-      navToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("open");
-        // Animate hamburger to X
-        const spans = navToggle.querySelectorAll("span");
-        const isOpen = navLinks.classList.contains("open");
-        spans[0].style.transform = isOpen
-          ? "translateY(7px) rotate(45deg)"
-          : "";
-        spans[1].style.opacity = isOpen ? "0" : "1";
-        spans[2].style.transform = isOpen
-          ? "translateY(-7px) rotate(-45deg)"
-          : "";
-      });
-
       /* ── 2. Search bar ── */
       document.getElementById("searchBtn").addEventListener("click", () => {
         const keyword = document.getElementById("searchInput").value.trim();
@@ -890,9 +701,9 @@
         </article>
       `;
       }
-
       // Run on page load
       loadFeatured();
     </script>
+    <script type="module" src="/assets/js/main.js"></script>
   </body>
 </html>

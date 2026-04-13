@@ -4,6 +4,7 @@
     { "source": "/property", "destination": "/pages/property.html" },
     { "source": "/listings", "destination": "/pages/listings.html" },
     { "source": "/about", "destination": "/pages/about.html" },
-    { "source": "/contact", "destination": "/pages/contact.html" }
+    { "source": "/contact", "destination": "/pages/contact.html" },
+    { "source": "developers", "destination": "/pages/developers.html" }
   ]
 }

@@ -74,34 +74,7 @@
   </head>
 
   <body>
-    <header>
-      <nav class="nav">
-        <div class="container nav__inner">
-          <a href="/" class="nav__logo">
-            <div>
-              <div class="nav__logo-text">CVR</div>
-              <div class="nav__logo-sub">Carbo Valencia Realty</div>
-            </div>
-          </a>
-          <ul class="nav__links" id="navLinks">
-            <li><a href="/" class="nav__link">Home</a></li>
-            <li>
-              <a href="/pages/listings.html" class="nav__link">Listings</a>
-            </li>
-            <li><a href="/pages/about.html" class="nav__link">About</a></li>
-            <li><a href="/pages/contact.html" class="nav__link">Contact</a></li>
-          </ul>
-          <div class="flex items-center gap-4">
-            <a href="tel:+639171234567" class="btn btn--primary btn--sm"
-              >📞 Call Us</a
-            >
-            <button class="nav__toggle" id="navToggle" aria-label="Open menu">
-              <span></span><span></span><span></span>
-            </button>
-          </div>
-        </div>
-      </nav>
-    </header>
+    <div id="nav-placeholder"></div>
 
     <div class="not-found__body">
       <div class="not-found__inner">
@@ -121,36 +94,8 @@
       </div>
     </div>
 
-    <footer class="footer">
-      <div class="container">
-        <div
-          class="footer__bottom"
-          style="
-            padding-top: var(--space-6);
-            border-top: 1px solid rgba(248, 247, 244, 0.12);
-          "
-        >
-          <span>© 2025 Carbo Valencia Realty. All rights reserved.</span>
-          <span>With God all things are possible.</span>
-        </div>
-      </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
-    <script>
-      const navToggle = document.getElementById("navToggle");
-      const navLinks = document.getElementById("navLinks");
-      navToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("open");
-        const spans = navToggle.querySelectorAll("span");
-        const isOpen = navLinks.classList.contains("open");
-        spans[0].style.transform = isOpen
-          ? "translateY(7px) rotate(45deg)"
-          : "";
-        spans[1].style.opacity = isOpen ? "0" : "1";
-        spans[2].style.transform = isOpen
-          ? "translateY(-7px) rotate(-45deg)"
-          : "";
-      });
-    </script>
+    <script type="module" src="/assets/js/main.js"></script>
   </body>
 </html>
