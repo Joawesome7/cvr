@@ -54,7 +54,7 @@
 
       <div class="container">
         <div class="hero__content">
-          <div class="hero__label">Trusted in CALABARZON since 2013</div>
+          <div class="hero__label">Trusted since 2013</div>
 
           <h1 class="hero__title">
             Your Future, <span>Your Home,</span><br />
@@ -62,8 +62,9 @@
           </h1>
 
           <p class="hero__subtitle">
-            Browse houses, condos, and lots for sale and for rent across
-            CALABARZON and beyond. CVR makes finding your next home simple.
+            Browse houses, condos, and lots for sale and for rent across Cavite,
+            Laguna, Tagaytay, Bulacan, Pampanga and beyond. CVR makes finding
+            your next home simple.
           </p>
 
           <div class="hero__actions">
@@ -252,6 +253,342 @@
     </section>
 
     <!-- ═══════════════════════════════════════
+       FEATURED LISTINGS
+       Cards are rendered by main.js from properties.json
+  ═══════════════════════════════════════ -->
+    <!-- <section class="featured" id="featured">
+      <div class="container">
+        <div class="featured__header">
+          <div>
+            <div class="section-label">Hand-picked for you</div>
+            <h2>Featured Properties</h2>
+          </div>
+          <a href="/listings" class="btn btn--secondary">
+            View all listings →
+          </a>
+        </div> -->
+
+    <!-- JS renders cards here -->
+    <!-- <div class="grid grid--3" id="featuredGrid"> -->
+    <!-- Loading skeletons shown before JS runs -->
+    <!-- <div class="card">
+            <div class="skeleton" style="height: 220px"></div>
+            <div class="card__body" style="gap: 12px">
+              <div class="skeleton" style="height: 20px; width: 80%"></div>
+              <div class="skeleton" style="height: 14px; width: 50%"></div>
+              <div class="skeleton" style="height: 14px; width: 65%"></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="skeleton" style="height: 220px"></div>
+            <div class="card__body" style="gap: 12px">
+              <div class="skeleton" style="height: 20px; width: 80%"></div>
+              <div class="skeleton" style="height: 14px; width: 50%"></div>
+              <div class="skeleton" style="height: 14px; width: 65%"></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="skeleton" style="height: 220px"></div>
+            <div class="card__body" style="gap: 12px">
+              <div class="skeleton" style="height: 20px; width: 80%"></div>
+              <div class="skeleton" style="height: 14px; width: 50%"></div>
+              <div class="skeleton" style="height: 14px; width: 65%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- ═══════════════════════════════════════
+       WHY CVR
+  ═══════════════════════════════════════ -->
+    <section class="why" aria-label="Why choose CVR">
+      <div class="container" style="padding: 20px">
+        <div class="why__header">
+          <div class="why__header-text">
+            <div class="section-label">Why choose us</div>
+            <h2>The <em>CVR</em> Difference</h2>
+            <p class="why__lead">
+              For over 5 years, we have consistently delivered a portfolio of
+              properties to people who want a hassle-free experience in buying,
+              selling, investing, and management. More than a company, we are
+              solid, responsive & professional team!
+            </p>
+            <div class="why__rule"></div>
+          </div>
+
+          <div class="why__award-logos">
+            <img
+              src="/images/awards/hlurb.png"
+              alt="Housing and Land Use Regulatory Board"
+            />
+            <img
+              src="/images/awards/prc.png"
+              alt="Professional Regulation Commission"
+            />
+            <img
+              src="/images/awards/sec.png"
+              alt="Securities and Exchange Commission"
+            />
+          </div>
+        </div>
+
+        <div class="why__panel-grid">
+          <div class="why__panel">
+            <span class="why__panel-num">01</span>
+            <div class="why__panel-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </div>
+            <h3 class="why__panel-title">Client-Centric Approach</h3>
+            <p class="why__panel-desc">
+              Personalized service built around your needs — not just a
+              transaction. We stay responsive and maintain long-term
+              relationships long after the keys are handed over.
+            </p>
+            <a href="/about" class="why__panel-link">
+              Learn more
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="why__panel">
+            <span class="why__panel-num">02</span>
+            <div class="why__panel-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>
+            </div>
+            <h3 class="why__panel-title">Continuous Learning &amp; Growth</h3>
+            <p class="why__panel-desc">
+              We embrace a culture of professional development. Resources,
+              trainings, and growth opportunities are built into how we work —
+              for both our agents and our clients.
+            </p>
+            <a href="/about" class="why__panel-link">
+              Learn more
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="why__panel">
+            <span class="why__panel-num">03</span>
+            <div class="why__panel-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                />
+              </svg>
+            </div>
+            <h3 class="why__panel-title">
+              Open Communication &amp; Transparency
+            </h3>
+            <p class="why__panel-desc">
+              No surprises, no fine print. Communication is at the heart of our
+              culture — honest, direct, and at every level of the process.
+            </p>
+            <a href="/about" class="why__panel-link">
+              Learn more
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     TESTIMONIALS
+═══════════════════════════════════════ -->
+    <section class="testi" aria-label="Client testimonials">
+      <div class="container">
+        <div class="testi__head">
+          <div class="section-label">Testimonials</div>
+          <h2>What Our Clients Say</h2>
+          <p>Some of our happy clients</p>
+        </div>
+
+        <div class="testi__track-wrap">
+          <div class="testi__track" id="testiTrack">
+            <div class="testi__slide">
+              <div class="testi__card">
+                <div class="testi__avatar">
+                  <img
+                    src="/images/clients/lavon-ana.png"
+                    alt="Lavon & Ana Martin"
+                  />
+                </div>
+                <div class="testi__body">
+                  <span class="testi__quote-mark">"</span>
+                  <p class="testi__text">
+                    We originally decided to hire them because they were very
+                    easy to communicate with and had very nice personalities to
+                    get along with. Dealing with them has been a pleasure and we
+                    would use them again in the future should the need arise.
+                  </p>
+                  <p class="testi__name">— Lavon &amp; Ana Martin</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="testi__slide">
+              <div class="testi__card">
+                <div class="testi__avatar">
+                  <img
+                    src="/images/clients/chinee-ferris.png"
+                    alt="Chinee and Ferris"
+                  />
+                </div>
+                <div class="testi__body">
+                  <span class="testi__quote-mark">"</span>
+                  <p class="testi__text">
+                    We really appreciated the assistance and effort that
+                    Carbo-Valencia Realty Inc. given to us. We are treated not
+                    just as customers, but as friends also. Thank you for making
+                    us feel that we got a great choice of realty provider. Keep
+                    up the great job!
+                  </p>
+                  <p class="testi__name">— Chinee and Ferris</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="testi__slide">
+              <div class="testi__card">
+                <div class="testi__avatar">
+                  <img src="/images/clients/jerald-nina.png" alt="Spacer" />
+                </div>
+                <div class="testi__body">
+                  <span class="testi__quote-mark">"</span>
+                  <p class="testi__text">
+                    Carbo Valencia Realty is very responsive in terms of
+                    answering questions. Lahat ng details na kailangan namin ay
+                    ibinibigay nila. Hindi ka nila ifoforce, bagkus tutulungan
+                    ka nila.
+                  </p>
+                  <p class="testi__name">— Jerald & Nina</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="testi__slide">
+              <div class="testi__card">
+                <div class="testi__avatar">
+                  <img
+                    src="/images/clients/minerva.png"
+                    alt="Minerva Toldoya"
+                  />
+                </div>
+                <div class="testi__body">
+                  <span class="testi__quote-mark">"</span>
+                  <p class="testi__text">
+                    My experience is very accommodating, respectful, responsible
+                    and willing to serve others — and lastly, maka-Diyos.
+                  </p>
+                  <p class="testi__name">— Minerva Toldoya</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="testi__slide">
+              <div class="testi__card">
+                <div class="testi__avatar">
+                  <img src="/images/clients/meann.png" alt="Meann Macapagal" />
+                </div>
+                <div class="testi__body">
+                  <span class="testi__quote-mark">"</span>
+                  <p class="testi__text">
+                    Thank you for working with your company and no hesitation in
+                    recommending other prospective buyers. God bless us all.
+                  </p>
+                  <p class="testi__name">— Meann Macapagal</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi__controls">
+          <button
+            class="testi__arrow"
+            id="testiPrev"
+            aria-label="Previous testimonial"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+          <div class="testi__dots" id="testiDots"></div>
+          <button
+            class="testi__arrow"
+            id="testiNext"
+            aria-label="Next testimonial"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
        SERVICES TEASER
   ═══════════════════════════════════════ -->
     <section class="services-teaser">
@@ -365,176 +702,6 @@
               <span class="svc-tile__sub">Pag-IBIG · Bank · In-house</span>
             </div>
           </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════
-       FEATURED LISTINGS
-       Cards are rendered by main.js from properties.json
-  ═══════════════════════════════════════ -->
-    <section class="featured" id="featured">
-      <div class="container">
-        <div class="featured__header">
-          <div>
-            <div class="section-label">Hand-picked for you</div>
-            <h2>Featured Properties</h2>
-          </div>
-          <a href="/listings" class="btn btn--secondary">
-            View all listings →
-          </a>
-        </div>
-
-        <!-- JS renders cards here -->
-        <div class="grid grid--3" id="featuredGrid">
-          <!-- Loading skeletons shown before JS runs -->
-          <div class="card">
-            <div class="skeleton" style="height: 220px"></div>
-            <div class="card__body" style="gap: 12px">
-              <div class="skeleton" style="height: 20px; width: 80%"></div>
-              <div class="skeleton" style="height: 14px; width: 50%"></div>
-              <div class="skeleton" style="height: 14px; width: 65%"></div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="skeleton" style="height: 220px"></div>
-            <div class="card__body" style="gap: 12px">
-              <div class="skeleton" style="height: 20px; width: 80%"></div>
-              <div class="skeleton" style="height: 14px; width: 50%"></div>
-              <div class="skeleton" style="height: 14px; width: 65%"></div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="skeleton" style="height: 220px"></div>
-            <div class="card__body" style="gap: 12px">
-              <div class="skeleton" style="height: 20px; width: 80%"></div>
-              <div class="skeleton" style="height: 14px; width: 50%"></div>
-              <div class="skeleton" style="height: 14px; width: 65%"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════
-       WHY CVR
-  ═══════════════════════════════════════ -->
-    <section class="why" aria-label="Why choose CVR">
-      <div class="container" style="padding: 20px">
-        <div class="why__header">
-          <div class="section-label">Why choose us</div>
-          <h2>The <em>CVR</em> Difference</h2>
-          <p class="why__lead">
-            We're from Cavite. We know these streets, these communities, and
-            what families here actually need.
-          </p>
-          <div class="why__rule"></div>
-        </div>
-
-        <div class="why__panel-grid">
-          <div class="why__panel">
-            <span class="why__panel-num">01</span>
-            <div class="why__panel-icon" aria-hidden="true">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                <circle cx="12" cy="7" r="4" />
-              </svg>
-            </div>
-            <h3 class="why__panel-title">Client-Centric Approach</h3>
-            <p class="why__panel-desc">
-              Personalized service built around your needs — not just a
-              transaction. We stay responsive and maintain long-term
-              relationships long after the keys are handed over.
-            </p>
-            <a href="/about" class="why__panel-link">
-              Learn more
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-
-          <div class="why__panel">
-            <span class="why__panel-num">02</span>
-            <div class="why__panel-icon" aria-hidden="true">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-              </svg>
-            </div>
-            <h3 class="why__panel-title">Continuous Learning &amp; Growth</h3>
-            <p class="why__panel-desc">
-              We embrace a culture of professional development. Resources,
-              trainings, and growth opportunities are built into how we work —
-              for both our agents and our clients.
-            </p>
-            <a href="/about" class="why__panel-link">
-              Learn more
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-
-          <div class="why__panel">
-            <span class="why__panel-num">03</span>
-            <div class="why__panel-icon" aria-hidden="true">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path
-                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
-                />
-              </svg>
-            </div>
-            <h3 class="why__panel-title">
-              Open Communication &amp; Transparency
-            </h3>
-            <p class="why__panel-desc">
-              No surprises, no fine print. Communication is at the heart of our
-              culture — honest, direct, and at every level of the process.
-            </p>
-            <a href="/about" class="why__panel-link">
-              Learn more
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
         </div>
       </div>
     </section>
@@ -701,6 +868,53 @@
         </article>
       `;
       }
+
+      /* ── Testimonials carousel ── */
+      (function () {
+        const track = document.getElementById("testiTrack");
+        const dotsWrap = document.getElementById("testiDots");
+        if (!track) return;
+        const slides = track.querySelectorAll(".testi__slide");
+        const total = slides.length;
+        let current = 0,
+          timer;
+
+        slides.forEach((_, i) => {
+          const d = document.createElement("button");
+          d.className = "testi__dot" + (i === 0 ? " active" : "");
+          d.setAttribute("aria-label", "Go to slide " + (i + 1));
+          d.addEventListener("click", () => {
+            goTo(i);
+            startTimer();
+          });
+          dotsWrap.appendChild(d);
+        });
+
+        function goTo(n) {
+          current = (n + total) % total;
+          track.style.transform = "translateX(-" + current * 100 + "%)";
+          dotsWrap
+            .querySelectorAll(".testi__dot")
+            .forEach((d, i) => d.classList.toggle("active", i === current));
+        }
+
+        function startTimer() {
+          clearInterval(timer);
+          timer = setInterval(() => goTo(current + 1), 5000);
+        }
+
+        document.getElementById("testiPrev").addEventListener("click", () => {
+          goTo(current - 1);
+          startTimer();
+        });
+        document.getElementById("testiNext").addEventListener("click", () => {
+          goTo(current + 1);
+          startTimer();
+        });
+
+        startTimer();
+      })();
+
       // Run on page load
       loadFeatured();
     </script>
