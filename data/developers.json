@@ -4,41 +4,41 @@
     "name": "Idesia",
     "logo": "/images/developers/idesia-logo.png",
     "description": "Idesia is a real estate developer committed to providing affordable dream homes. With their 'Ideal Way of Living' philosophy, they focus on creating communities that offer value, quality, and accessibility to Filipino homebuyers.",
-    "website": "https://idesia.ph"
+    "website": "/pages/idesia-properties"
   },
   {
     "id": "avida",
     "name": "Avida Land",
     "logo": "/images/developers/avida-logo.png",
     "description": "Avida Land is a premier real estate developer known for thoughtfully designed condominium units and residential developments across the Philippines. Part of the AyalaLand group, they focus on creating communities that enhance lifestyle.",
-    "website": "https://www.avidaland.com"
+    "website": "/pages/avida-properties"
   },
   {
     "id": "demeterland",
     "name": "demeterland ",
     "logo": "/images/developers/demeterland-logo.png",
     "description": "DEMETERLAND AND DEVELOPMENT CORPORATION does General Contracting, Construction Management and Design/Build. It is currently among the top and well-known general contractors operating in the province of Batangas.",
-    "website": "https://betterfuturehomes.weebly.com/demeterland-batangas-cavite--laguna.html"
+    "website": "/pages/demeterland-properties"
   },
   {
     "id": "axeia",
     "name": "Axeia Development Corporation",
     "logo": "/images/developers/axeia-logo.png",
     "description": "Axeia Development Corporation is a leading real estate developer specializing in residential and commercial properties. They are committed to delivering quality developments that meet the needs of modern Filipino families.",
-    "website": "https://axeia.com.ph"
+    "website": "/pages/axeia-properties"
   },
   {
     "id": "apechomes",
     "name": "Apechomes",
     "logo": "/images/developers/apechomes-logo.png",
     "description": "Apechomes is a dynamic real estate developer focused on building quality homes and communities. With a tagline of 'Building Lives', they create residential developments that provide value and comfort to Filipino families.",
-    "website": "https://apechomes.com"
+    "website": "/pages/apechomes-properties"
   },
   {
     "id": "cbdi",
     "name": "CitihomesBuildersInc",
     "logo": "/images/developers/CitihomesBuildersInc-logo.png",
     "description": "Amaia Land is a trusted real estate developer offering a wide range of residential properties including house and lots, townhouses, and condominiums. They are known for their commitment to quality and customer satisfaction.",
-    "website": "https://www.cbdi.com.ph/"
+    "website": "/pages/citihomesbuilder-properties"
   }
 ]
