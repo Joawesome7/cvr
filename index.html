@@ -752,130 +752,130 @@
        JAVASCRIPT
   ═══════════════════════════════════════ -->
     <script>
-      /* ── 2. Search bar ── */
-      document.getElementById("searchBtn").addEventListener("click", () => {
-        const keyword = document.getElementById("searchInput").value.trim();
-        const type = document.getElementById("searchType").value;
-        const status = document.getElementById("searchStatus").value;
+      // /* ── 2. Search bar ── */
+      // document.getElementById("searchBtn").addEventListener("click", () => {
+      //   const keyword = document.getElementById("searchInput").value.trim();
+      //   const type = document.getElementById("searchType").value;
+      //   const status = document.getElementById("searchStatus").value;
 
-        const params = new URLSearchParams();
-        if (keyword) params.set("q", keyword);
-        if (type) params.set("type", type);
-        if (status) params.set("status", status);
+      //   const params = new URLSearchParams();
+      //   if (keyword) params.set("q", keyword);
+      //   if (type) params.set("type", type);
+      //   if (status) params.set("status", status);
 
-        window.location.href = `/pages/listings.html?${params.toString()}`;
-      });
+      //   window.location.href = `/pages/listings.html?${params.toString()}`;
+      // });
 
-      // Allow Enter key on search input
-      document
-        .getElementById("searchInput")
-        .addEventListener("keydown", (e) => {
-          if (e.key === "Enter") document.getElementById("searchBtn").click();
-        });
+      // // Allow Enter key on search input
+      // document
+      //   .getElementById("searchInput")
+      //   .addEventListener("keydown", (e) => {
+      //     if (e.key === "Enter") document.getElementById("searchBtn").click();
+      //   });
 
-      /* ── 3. Featured listings — loaded from properties.json ── */
-      async function loadFeatured() {
-        try {
-          const res = await fetch("/data/properties.json");
-          const data = await res.json();
+      // /* ── 3. Featured listings — loaded from properties.json ── */
+      // async function loadFeatured() {
+      //   try {
+      //     const res = await fetch("/data/properties.json");
+      //     const data = await res.json();
 
-          // Only show featured properties, max 3
-          const featured = data.properties
-            .filter((p) => p.identity.featured)
-            .slice(0, 3);
+      //     // Only show featured properties, max 3
+      //     const featured = data.properties
+      //       .filter((p) => p.identity.featured)
+      //       .slice(0, 3);
 
-          // If no featured, fall back to first 3
-          const toShow =
-            featured.length > 0 ? featured : data.properties.slice(0, 3);
+      //     // If no featured, fall back to first 3
+      //     const toShow =
+      //       featured.length > 0 ? featured : data.properties.slice(0, 3);
 
-          renderCards(toShow);
-        } catch (err) {
-          // If fetch fails (e.g. opening file directly), show a friendly message
-          document.getElementById("featuredGrid").innerHTML = `
-          <p class="text-muted text-sm" style="grid-column: 1/-1; padding: 24px 0;">
-            Could not load listings. Make sure the site is served from a local server.
-          </p>
-        `;
-        }
-      }
+      //     renderCards(toShow);
+      //   } catch (err) {
+      //     // If fetch fails (e.g. opening file directly), show a friendly message
+      //     document.getElementById("featuredGrid").innerHTML = `
+      //     <p class="text-muted text-sm" style="grid-column: 1/-1; padding: 24px 0;">
+      //       Could not load listings. Make sure the site is served from a local server.
+      //     </p>
+      //   `;
+      //   }
+      // }
 
-      function renderCards(properties) {
-        const grid = document.getElementById("featuredGrid");
-        grid.innerHTML = properties.map((p) => cardHTML(p)).join("");
-      }
+      // function renderCards(properties) {
+      //   const grid = document.getElementById("featuredGrid");
+      //   grid.innerHTML = properties.map((p) => cardHTML(p)).join("");
+      // }
 
-      function cardHTML(p) {
-        const { identity, pricing, location, details, media, metadata } = p;
+      // function cardHTML(p) {
+      //   const { identity, pricing, location, details, media, metadata } = p;
 
-        const statusClass =
-          identity.status === "for-sale"
-            ? "badge--for-sale"
-            : identity.status === "for-rent"
-              ? "badge--for-rent"
-              : "badge--sold";
+      //   const statusClass =
+      //     identity.status === "for-sale"
+      //       ? "badge--for-sale"
+      //       : identity.status === "for-rent"
+      //         ? "badge--for-rent"
+      //         : "badge--sold";
 
-        const statusLabel =
-          identity.status === "for-sale"
-            ? "For Sale"
-            : identity.status === "for-rent"
-              ? "For Rent"
-              : "Sold";
+      //   const statusLabel =
+      //     identity.status === "for-sale"
+      //       ? "For Sale"
+      //       : identity.status === "for-rent"
+      //         ? "For Rent"
+      //         : "Sold";
 
-        const beds =
-          details.bedrooms > 0
-            ? `${details.bedrooms} Bed${details.bedrooms > 1 ? "s" : ""}`
-            : "Studio";
-        const baths = `${details.bathrooms} Bath${details.bathrooms > 1 ? "s" : ""}`;
-        const area = details.floorArea ? `${details.floorArea} sqm` : "";
+      //   const beds =
+      //     details.bedrooms > 0
+      //       ? `${details.bedrooms} Bed${details.bedrooms > 1 ? "s" : ""}`
+      //       : "Studio";
+      //   const baths = `${details.bathrooms} Bath${details.bathrooms > 1 ? "s" : ""}`;
+      //   const area = details.floorArea ? `${details.floorArea} sqm` : "";
 
-        const monthly = pricing.monthlyAmortization
-          ? `<div class="price-monthly">~₱${pricing.monthlyAmortization.toLocaleString()}/mo</div>`
-          : "";
+      //   const monthly = pricing.monthlyAmortization
+      //     ? `<div class="price-monthly">~₱${pricing.monthlyAmortization.toLocaleString()}/mo</div>`
+      //     : "";
 
-        return `
-        <article class="card">
-          <a href="/pages/property.html?id=${p.id}" class="card__image-wrap">
-            <img
-              class="card__image"
-              src="${media.thumbnail}"
-              alt="${identity.title}"
-              loading="lazy"
-              onerror="this.src='/images/brand/placeholder.jpg'"
-            />
-            <div class="card__badges">
-              <span class="badge ${statusClass}">${statusLabel}</span>
-              ${identity.featured ? '<span class="badge badge--featured">★ Featured</span>' : ""}
-            </div>
-          </a>
-          <div class="card__body">
-            <h3 class="card__title">
-              <a href="/pages/property.html?id=${p.id}">${identity.title}</a>
-            </h3>
-            <div class="card__location">
-              📍 ${location.barangay}, ${location.city}
-            </div>
-            <div class="card__specs">
-              <div class="card__spec">
-                <span class="card__spec-icon">🛏</span> ${beds}
-              </div>
-              <div class="card__spec">
-                <span class="card__spec-icon">🚿</span> ${baths}
-              </div>
-              ${area ? `<div class="card__spec"><span class="card__spec-icon">📐</span> ${area}</div>` : ""}
-            </div>
-            <div class="card__footer">
-              <div>
-                <div class="price">${pricing.priceLabel}</div>
-                ${monthly}
-              </div>
-              <a href="/pages/property.html?id=${p.id}" class="btn btn--primary btn--sm">
-                View
-              </a>
-            </div>
-          </div>
-        </article>
-      `;
-      }
+      //   return `
+      //   <article class="card">
+      //     <a href="/pages/property.html?id=${p.id}" class="card__image-wrap">
+      //       <img
+      //         class="card__image"
+      //         src="${media.thumbnail}"
+      //         alt="${identity.title}"
+      //         loading="lazy"
+      //         onerror="this.src='/images/brand/placeholder.jpg'"
+      //       />
+      //       <div class="card__badges">
+      //         <span class="badge ${statusClass}">${statusLabel}</span>
+      //         ${identity.featured ? '<span class="badge badge--featured">★ Featured</span>' : ""}
+      //       </div>
+      //     </a>
+      //     <div class="card__body">
+      //       <h3 class="card__title">
+      //         <a href="/pages/property.html?id=${p.id}">${identity.title}</a>
+      //       </h3>
+      //       <div class="card__location">
+      //         📍 ${location.barangay}, ${location.city}
+      //       </div>
+      //       <div class="card__specs">
+      //         <div class="card__spec">
+      //           <span class="card__spec-icon">🛏</span> ${beds}
+      //         </div>
+      //         <div class="card__spec">
+      //           <span class="card__spec-icon">🚿</span> ${baths}
+      //         </div>
+      //         ${area ? `<div class="card__spec"><span class="card__spec-icon">📐</span> ${area}</div>` : ""}
+      //       </div>
+      //       <div class="card__footer">
+      //         <div>
+      //           <div class="price">${pricing.priceLabel}</div>
+      //           ${monthly}
+      //         </div>
+      //         <a href="/pages/property.html?id=${p.id}" class="btn btn--primary btn--sm">
+      //           View
+      //         </a>
+      //       </div>
+      //     </div>
+      //   </article>
+      // `;
+      // }
 
       /* ── Testimonials carousel ── */
       (function () {
@@ -924,7 +924,7 @@
       })();
 
       // Run on page load
-      loadFeatured();
+      // loadFeatured();
     </script>
     <script type="module" src="/assets/js/main.js"></script>
   </body>
