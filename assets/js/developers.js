@@ -58,7 +58,7 @@ function createDeveloperCard(developer) {
     <div class="card-body">
       <h3 class="developer-name">${developer.name}</h3>
       <p class="developer-description">${developer.description}</p>
-      <a href="${developer.website}" target="_blank" rel="noopener noreferrer" class="btn btn-learn-more">
+      <a href="${developer.website}" rel="noopener noreferrer" class="btn btn-learn-more">
         Learn More →
       </a>
     </div>
