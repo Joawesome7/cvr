@@ -29,16 +29,16 @@
   },
   {
     "id": "apechomes",
-    "name": "Apechomes",
+    "name": "Apec Homes",
     "logo": "/images/developers/apec.png",
-    "description": "Apechomes is a dynamic real estate developer focused on building quality homes and communities. With a tagline of 'Building Lives', they create residential developments that provide value and comfort to Filipino families, affordable yet quality.",
+    "description": "Apec Homes is a dynamic real estate developer focused on building affordable yet quality homes and communities. With a tagline of 'Building Lives', they create residential developments that provide value and comfort to Filipino families.",
     "website": "/pages/apechomes-properties"
   },
   {
     "id": "cbdi",
     "name": "Citihomes Builders Inc",
     "logo": "/images/developers/CitihomesBuildersInc-logo.png",
-    "description": "AMAIA Land is a trusted real estate developer offering a wide range of residential properties including house and lots, townhouses, and condominiums. They are known for their commitment to quality and customer satisfaction.",
+    "description": "Citihomes Builder and Development, Inc. (CBDI) is a premier Filipino real estate developer specializing in sustainable, affordable, and high-value residential communities. With over 40 years of experience and more than 18,000 homes built, CBDI is a pioneer in 'green' housing, featuring the Philippines' largest residential rooftop solar farm and BERDE-certified districts.",
     "website": "/pages/citihomesbuilder-properties"
   }
 ]

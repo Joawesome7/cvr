@@ -334,29 +334,58 @@
 }
 
 .careers-wrap {
-  max-width: 768px; /* Constrains the form width to look balanced */
+  /* This prevents the text from stretching too far on giant screens */
+  max-width: 900px;
   margin: 0 auto;
+  padding: 0 var(--space-4); /* Ensures it doesn't touch the screen edges on mobile */
 }
 
 .careers-text {
   text-align: center;
-  margin-bottom: var(--space-10);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .careers-text h2 {
   font-family: var(--font-heading);
-  font-size: var(--text-3xl);
+  font-size: var(--text-5xl); /* Uses your large heading size */
   color: var(--color-blue);
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-8);
 }
 
 .careers-text p {
-  font-size: var(--text-base);
+  /* Using a slightly larger text size for impact, but letting it wrap */
+  font-size: var(--text-xl);
   color: var(--color-text-secondary);
   line-height: var(--leading-normal);
+  max-width: 100%; /* Ensures it stays within the screen width */
+  margin: 0 auto;
+}
+
+.careers-email {
+  color: var(--color-yellow);
+  font-weight: var(--weight-bold);
+  cursor: pointer;
+  word-break: break-all; /* Prevents long emails from breaking mobile layouts */
+  transition: color var(--transition-fast);
+}
+
+.careers-email:hover {
+  color: var(--color-yellow-dark);
+}
+
+/* ── Responsive Adjustments for Mobile ── */
+@media (max-width: 768px) {
+  .careers-section {
+    padding: var(--space-12) 0;
+  }
+
+  .careers-text h2 {
+    font-size: var(--text-4xl); /* Shrinks heading on mobile */
+    margin-bottom: var(--space-6);
+  }
+
+  .careers-text p {
+    font-size: var(--text-base); /* Shrinks paragraph on mobile */
+  }
 }
 
 /* ── Responsive ── */
