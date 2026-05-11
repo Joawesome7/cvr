@@ -622,6 +622,10 @@
     opacity 0.6s ease,
     transform 0.6s ease,
     box-shadow var(--transition-base);
+
+  will-change: transform, opacity;
+  backface-visibility: hidden; /* Fixes flickering during animation */
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 .svc-card.visible {
@@ -873,6 +877,29 @@
   }
   .svc-cta-strip__actions {
     justify-content: center;
+  }
+}
+
+/* Only apply these heavy effects on desktop/devices with a mouse */
+@media (hover: hover) and (pointer: fine) {
+  .svc-card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+      0 0 0 3px var(--color-yellow),
+      0 20px 48px rgba(30, 58, 95, 0.22);
+  }
+
+  .svc-card:hover .svc-card__bg {
+    transform: scale(1.05);
+  }
+
+  .svc-card:hover .svc-card__overlay {
+    background: linear-gradient(
+      to top,
+      rgba(14, 28, 50, 0.98) 0%,
+      rgba(14, 28, 50, 0.72) 50%,
+      rgba(14, 28, 50, 0.25) 100%
+    );
   }
 }
 
