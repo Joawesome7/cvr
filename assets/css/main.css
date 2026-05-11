@@ -861,7 +861,7 @@ p {
   color: rgba(255, 255, 255, 0.8);
   font-size: 13px;
   padding: 8px 0;
-  display: none; /* Hidden on mobile to save space */
+  display: block; /* Hidden on mobile to save space */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -938,6 +938,23 @@ p {
 .topbar__icon:hover {
   color: var(--color-yellow-light, #f0c84a);
   transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .topbar__inner {
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    padding: 4px 0;
+  }
+  .topbar__contact {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 16px;
+  }
+  .topbar__divider {
+    display: none; /* Hides the vertical line when items wrap */
+  }
 }
 
 /* ============================================================

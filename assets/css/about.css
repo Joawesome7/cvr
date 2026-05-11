@@ -313,12 +313,16 @@
   display: flex;
   gap: var(--space-6);
   justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .team-grid__bottom {
   display: flex;
   gap: var(--space-6);
   justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .team-card-new {
