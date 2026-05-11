@@ -853,6 +853,93 @@ p {
   min-width: 160px;
 }
 
+/* ═══════════════════════════════════════════════════
+   TOP BAR (Contact & Socials)
+   ═══════════════════════════════════════════════════ */
+.topbar {
+  background-color: var(--color-blue);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  padding: 8px 0;
+  display: none; /* Hidden on mobile to save space */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Show topbar on desktop/tablet */
+@media (min-width: 900px) {
+  .topbar {
+    display: block;
+  }
+}
+
+.topbar__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar__contact {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.topbar__link {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color var(--transition-fast, 0.2s ease);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Colors the icons gold/yellow */
+.topbar__link i {
+  font-size: 16px;
+  color: var(--color-yellow-light, #f0c84a);
+}
+
+.topbar__link:hover {
+  color: var(--color-white);
+}
+
+.topbar__divider {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 12px;
+}
+
+.topbar__socials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topbar__follow {
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-right: 4px;
+}
+
+.topbar__icon {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 18px;
+  transition: all var(--transition-fast, 0.2s ease);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topbar__icon:hover {
+  color: var(--color-yellow-light, #f0c84a);
+  transform: translateY(-2px);
+}
+
 /* ============================================================
    10. FOOTER
    ============================================================ */
