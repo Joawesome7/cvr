@@ -549,73 +549,96 @@
   margin: 0;
 }
 
-/* ── Mission & Vision — Fixed layout! ── */
+/* ── Mission & Vision — Bigger & More Important ── */
 .mission-vision {
   background-color: var(--color-blue);
-  padding: var(--space-20) 0;
+  /* INCREASED: Massive top/bottom padding for a grand entrance */
+  padding: clamp(6rem, 12vw, 10rem) 0;
   position: relative;
   overflow: hidden;
 }
+
 .mission-vision::before {
   content: "";
   position: absolute;
   top: 0;
-  right: -60px;
-  width: 300px;
+  right: -10%;
+  /* INCREASED: Made the background skew element much wider */
+  width: 45%;
   height: 100%;
   background: rgba(212, 160, 23, 0.06);
   transform: skewX(-12deg);
   pointer-events: none;
 }
+
 .mv-eyebrow {
   color: var(--color-yellow);
   font-weight: var(--weight-bold);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: var(--text-sm);
-  margin-bottom: var(--space-3);
+  /* INCREASED: Wider letter spacing for a premium feel */
+  letter-spacing: 0.2em;
+  font-size: var(--text-base, 1rem);
+  margin-bottom: var(--space-4, 1rem);
 }
+
 .mv-title {
   color: var(--color-white);
-  font-size: var(--text-3xl);
+  /* INCREASED: Responsive massive font size (up to ~5.5rem on large screens) */
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: var(--weight-bold, 700);
+  line-height: 1.1;
 }
-/* ADDED: Missing structural code for the split grid */
+
 .mv-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-8);
-  margin-top: var(--space-10);
+  /* INCREASED: Much larger gap between columns to let them breathe */
+  gap: clamp(2rem, 8vw, 6rem);
+  /* INCREASED: Pushed the panels further down from the main title */
+  margin-top: clamp(4rem, 10vw, 7rem);
 }
+
 .mv-panel {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .mv-panel:first-child {
-  border-right: 1px solid rgba(255, 255, 255, 0.12); /* FIXED: Added full border shorthand */
-  padding-right: var(--space-8);
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  /* INCREASED: Breathing room before the divider line */
+  padding-right: clamp(2rem, 5vw, 4rem);
 }
+
 .mv-panel:last-child {
-  padding-left: var(--space-8);
+  /* INCREASED: Breathing room after the divider line */
+  padding-left: clamp(2rem, 5vw, 4rem);
 }
+
 .mv-panel__tag {
   color: var(--color-yellow);
-  font-size: var(--text-sm);
+  /* INCREASED: Slightly larger tag font */
+  font-size: var(--text-base, 1.125rem);
   font-weight: var(--weight-bold);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
 }
-/* ADDED: Missing line divider styles */
+
 .mv-panel__line {
-  width: 40px;
-  height: 2px;
+  /* INCREASED: Longer and thicker accent line to anchor the large text */
+  width: 80px;
+  height: 3px;
   background-color: var(--color-yellow);
-  margin: var(--space-4) 0;
+  margin: 1.5rem 0;
 }
+
 .mv-panel__headline {
   color: var(--color-white);
-  font-size: var(--text-xl);
-  line-height: var(--leading-normal);
+  /* INCREASED: Much larger statement text (up to ~2.5rem) */
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  /* Thinner font weights often feel more premium on oversized text */
+  font-weight: 300;
+  line-height: 1.4;
 }
 
 /* ── CTA ── */
@@ -672,17 +695,16 @@
   /* Mission / Vision responsive stack */
   .mv-split {
     grid-template-columns: 1fr;
-    gap: var(--space-0);
   }
   .mv-panel:first-child {
     border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     padding-right: 0;
-    padding-bottom: var(--space-8);
-    margin-bottom: var(--space-8);
+    padding-bottom: 3rem;
   }
   .mv-panel:last-child {
     padding-left: 0;
+    padding-top: 3rem;
   }
 }
 
