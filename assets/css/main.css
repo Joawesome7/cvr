@@ -857,12 +857,13 @@ p {
    TOP BAR (Contact & Socials)
    ═══════════════════════════════════════════════════ */
 .topbar {
-  background-color: var(--color-blue);
-  color: rgba(255, 255, 255, 0.8);
+  background-color: var(--color-white);
+  color: var(--color-blue);
   font-size: 13px;
   padding: 8px 0;
-  display: block; /* Hidden on mobile to save space */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: block;
+  /* Changed border so it shows up against the white background */
+  border-bottom: 1px solid var(--color-border, #e8e5de);
 }
 
 /* Show topbar on desktop/tablet */
@@ -885,7 +886,7 @@ p {
 }
 
 .topbar__link {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-blue); /* Changed from white to blue */
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -895,18 +896,21 @@ p {
   letter-spacing: 0.02em;
 }
 
-/* Colors the icons gold/yellow */
+/* Colors the icons blue */
 .topbar__link i {
   font-size: 16px;
-  color: var(--color-yellow-light, #f0c84a);
+  color: var(--color-blue);
+  transition: color var(--transition-fast, 0.2s ease);
 }
 
-.topbar__link:hover {
-  color: var(--color-white);
+/* Adds a gold accent on hover for better UX */
+.topbar__link:hover,
+.topbar__link:hover i {
+  color: var(--color-yellow-dark, #d4a017);
 }
 
 .topbar__divider {
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(30, 58, 95, 0.2); /* Faint blue divider instead of white */
   font-size: 12px;
 }
 
@@ -921,12 +925,12 @@ p {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 10px;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(30, 58, 95, 0.6); /* Muted blue */
   margin-right: 4px;
 }
 
 .topbar__icon {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-blue); /* Changed from white to blue */
   text-decoration: none;
   font-size: 18px;
   transition: all var(--transition-fast, 0.2s ease);
@@ -936,7 +940,7 @@ p {
 }
 
 .topbar__icon:hover {
-  color: var(--color-yellow-light, #f0c84a);
+  color: var(--color-yellow-dark, #d4a017);
   transform: translateY(-2px);
 }
 
@@ -955,6 +959,17 @@ p {
   .topbar__divider {
     display: none; /* Hides the vertical line when items wrap */
   }
+}
+
+/* Styling for the Bible Verse */
+.topbar__verse {
+  font-family: var(--font-heading); /* Uses your elegant serif font */
+  font-size: 13px;
+  font-style: italic;
+  color: var(--color-blue);
+  opacity: 0.75;
+  letter-spacing: 0.05em;
+  text-align: center;
 }
 
 /* ============================================================
