@@ -161,9 +161,6 @@
 
 .developer-logo {
   max-width: 100%;
-  /* max-height: 120px; */
-  /* width: 180px; consistent base width for all logos */
-  /* height: 120px; fixed height so all card headers look uniform */
   object-fit: contain;
   position: relative;
   z-index: 1;

@@ -7,7 +7,7 @@
     <title>About Us | Carbo Valencia Realty</title>
     <meta
       name="description"
-      content="Meet the Valencia family team behind. Licensed PRC brokers with years of experience in Cavite real estate."
+      content="Meet the Valencia family team behind CVR. Licensed PRC brokers with years of experience in Cavite real estate."
     />
 
     <link
@@ -21,6 +21,10 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
 
     <link
       rel="shortcut icon"
@@ -29,44 +33,41 @@
     />
 
     <link rel="stylesheet" href="/assets/css/about.css" />
+    <link rel="stylesheet" href="/assets/css/home.css" />
     <link rel="stylesheet" href="/assets/css/main.css" />
   </head>
 
   <body>
-    <!-- ═══════════════════════════════════
-       NAVIGATION
-  ═══════════════════════════════════ -->
+    <!-- NAV -->
     <div id="nav-placeholder"></div>
 
     <!-- ═══════════════════════════════════
-       HERO
-  ═══════════════════════════════════ -->
+         HERO
+    ═══════════════════════════════════ -->
     <section class="about-hero">
       <div class="container">
         <div class="about-hero__inner">
-          <div class="section-label" style="color: var(--color-yellow-light)">
+          <div
+            class="section-label reveal"
+            style="color: var(--color-yellow-light)"
+          >
             Our story
           </div>
-          <h1 class="about-hero__title">
+          <h1 class="about-hero__title reveal reveal-d1">
             Real estate built on<br />
             <em>trust and community</em>
           </h1>
-          <!-- <p class="about-hero__sub">
-            Carbo Valencia Realty was born in Cavite — and we're proud of it.
-            Since 2012, we've helped hundreds of Filipino families find a place
-            they truly call home.
-          </p> -->
         </div>
       </div>
     </section>
 
     <!-- ═══════════════════════════════════
-       STORY
-  ═══════════════════════════════════ -->
+         STORY
+    ═══════════════════════════════════ -->
     <section class="story">
       <div class="container">
         <div class="story__layout">
-          <div class="story__image-wrap">
+          <div class="story__image-wrap reveal">
             <img
               src="/images/brand/cvr-fam.png"
               alt="CVR office in Dasmariñas, Cavite"
@@ -80,138 +81,89 @@
           </div>
 
           <div class="story__content">
-            <div class="section-label">Who we are</div>
-            <h2>A family business<br />rooted in Cavite</h2>
-            <p>
-              Carbo-Valencia Realty Inc. started last May 1, 2012 when Marietta
-              Carbo - Valencia passed the board of Real Estate Brokers
-              Examination last March 18, 2012. Then, thru the efforts and
-              perseverance the company became number one realty firm in Cavite.
-              Next to this achievement following his footstep her sons became a
-              Real Esate Brokers and an Appraiser.
+            <div class="section-label reveal">Who we are</div>
+            <h2 class="reveal reveal-d1">
+              A family business<br />rooted in Cavite
+            </h2>
+            <p class="reveal reveal-d2">
+              Carbo-Valencia Realty Inc. started 2012 when Marietta
+              Carbo-Valencia passed the board of Real Estate Brokers
+              Examination. Through effort and perseverance the company became a
+              leading realty firm in Cavite — and following her footsteps, her
+              sons became licensed Real Estate Brokers and Appraisers.
             </p>
-            <p>
-              Today our team of licensed brokers and accredited salespersons
-              handles listings across Dasmariñas, Bacoor, Imus, General Trias,
-              and the wider CALABARZON region — always with the same personal
-              touch we started with.
+            <p class="reveal reveal-d4">
+              Carbo-Valencia Realty Inc. is registered with the Securities and
+              Exchange Commission, SSS, PAG-IBIG, PhilHealth, and the Bureau of
+              Internal Revenue. We operate with full transparency and faith.
             </p>
-            <p>
-              Carbo - Valencia Realty Inc. registered and approved with
-              Securities and Exchange Commission last January 31, 2013 together
-              with all government agencies like SSS, PAG-IBIG, Philhealth and
-              even in Bureau of Internal Revenue (BIR). True enough what God is
-              their source and He gives victory to those who plot their trust in
-              Him.
-            </p>
-            <!-- <a
-              href="/listings"
-              class="btn btn--primary"
-              style="margin-top: var(--space-4)"
-            >
-              Browse our listings
-            </a> -->
           </div>
         </div>
       </div>
     </section>
 
     <!-- ═══════════════════════════════════
-       VALUES
-  ═══════════════════════════════════ -->
+         VALUES
+    ═══════════════════════════════════ -->
     <section class="values">
       <div class="container">
-        <div class="values__header">
+        <div class="values__header reveal">
           <div class="section-label">What drives us</div>
           <h2>Our core values</h2>
           <div class="values__rule"></div>
         </div>
 
-        <ol class="values__list">
-          <li class="value-row">
-            <div class="value-row__num-col">
-              <span class="value-row__num">01</span>
-              <div class="value-row__tick"></div>
+        <div class="vals-grid">
+          <div class="val-card reveal">
+            <span class="val-num">01</span>
+            <div class="val-icon" aria-hidden="true">
+              <i class="ti ti-users"></i>
             </div>
-            <div class="value-row__content">
-              <h3 class="value-row__title">Respect</h3>
-              <p class="value-row__text">
-                Valuing colleagues, clients, and the workplace regardless of
-                role or background. Every interaction begins with dignity.
-              </p>
-              <span class="value-row__tag">People-first</span>
+            <div class="val-divider"></div>
+            <h3 class="val-title">Respect</h3>
+          </div>
+          <div class="val-card reveal reveal-d1">
+            <span class="val-num">02</span>
+            <div class="val-icon" aria-hidden="true">
+              <i class="ti ti-shield-check"></i>
             </div>
-          </li>
-
-          <li class="value-row">
-            <div class="value-row__num-col">
-              <span class="value-row__num">02</span>
-              <div class="value-row__tick"></div>
+            <div class="val-divider"></div>
+            <h3 class="val-title">Integrity</h3>
+          </div>
+          <div class="val-card reveal reveal-d2">
+            <span class="val-num">03</span>
+            <div class="val-icon" aria-hidden="true">
+              <i class="ti ti-flag"></i>
             </div>
-            <div class="value-row__content">
-              <h3 class="value-row__title">Integrity</h3>
-              <p class="value-row__text">
-                Being honest, ethical, and trustworthy in all actions — from the
-                first consultation to the final handover.
-              </p>
-              <span class="value-row__tag">Trust</span>
+            <div class="val-divider"></div>
+            <h3 class="val-title">Commitment</h3>
+          </div>
+          <div class="val-card reveal reveal-d3">
+            <span class="val-num">04</span>
+            <div class="val-icon" aria-hidden="true">
+              <i class="ti ti-clipboard-check"></i>
             </div>
-          </li>
-
-          <li class="value-row">
-            <div class="value-row__num-col">
-              <span class="value-row__num">03</span>
-              <div class="value-row__tick"></div>
+            <div class="val-divider"></div>
+            <h3 class="val-title">Accountability</h3>
+          </div>
+          <div class="val-card reveal reveal-d4">
+            <span class="val-num">05</span>
+            <div class="val-icon" aria-hidden="true">
+              <i class="ti ti-briefcase"></i>
             </div>
-            <div class="value-row__content">
-              <h3 class="value-row__title">Commitment</h3>
-              <p class="value-row__text">
-                Staying dedicated to responsibilities, goals, and company values
-                — even when the market is difficult or demanding.
-              </p>
-              <span class="value-row__tag">Dedication</span>
-            </div>
-          </li>
-
-          <li class="value-row">
-            <div class="value-row__num-col">
-              <span class="value-row__num">04</span>
-              <div class="value-row__tick"></div>
-            </div>
-            <div class="value-row__content">
-              <h3 class="value-row__title">Accountability</h3>
-              <p class="value-row__text">
-                Taking full ownership of tasks, actions, and results. We stand
-                behind every promise made to our clients.
-              </p>
-              <span class="value-row__tag">Ownership</span>
-            </div>
-          </li>
-
-          <li class="value-row">
-            <div class="value-row__num-col">
-              <span class="value-row__num">05</span>
-              <div class="value-row__tick"></div>
-            </div>
-            <div class="value-row__content">
-              <h3 class="value-row__title">Professionalism</h3>
-              <p class="value-row__text">
-                Demonstrating proper conduct, reliability, and a positive
-                attitude in every client interaction and team collaboration.
-              </p>
-              <span class="value-row__tag">Excellence</span>
-            </div>
-          </li>
-        </ol>
+            <div class="val-divider"></div>
+            <h3 class="val-title">Professionalism</h3>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- ═══════════════════════════════════
-       TEAM
-  ═══════════════════════════════════ -->
+         TEAM
+    ═══════════════════════════════════ -->
     <section class="team">
       <div class="container">
-        <div class="team__header">
+        <div class="team__header reveal">
           <div class="section-label">The people behind CVR</div>
           <h2>Meet our team</h2>
           <p style="color: var(--color-text-muted); margin-top: var(--space-3)">
@@ -219,272 +171,252 @@
           </p>
         </div>
 
-        <!-- Peter Valencia -->
-        <div class="profile-block">
-          <div class="profile-block__media">
-            <img
-              src="/images/team/peter-valencia.jpg"
-              alt="Peter Valencia"
-              class="profile-block__photo"
-              onerror="
-                this.style.display = 'none';
-                this.nextElementSibling.style.display = 'flex';
-              "
-            />
-            <div class="profile-block__photo-placeholder" style="display: none">
-              👨
+        <div class="team-grid">
+          <div class="team-grid__top">
+            <!-- Mayeth -->
+            <div class="team-card-new reveal">
+              <div class="team-card-new__photo-wrap">
+                <img
+                  src="/images/team/mayeth-valencia.jpg"
+                  alt="Mayeth Valencia"
+                  class="team-card-new__photo"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'flex';
+                  "
+                />
+                <div
+                  class="team-card-new__photo-placeholder"
+                  style="display: none"
+                >
+                  👩
+                </div>
+              </div>
+              <div class="team-card-new__body">
+                <h3 class="team-card-new__name">Mayeth Valencia</h3>
+                <div class="team-card-new__divider"></div>
+                <p class="team-card-new__role-label">
+                  President | Lic. No. 0011685
+                </p>
+              </div>
+            </div>
+
+            <!-- Peter -->
+            <div class="team-card-new reveal reveal-d1">
+              <div class="team-card-new__photo-wrap">
+                <img
+                  src="/images/team/peter-valencia.jpg"
+                  alt="Peter Valencia"
+                  class="team-card-new__photo"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'flex';
+                  "
+                />
+                <div
+                  class="team-card-new__photo-placeholder"
+                  style="display: none"
+                >
+                  👨
+                </div>
+                <!-- <span class="team-card-new__badge">Chairman</span> -->
+              </div>
+              <div class="team-card-new__body">
+                <h3 class="team-card-new__name">Peter Valencia</h3>
+                <div class="team-card-new__divider"></div>
+                <p class="team-card-new__role-label">Chairman</p>
+              </div>
+            </div>
+
+            <!-- Justine -->
+            <div class="team-card-new reveal reveal-d2">
+              <div class="team-card-new__photo-wrap">
+                <img
+                  src="/images/team/justine-valencia.jpg"
+                  alt="Justine Valencia"
+                  class="team-card-new__photo"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'flex';
+                  "
+                />
+                <div
+                  class="team-card-new__photo-placeholder"
+                  style="display: none"
+                >
+                  👩
+                </div>
+              </div>
+              <div class="team-card-new__body">
+                <h3 class="team-card-new__name">Justine Valencia</h3>
+                <div class="team-card-new__divider"></div>
+                <p class="team-card-new__role-label">
+                  VP for Operations | Lic. No. 0026527
+                </p>
+              </div>
             </div>
           </div>
-          <div class="profile-block__content">
-            <div class="profile-block__role">Chairman</div>
-            <h3 class="profile-block__name">Peter Valencia</h3>
-            <p>
-              An accredited salesperson with deep expertise in condo units
-              across Bacoor and Imus. Peter understands how Filipino buyers
-              communicate — his Viber-first approach means fast replies and zero
-              runaround, every time.
-            </p>
-            <p>
-              He works closely with developers to ensure buyers get accurate,
-              up-to-date unit availability and pricing before committing to any
-              viewing.
-            </p>
-            <div class="profile-block__skills-label">Areas of expertise</div>
-            <ul class="profile-block__skills-list">
-              <li>Condo Sales (Bacoor &amp; Imus)</li>
-              <li>Developer Liaison &amp; Unit Availability</li>
-              <li>Viber &amp; Digital Client Communication</li>
-              <li>Buyer Pre-qualification</li>
-              <li>Reservation &amp; Spot Cash Deals</li>
-            </ul>
+
+          <div class="team-grid__bottom">
+            <!-- Eunice card -->
+            <div class="team-card-new reveal reveal-d3">
+              <div class="team-card-new__photo-wrap">
+                <img
+                  src="/images/team/eunice-valencia.jpg"
+                  alt="Eunice Valencia"
+                  class="team-card-new__photo"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'flex';
+                  "
+                />
+                <div
+                  class="team-card-new__photo-placeholder"
+                  style="display: none"
+                >
+                  👩
+                </div>
+                <!-- <span class="team-card-new__badge">General Manager</span> -->
+              </div>
+              <div class="team-card-new__body">
+                <h3 class="team-card-new__name">Eunice Valencia</h3>
+                <div class="team-card-new__divider"></div>
+                <p class="team-card-new__role-label">General Manager</p>
+              </div>
+            </div>
+            <!-- Jemimah card -->
+            <div class="team-card-new reveal reveal-d4">
+              <div class="team-card-new__photo-wrap">
+                <img
+                  src="/images/team/jemimah-valencia.jpg"
+                  alt="Jemimah Valencia"
+                  class="team-card-new__photo"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'flex';
+                  "
+                />
+                <div
+                  class="team-card-new__photo-placeholder"
+                  style="display: none"
+                >
+                  👩
+                </div>
+                <!-- <span class="team-card-new__badge">Finance Manager</span> -->
+              </div>
+              <div class="team-card-new__body">
+                <h3 class="team-card-new__name">Jemimah Valencia</h3>
+                <div class="team-card-new__divider"></div>
+                <p class="team-card-new__role-label">Finance Manager</p>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Mayeth Valencia -->
-        <div class="profile-block profile-block--reverse">
-          <div class="profile-block__media">
-            <img
-              src="/images/team/mayeth-valencia.jpg"
-              alt="Mayeth Valencia"
-              class="profile-block__photo"
-              onerror="
-                this.style.display = 'none';
-                this.nextElementSibling.style.display = 'flex';
-              "
-            />
-            <div class="profile-block__photo-placeholder" style="display: none">
-              👩
-            </div>
-          </div>
-          <div class="profile-block__content">
-            <div class="profile-block__role">
-              President | Real Estate Broker Lic. No. 0011685
-            </div>
-            <h3 class="profile-block__name">Mayeth Valencia</h3>
-            <p>
-              A PRC-licensed real estate broker with over 12 years of dedicated
-              experience in Cavite residential properties. Mayeth specializes in
-              navigating the complex property landscapes of Dasmariñas and
-              General Trias, ensuring all transactions strictly comply with
-              national real estate regulations.
-            </p>
-            <p>
-              She guides families from initial viewing through to final turnover
-              — making the entire process clear, honest, and stress-free.
-            </p>
-            <div class="profile-block__skills-label">Areas of expertise</div>
-            <ul class="profile-block__skills-list">
-              <li>PRC-Licensed Brokerage</li>
-              <li>
-                Cavite Residential Market Analysis (Dasmariñas &amp; Gen. Trias)
-              </li>
-              <li>Client Negotiation &amp; Contract Processing</li>
-              <li>Property Turnover Management</li>
-              <li>Team Goal &amp; Performance Leadership</li>
-            </ul>
-          </div>
+        <!-- /.team-grid -->
+      </div>
+    </section>
+    <!-- ═══════════════════════════════════════
+         WHY CVR
+    ═══════════════════════════════════════ -->
+    <section class="why" aria-label="Why choose CVR">
+      <div class="container">
+        <div class="why__header reveal">
+          <div class="why__eyebrow">Why choose us</div>
+          <h2 class="why__title">The <em>CVR</em> Difference</h2>
+          <p class="why__lead">
+            For over 5 years, we have consistently delivered a portfolio of
+            properties to people who want a hassle-free experience in buying,
+            selling, investing, and management. More than a company — we are a
+            solid, responsive &amp; professional team.
+          </p>
+          <div class="why__rule"></div>
         </div>
 
-        <!-- Justine Valencia -->
-        <div class="profile-block">
-          <div class="profile-block__media">
-            <img
-              src="/images/team/justine-valencia.jpg"
-              alt="Justine Valencia"
-              class="profile-block__photo"
-              onerror="
-                this.style.display = 'none';
-                this.nextElementSibling.style.display = 'flex';
-              "
-            />
-            <div class="profile-block__photo-placeholder" style="display: none">
-              👩
+        <div class="why__badges">
+          <div class="why__badge reveal">
+            <div class="why__badge-logo">
+              <img
+                src="/images/awards/hlurb.png"
+                alt="HLURB"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'flex';
+                "
+              />
+              <div class="why__badge-logo-placeholder" style="display: none">
+                <i class="ti ti-building" aria-hidden="true"></i>
+              </div>
             </div>
-          </div>
-          <div class="profile-block__content">
-            <div class="profile-block__role">
-              VP for Operations | Real Estate Broker Lic. No. 0026527
-            </div>
-            <h3 class="profile-block__name">Justine Valencia</h3>
-            <p>
-              Justine leads day-to-day operations and is the go-to person for
-              first-time buyers trying to understand Pag-IBIG, bank financing,
-              and in-house developer terms. She translates the numbers into
-              plain language so nothing gets lost.
+            <div class="why__badge-divider"></div>
+            <p class="why__badge-name">
+              Housing &amp; Land Use<br />Regulatory Board
             </p>
-            <p>
-              With a calm, detail-oriented approach, she makes sure every
-              transaction moves smoothly from reservation to title transfer.
-            </p>
-            <div class="profile-block__skills-label">Areas of expertise</div>
-            <ul class="profile-block__skills-list">
-              <li>Pag-IBIG &amp; Bank Financing Coordination</li>
-              <li>In-house Developer Payment Terms</li>
-              <li>Transaction &amp; Document Management</li>
-              <li>First-time Buyer Consultation</li>
-              <li>Operations Workflow &amp; Team Coordination</li>
-            </ul>
           </div>
-        </div>
 
-        <!-- Eunice Valencia -->
-        <div class="profile-block profile-block--reverse">
-          <div class="profile-block__media">
-            <img
-              src="/images/team/eunice-valencia.jpg"
-              alt="Eunice Valencia"
-              class="profile-block__photo"
-              onerror="
-                this.style.display = 'none';
-                this.nextElementSibling.style.display = 'flex';
-              "
-            />
-            <div class="profile-block__photo-placeholder" style="display: none">
-              👩
+          <div class="why__badge reveal reveal-d1">
+            <div class="why__badge-logo">
+              <img
+                src="/images/awards/prc.png"
+                alt="PRC"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'flex';
+                "
+              />
+              <div class="why__badge-logo-placeholder" style="display: none">
+                <i class="ti ti-license" aria-hidden="true"></i>
+              </div>
             </div>
-          </div>
-          <div class="profile-block__content">
-            <div class="profile-block__role">General Manager</div>
-            <h3 class="profile-block__name">Eunice Valencia</h3>
-            <p>
-              Eunice oversees the overall direction of CVR's listings,
-              partnerships, and agent performance. She ensures the team stays
-              aligned on standards — from how listings are presented online to
-              how inquiries are handled.
+            <div class="why__badge-divider"></div>
+            <p class="why__badge-name">
+              Professional Regulation<br />Commission
             </p>
-            <p>
-              Her focus is on building a brokerage that clients trust enough to
-              recommend to their own families.
-            </p>
-            <div class="profile-block__skills-label">Areas of expertise</div>
-            <ul class="profile-block__skills-list">
-              <li>Brokerage Management &amp; Standards</li>
-              <li>Listings Quality Control</li>
-              <li>Agent Performance Oversight</li>
-              <li>Developer &amp; Subdivision Partnerships</li>
-              <li>Brand &amp; Client Experience</li>
-            </ul>
           </div>
-        </div>
 
-        <!-- Jemimah Valencia -->
-        <div class="profile-block">
-          <div class="profile-block__media">
-            <img
-              src="/images/team/jemimah-valencia.jpg"
-              alt="Jemimah Valencia"
-              class="profile-block__photo"
-              onerror="
-                this.style.display = 'none';
-                this.nextElementSibling.style.display = 'flex';
-              "
-            />
-            <div class="profile-block__photo-placeholder" style="display: none">
-              👩
+          <div class="why__badge reveal reveal-d2">
+            <div class="why__badge-logo">
+              <img
+                src="/images/awards/sec.png"
+                alt="SEC"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'flex';
+                "
+              />
+              <div class="why__badge-logo-placeholder" style="display: none">
+                <i class="ti ti-certificate" aria-hidden="true"></i>
+              </div>
             </div>
-          </div>
-          <div class="profile-block__content">
-            <div class="profile-block__role">Finance Manager</div>
-            <h3 class="profile-block__name">Jemimah Valencia</h3>
-            <p>
-              Jemimah manages the financial side of CVR — from commission
-              tracking and agent payouts to budget planning and compliance
-              documentation. She keeps the books clean so the team can focus on
-              what they do best.
+            <div class="why__badge-divider"></div>
+            <p class="why__badge-name">
+              Securities &amp; Exchange<br />Commission
             </p>
-            <p>
-              She also advises buyers on total cost of acquisition, helping them
-              plan beyond just the monthly amortization.
-            </p>
-            <div class="profile-block__skills-label">Areas of expertise</div>
-            <ul class="profile-block__skills-list">
-              <li>Commission &amp; Payout Management</li>
-              <li>Budget Planning &amp; Forecasting</li>
-              <li>Compliance Documentation</li>
-              <li>Total Acquisition Cost Advisory</li>
-              <li>Financial Reporting</li>
-            </ul>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ═══════════════════════════════════
-       MISSION & VISION
-  ═══════════════════════════════════ -->
+         MISSION & VISION
+    ═══════════════════════════════════ -->
     <section class="mission-vision">
       <div class="container">
-        <div class="mission-vision__header">
-          <div class="section-label" style="color: var(--color-yellow-light)">
-            Who we are
-          </div>
-          <h2>Purpose &amp; direction</h2>
-          <p>The principles that guide every transaction we make.</p>
-        </div>
-        <div class="mv-cards">
-          <div class="mv-card">
-            <div class="mv-card__icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.6"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <circle cx="12" cy="12" r="3" />
-                <path
-                  d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
-                />
-              </svg>
-            </div>
-            <div class="mv-card__label">Vision</div>
-            <div class="mv-card__divider"></div>
-            <p class="mv-card__body">
-              To be the most trusted and respected brokerage in the whole
-              region.
+        <div class="mv-eyebrow reveal">Who we are</div>
+        <h2 class="mv-title reveal reveal-d1">Purpose</h2>
+        <div class="mv-split">
+          <div class="mv-panel reveal reveal-d2">
+            <div class="mv-panel__tag">Vision</div>
+            <div class="mv-panel__line"></div>
+            <p class="mv-panel__headline">
+              To be the most trusted and respected brokerage in the region.
             </p>
           </div>
-
-          <div class="mv-card">
-            <div class="mv-card__icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.6"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-              </svg>
-            </div>
-            <div class="mv-card__label">Mission</div>
-            <div class="mv-card__divider"></div>
-            <p class="mv-card__body">
-              To empower clients to achieve their real estate goals through
-              expert guidance, personalized service, and a commitment to
-              integrity.
+          <div class="mv-panel reveal reveal-d3">
+            <div class="mv-panel__tag">Mission</div>
+            <div class="mv-panel__line"></div>
+            <p class="mv-panel__headline">
+              To empower clients through expert guidance and integrity.
             </p>
           </div>
         </div>
@@ -492,21 +424,18 @@
     </section>
 
     <!-- ═══════════════════════════════════
-       CTA
-  ═══════════════════════════════════ -->
+         CTA
+    ═══════════════════════════════════ -->
     <section class="about-cta">
       <div class="container">
-        <div class="section-label">Ready to start?</div>
-        <h2>Let's find your home together</h2>
-        <p>
+        <div class="section-label reveal">Ready to start?</div>
+        <h2 class="reveal reveal-d1">Let's find your home together</h2>
+        <p class="reveal reveal-d2">
           Whether you're buying your first home or looking for an investment
           property — our team is here to help.
         </p>
-        <div class="about-cta__actions">
-          <a href="/listings" class="btn btn--primary btn--lg">
-            Browse listings
-          </a>
-          <a href="/contact" class="btn btn--secondary btn--lg"> Contact us </a>
+        <div class="about-cta__actions reveal reveal-d3">
+          <a href="/contact" class="btn btn--secondary btn--lg">Contact us</a>
           <a
             href="viber://chat?number=%2B639171234567"
             class="btn btn--viber btn--lg"
@@ -517,10 +446,31 @@
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════
-       FOOTER
-  ═══════════════════════════════════ -->
+    <!-- FOOTER -->
     <div id="footer-placeholder"></div>
+
+    <!-- ═══════════════════════════════════
+         SCROLL REVEAL — unified observer
+    ═══════════════════════════════════ -->
+    <script>
+      (function () {
+        const revealObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                revealObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+        );
+
+        document
+          .querySelectorAll(".reveal")
+          .forEach((el) => revealObserver.observe(el));
+      })();
+    </script>
 
     <script type="module" src="/assets/js/main.js"></script>
   </body>

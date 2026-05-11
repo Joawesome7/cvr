@@ -2,14 +2,14 @@
   {
     "id": "idesia",
     "name": "Idesia",
-    "logo": "/images/developers/idesia-logo.png",
+    "logo": "/images/developers/idesia-dasmarinas.jpg",
     "description": "Idesia is a real estate developer committed to providing affordable dream homes. With their 'Ideal Way of Living' philosophy, they focus on creating communities that offer value, quality, and accessibility to Filipino homebuyers.",
     "website": "/pages/idesia-properties"
   },
   {
     "id": "avida",
     "name": "Avida Land",
-    "logo": "/images/developers/avida-logo.png",
+    "logo": "/images/developers/avidaland.jpg",
     "description": "Avida Land is a premier real estate developer known for thoughtfully designed condominium units and residential developments across the Philippines. Part of the AyalaLand group, they focus on creating communities that enhance lifestyle.",
     "website": "/pages/avida-properties"
   },
@@ -30,7 +30,7 @@
   {
     "id": "apechomes",
     "name": "Apechomes",
-    "logo": "/images/developers/apechomes-logo.png",
+    "logo": "/images/developers/apechomes.jpg",
     "description": "Apechomes is a dynamic real estate developer focused on building quality homes and communities. With a tagline of 'Building Lives', they create residential developments that provide value and comfort to Filipino families.",
     "website": "/pages/apechomes-properties"
   },

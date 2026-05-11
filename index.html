@@ -43,6 +43,7 @@
     />
 
     <!-- Stylesheet -->
+    <link rel="stylesheet" href="/assets/css/developers.css" />
     <link rel="stylesheet" href="/assets/css/services.css" />
     <link rel="stylesheet" href="/assets/css/home.css" />
     <link rel="stylesheet" href="/assets/css/main.css" />
@@ -153,17 +154,17 @@
             your next home simple.
           </p>
 
-          <div class="hero__actions">
+          <!-- <div class="hero__actions">
             <a href="/listings" class="btn btn--primary btn--lg">
               Browse Listings
             </a>
             <a href="/contact" class="btn btn--ghost btn--lg">
               Talk to an Agent
             </a>
-          </div>
+          </div> -->
 
           <!-- Quick search bar -->
-          <div class="hero__search" role="search">
+          <!-- <div class="hero__search" role="search">
             <input
               type="text"
               id="searchInput"
@@ -183,36 +184,219 @@
               <option value="for-rent">For rent</option>
             </select>
             <button class="btn btn--primary" id="searchBtn">Search</button>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     STATS STRIP
+═══════════════════════════════════════ -->
+    <section class="stats" aria-label="CVR by the numbers">
+      <div class="container">
+        <div class="stats__grid">
+          <div class="stats__item" data-target="150" data-suffix="+">
+            <div class="stats__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"
+                />
+                <path d="M9 21V12h6v9" />
+              </svg>
+            </div>
+            <div class="stats__item-number">0</div>
+            <div class="stats__item-label">Properties Listed</div>
+          </div>
+
+          <div class="stats__item" data-target="12" data-suffix="">
+            <div class="stats__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="10" r="3" />
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                />
+              </svg>
+            </div>
+            <div class="stats__item-number">0</div>
+            <div class="stats__item-label">
+              Cities in Cavite &amp; Metro Manila
+            </div>
+          </div>
+
+          <div class="stats__item" data-target="14" data-suffix="">
+            <div class="stats__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" />
+                <path d="M16 2v4M8 2v4M3 10h18" />
+                <path
+                  d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"
+                />
+              </svg>
+            </div>
+            <div class="stats__item-number">0</div>
+            <div class="stats__item-label">Years in Business</div>
+          </div>
+
+          <div class="stats__item" data-target="500" data-suffix="+">
+            <div class="stats__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <div class="stats__item-number">0</div>
+            <div class="stats__item-label">Families Helped</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ═══════════════════════════════════════
-       STATS STRIP
+       FEATURED LISTINGS
+       Cards are rendered by main.js from properties.json
   ═══════════════════════════════════════ -->
-    <section class="stats" aria-label="CVR by the numbers">
+    <section class="featured" id="featured">
       <div class="container">
-        <div class="stats__grid">
-          <div>
-            <div class="stats__item-number">150+</div>
-            <div class="stats__item-label">Properties listed</div>
+
+        <div class="svc-section__header">
+          <span class="section-label">Our Top 6 Partner Developers</span>
+          <h2 class="svc-section__title">Featured Developers</h2>
+          <p class="svc-section__sub">Browse projects from our accredited developer partners — and let CVR guide you from reservation to turnover.</p>
+        </div>
+  
+        <!-- Developers Grid -->
+      <section class="developers-section">
+        <div class="container">
+          <div id="developersGrid" class="developers-grid">
+            <!-- Developers will be loaded here by JavaScript -->
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
           </div>
-          <div>
-            <div class="stats__item-number">12</div>
-            <div class="stats__item-label">Cities in Cavite & Metro Manila</div>
+        </div>
+      </section>
+
+    </section>
+
+    <!-- JS renders cards here -->
+    <!-- <div class="grid grid--3" id="featuredGrid"> -->
+    <!-- Loading skeletons shown before JS runs -->
+    <!-- <div class="card">
+            <div class="skeleton" style="height: 220px"></div>
+            <div class="card__body" style="gap: 12px">
+              <div class="skeleton" style="height: 20px; width: 80%"></div>
+              <div class="skeleton" style="height: 14px; width: 50%"></div>
+              <div class="skeleton" style="height: 14px; width: 65%"></div>
+            </div>
           </div>
-          <div>
-            <div class="stats__item-number">14</div>
-            <div class="stats__item-label">Years in business</div>
+          <div class="card">
+            <div class="skeleton" style="height: 220px"></div>
+            <div class="card__body" style="gap: 12px">
+              <div class="skeleton" style="height: 20px; width: 80%"></div>
+              <div class="skeleton" style="height: 14px; width: 50%"></div>
+              <div class="skeleton" style="height: 14px; width: 65%"></div>
+            </div>
           </div>
-          <div>
-            <div class="stats__item-number">500+</div>
-            <div class="stats__item-label">Families helped</div>
+          <div class="card">
+            <div class="skeleton" style="height: 220px"></div>
+            <div class="card__body" style="gap: 12px">
+              <div class="skeleton" style="height: 20px; width: 80%"></div>
+              <div class="skeleton" style="height: 14px; width: 50%"></div>
+              <div class="skeleton" style="height: 14px; width: 65%"></div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
+
+    <!-- ═══════════════════════════════════════
+     SERVICES SECTION
+     Image paths to swap: /images/services/brokerage.jpg
+                          /images/services/appraisal.jpg
+                          /images/services/titling.jpg
+                          /images/services/loans.jpg
+═══════════════════════════════════════ -->
+  <section class="svc-list-section" aria-label="CVR Realty Services">
+    <div class="container">
+  
+      <!-- Section header -->
+      <div class="svc-section__header">
+        <span class="section-label">What We Do</span>
+        <h2 class="svc-section__title">Our Real Estate Services</h2>
+        <p class="svc-section__sub">From finding your dream home to securing your title — CVR handles it all across Dasmariñas and Cavite.</p>
+      </div>
+  
+      <!-- Service cards grid -->
+      <div class="svc-grid">
+  
+        <div class="svc-card" id="brokerage">
+          <div class="svc-card__bg" style="background-image: url('/images/services/brokerage.jpg');"></div>
+          <div class="svc-card__overlay"></div>
+          <div class="svc-card__inner">
+            <div class="svc-card__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75">
+                <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/>
+                <path d="M9 21V12h6v9"/>
+              </svg>
+            </div>
+            <h3 class="svc-card__title">Real Estate Brokerage</h3> 
+          </div>
+        </div>
+  
+        <div class="svc-card" id="appraisal">
+          <div class="svc-card__bg" style="background-image: url('/images/services/appraisal.jpg');"></div>
+          <div class="svc-card__overlay"></div>
+          <div class="svc-card__inner">
+            <div class="svc-card__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75">
+                <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/>
+                <rect x="9" y="3" width="6" height="4" rx="2"/>
+                <path d="M9 12h6M9 16h4"/>
+              </svg>
+            </div>
+            <h3 class="svc-card__title">Real Estate Appraisal</h3>  
+          </div>
+        </div>
+  
+        <div class="svc-card" id="titling">
+          <div class="svc-card__bg" style="background-image: url('/images/services/titling.jpg');"></div>
+          <div class="svc-card__overlay"></div>
+          <div class="svc-card__inner">
+            <div class="svc-card__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <path d="M9 13h6M9 17h4"/>
+              </svg>
+            </div>
+            <h3 class="svc-card__title">Title Transfer / Property Titling</h3>
+          </div>
+        </div>
+  
+        <div class="svc-card" id="loans">
+          <div class="svc-card__bg" style="background-image: url('/images/services/loans.jpg');"></div>
+          <div class="svc-card__overlay"></div>
+          <div class="svc-card__inner">
+            <div class="svc-card__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75">
+                <rect x="2" y="5" width="20" height="14" rx="2"/>
+                <path d="M2 10h20"/>
+              </svg>
+            </div>
+            <h3 class="svc-card__title">Housing Loan Assistance</h3>
+          </div>
+        </div>
+  
+      </div>
+  
+    </div>
+  </section>
+
 
     <!-- ═══════════════════════════════════════
      DEVELOPER LOGOS MARQUEE
@@ -338,194 +522,6 @@
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════
-       FEATURED LISTINGS
-       Cards are rendered by main.js from properties.json
-  ═══════════════════════════════════════ -->
-    <section class="featured" id="featured">
-      <div class="container">
-        <div class="featured__header">
-          <div>
-            <div class="section-label">Hand-picked for you</div>
-            <h2>Featured Properties</h2>
-          </div>
-          <a href="/listings" class="btn btn--secondary">
-            View all listings →
-          </a>
-        </div>
-
-        <!-- JS renders cards here -->
-        <div class="grid grid--3" id="featuredGrid">
-          <!-- Loading skeletons shown before JS runs -->
-          <div class="card">
-            <div class="skeleton" style="height: 220px"></div>
-            <div class="card__body" style="gap: 12px">
-              <div class="skeleton" style="height: 20px; width: 80%"></div>
-              <div class="skeleton" style="height: 14px; width: 50%"></div>
-              <div class="skeleton" style="height: 14px; width: 65%"></div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="skeleton" style="height: 220px"></div>
-            <div class="card__body" style="gap: 12px">
-              <div class="skeleton" style="height: 20px; width: 80%"></div>
-              <div class="skeleton" style="height: 14px; width: 50%"></div>
-              <div class="skeleton" style="height: 14px; width: 65%"></div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="skeleton" style="height: 220px"></div>
-            <div class="card__body" style="gap: 12px">
-              <div class="skeleton" style="height: 20px; width: 80%"></div>
-              <div class="skeleton" style="height: 14px; width: 50%"></div>
-              <div class="skeleton" style="height: 14px; width: 65%"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════
-       WHY CVR
-  ═══════════════════════════════════════ -->
-    <section class="why" aria-label="Why choose CVR">
-      <div class="container" style="padding: 20px">
-        <div class="why__header">
-          <div class="why__header-text">
-            <div class="section-label">Why choose us</div>
-            <h2>The <em>CVR</em> Difference</h2>
-            <p class="why__lead">
-              For over 5 years, we have consistently delivered a portfolio of
-              properties to people who want a hassle-free experience in buying,
-              selling, investing, and management. More than a company, we are
-              solid, responsive & professional team!
-            </p>
-            <div class="why__rule"></div>
-          </div>
-
-          <div class="why__award-logos">
-            <img
-              src="/images/awards/hlurb.png"
-              alt="Housing and Land Use Regulatory Board"
-            />
-            <img
-              src="/images/awards/prc.png"
-              alt="Professional Regulation Commission"
-            />
-            <img
-              src="/images/awards/sec.png"
-              alt="Securities and Exchange Commission"
-            />
-          </div>
-        </div>
-
-        <div class="why__panel-grid">
-          <div class="why__panel">
-            <span class="why__panel-num">01</span>
-            <div class="why__panel-icon" aria-hidden="true">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                <circle cx="12" cy="7" r="4" />
-              </svg>
-            </div>
-            <h3 class="why__panel-title">Client-Centric Approach</h3>
-            <p class="why__panel-desc">
-              Personalized service built around your needs — not just a
-              transaction. We stay responsive and maintain long-term
-              relationships long after the keys are handed over.
-            </p>
-            <a href="/about" class="why__panel-link">
-              Learn more
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-
-          <div class="why__panel">
-            <span class="why__panel-num">02</span>
-            <div class="why__panel-icon" aria-hidden="true">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-              </svg>
-            </div>
-            <h3 class="why__panel-title">Continuous Learning &amp; Growth</h3>
-            <p class="why__panel-desc">
-              We embrace a culture of professional development. Resources,
-              trainings, and growth opportunities are built into how we work —
-              for both our agents and our clients.
-            </p>
-            <a href="/about" class="why__panel-link">
-              Learn more
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-
-          <div class="why__panel">
-            <span class="why__panel-num">03</span>
-            <div class="why__panel-icon" aria-hidden="true">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path
-                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
-                />
-              </svg>
-            </div>
-            <h3 class="why__panel-title">
-              Open Communication &amp; Transparency
-            </h3>
-            <p class="why__panel-desc">
-              No surprises, no fine print. Communication is at the heart of our
-              culture — honest, direct, and at every level of the process.
-            </p>
-            <a href="/about" class="why__panel-link">
-              Learn more
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- ═══════════════════════════════════════
      TESTIMONIALS
@@ -534,7 +530,7 @@
       <div class="container">
         <div class="testi__head">
           <div class="section-label">Testimonials</div>
-          <h2>What Our Clients Say</h2>
+          <h2 class="svc-section__title">What Our Clients Say</h2>
           <p>Some of our happy clients</p>
         </div>
 
@@ -813,9 +809,9 @@
             >
               📱 Message on Viber
             </a>
-            <a href="/listings" class="btn btn--ghost btn--lg">
+            <!-- <a href="/listings" class="btn btn--ghost btn--lg">
               Browse listings
-            </a>
+            </a> -->
           </div>
         </div>
       </div>
@@ -829,131 +825,206 @@
     <!-- ═══════════════════════════════════════
        JAVASCRIPT
   ═══════════════════════════════════════ -->
+    <script src="/assets/js/developers.js"></script>
     <script>
       /* ── 2. Search bar ── */
-      document.getElementById("searchBtn").addEventListener("click", () => {
-        const keyword = document.getElementById("searchInput").value.trim();
-        const type = document.getElementById("searchType").value;
-        const status = document.getElementById("searchStatus").value;
+      // document.getElementById("searchBtn").addEventListener("click", () => {
+      //   const keyword = document.getElementById("searchInput").value.trim();
+      //   const type = document.getElementById("searchType").value;
+      //   const status = document.getElementById("searchStatus").value;
 
-        const params = new URLSearchParams();
-        if (keyword) params.set("q", keyword);
-        if (type) params.set("type", type);
-        if (status) params.set("status", status);
+      //   const params = new URLSearchParams();
+      //   if (keyword) params.set("q", keyword);
+      //   if (type) params.set("type", type);
+      //   if (status) params.set("status", status);
 
-        window.location.href = `/pages/listings.html?${params.toString()}`;
-      });
+      //   window.location.href = `/pages/listings.html?${params.toString()}`;
+      // });
 
       // Allow Enter key on search input
-      document
-        .getElementById("searchInput")
-        .addEventListener("keydown", (e) => {
-          if (e.key === "Enter") document.getElementById("searchBtn").click();
-        });
+      // document
+      //   .getElementById("searchInput")
+      //   .addEventListener("keydown", (e) => {
+      //     if (e.key === "Enter") document.getElementById("searchBtn").click();
+      //   });
 
       /* ── 3. Featured listings — loaded from properties.json ── */
-      async function loadFeatured() {
-        try {
-          const res = await fetch("/data/properties.json");
-          const data = await res.json();
+      // async function loadFeatured() {
+      //   try {
+      //     const res = await fetch("/data/properties.json");
+      //     const data = await res.json();
 
-          // Only show featured properties, max 3
-          const featured = data.properties
-            .filter((p) => p.identity.featured)
-            .slice(0, 3);
+      //     // Only show featured properties, max 3
+      //     const featured = data.properties
+      //       .filter((p) => p.identity.featured)
+      //       .slice(0, 3);
 
-          // If no featured, fall back to first 3
-          const toShow =
-            featured.length > 0 ? featured : data.properties.slice(0, 3);
+      //     // If no featured, fall back to first 3
+      //     const toShow =
+      //       featured.length > 0 ? featured : data.properties.slice(0, 3);
 
-          renderCards(toShow);
-        } catch (err) {
-          // If fetch fails (e.g. opening file directly), show a friendly message
-          document.getElementById("featuredGrid").innerHTML = `
-          <p class="text-muted text-sm" style="grid-column: 1/-1; padding: 24px 0;">
-            Could not load listings. Make sure the site is served from a local server.
-          </p>
-        `;
+      //     renderCards(toShow);
+      //   } catch (err) {
+      //     // If fetch fails (e.g. opening file directly), show a friendly message
+      //     document.getElementById("featuredGrid").innerHTML = `
+      //     <p class="text-muted text-sm" style="grid-column: 1/-1; padding: 24px 0;">
+      //       Could not load listings. Make sure the site is served from a local server.
+      //     </p>
+      //   `;
+      //   }
+      // }
+
+      // function renderCards(properties) {
+      //   const grid = document.getElementById("featuredGrid");
+      //   grid.innerHTML = properties.map((p) => cardHTML(p)).join("");
+      // }
+
+      // function cardHTML(p) {
+      //   const { identity, pricing, location, details, media, metadata } = p;
+
+      //   const statusClass =
+      //     identity.status === "for-sale"
+      //       ? "badge--for-sale"
+      //       : identity.status === "for-rent"
+      //         ? "badge--for-rent"
+      //         : "badge--sold";
+
+      //   const statusLabel =
+      //     identity.status === "for-sale"
+      //       ? "For Sale"
+      //       : identity.status === "for-rent"
+      //         ? "For Rent"
+      //         : "Sold";
+
+      //   const beds =
+      //     details.bedrooms > 0
+      //       ? `${details.bedrooms} Bed${details.bedrooms > 1 ? "s" : ""}`
+      //       : "Studio";
+      //   const baths = `${details.bathrooms} Bath${details.bathrooms > 1 ? "s" : ""}`;
+      //   const area = details.floorArea ? `${details.floorArea} sqm` : "";
+
+      //   const monthly = pricing.monthlyAmortization
+      //     ? `<div class="price-monthly">~₱${pricing.monthlyAmortization.toLocaleString()}/mo</div>`
+      //     : "";
+
+      //   return `
+      //   <article class="card">
+      //     <a href="/pages/property.html?id=${p.id}" class="card__image-wrap">
+      //       <img
+      //         class="card__image"
+      //         src="${media.thumbnail}"
+      //         alt="${identity.title}"
+      //         loading="lazy"
+      //         onerror="this.src='/images/brand/placeholder.jpg'"
+      //       />
+      //       <div class="card__badges">
+      //         <span class="badge ${statusClass}">${statusLabel}</span>
+      //         ${identity.featured ? '<span class="badge badge--featured">★ Featured</span>' : ""}
+      //       </div>
+      //     </a>
+      //     <div class="card__body">
+      //       <h3 class="card__title">
+      //         <a href="/pages/property.html?id=${p.id}">${identity.title}</a>
+      //       </h3>
+      //       <div class="card__location">
+      //         📍 ${location.barangay}, ${location.city}
+      //       </div>
+      //       <div class="card__specs">
+      //         <div class="card__spec">
+      //           <span class="card__spec-icon">🛏</span> ${beds}
+      //         </div>
+      //         <div class="card__spec">
+      //           <span class="card__spec-icon">🚿</span> ${baths}
+      //         </div>
+      //         ${area ? `<div class="card__spec"><span class="card__spec-icon">📐</span> ${area}</div>` : ""}
+      //       </div>
+      //       <div class="card__footer">
+      //         <div>
+      //           <div class="price">${pricing.priceLabel}</div>
+      //           ${monthly}
+      //         </div>
+      //         <a href="/pages/property.html?id=${p.id}" class="btn btn--primary btn--sm">
+      //           View
+      //         </a>
+      //       </div>
+      //     </div>
+      //   </article>
+      // `;
+      // }
+
+      // ── Stats Count-Up Animation ──
+      // Triggers once when the stats section scrolls into view.
+      (function () {
+        function easeOutQuart(t) {
+          return 1 - Math.pow(1 - t, 4);
         }
-      }
 
-      function renderCards(properties) {
-        const grid = document.getElementById("featuredGrid");
-        grid.innerHTML = properties.map((p) => cardHTML(p)).join("");
-      }
+        function animateCount(el, target, suffix, duration) {
+          const numEl = el.querySelector(".stats__item-number");
+          const start = performance.now();
 
-      function cardHTML(p) {
-        const { identity, pricing, location, details, media, metadata } = p;
+          function update(now) {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = easeOutQuart(progress);
+            const current = Math.round(eased * target);
+            numEl.textContent = current.toLocaleString() + suffix;
 
-        const statusClass =
-          identity.status === "for-sale"
-            ? "badge--for-sale"
-            : identity.status === "for-rent"
-              ? "badge--for-rent"
-              : "badge--sold";
+            if (progress < 1) {
+              requestAnimationFrame(update);
+            } else {
+              numEl.textContent = target.toLocaleString() + suffix;
+              numEl.classList.add("pop");
+              setTimeout(() => numEl.classList.remove("pop"), 400);
+            }
+          }
 
-        const statusLabel =
-          identity.status === "for-sale"
-            ? "For Sale"
-            : identity.status === "for-rent"
-              ? "For Rent"
-              : "Sold";
+          requestAnimationFrame(update);
+        }
 
-        const beds =
-          details.bedrooms > 0
-            ? `${details.bedrooms} Bed${details.bedrooms > 1 ? "s" : ""}`
-            : "Studio";
-        const baths = `${details.bathrooms} Bath${details.bathrooms > 1 ? "s" : ""}`;
-        const area = details.floorArea ? `${details.floorArea} sqm` : "";
+        const items = document.querySelectorAll(".stats__item");
+        const observed = new Set();
 
-        const monthly = pricing.monthlyAmortization
-          ? `<div class="price-monthly">~₱${pricing.monthlyAmortization.toLocaleString()}/mo</div>`
-          : "";
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting && !observed.has(entry.target)) {
+                observed.add(entry.target);
+                const el = entry.target;
+                const target = parseInt(el.dataset.target, 10);
+                const suffix = el.dataset.suffix || "";
+                animateCount(el, target, suffix, 1500);
+              }
+            });
+          },
+          { threshold: 0.3 },
+        );
 
-        return `
-        <article class="card">
-          <a href="/pages/property.html?id=${p.id}" class="card__image-wrap">
-            <img
-              class="card__image"
-              src="${media.thumbnail}"
-              alt="${identity.title}"
-              loading="lazy"
-              onerror="this.src='/images/brand/placeholder.jpg'"
-            />
-            <div class="card__badges">
-              <span class="badge ${statusClass}">${statusLabel}</span>
-              ${identity.featured ? '<span class="badge badge--featured">★ Featured</span>' : ""}
-            </div>
-          </a>
-          <div class="card__body">
-            <h3 class="card__title">
-              <a href="/pages/property.html?id=${p.id}">${identity.title}</a>
-            </h3>
-            <div class="card__location">
-              📍 ${location.barangay}, ${location.city}
-            </div>
-            <div class="card__specs">
-              <div class="card__spec">
-                <span class="card__spec-icon">🛏</span> ${beds}
-              </div>
-              <div class="card__spec">
-                <span class="card__spec-icon">🚿</span> ${baths}
-              </div>
-              ${area ? `<div class="card__spec"><span class="card__spec-icon">📐</span> ${area}</div>` : ""}
-            </div>
-            <div class="card__footer">
-              <div>
-                <div class="price">${pricing.priceLabel}</div>
-                ${monthly}
-              </div>
-              <a href="/pages/property.html?id=${p.id}" class="btn btn--primary btn--sm">
-                View
-              </a>
-            </div>
-          </div>
-        </article>
-      `;
-      }
+        items.forEach((item) => observer.observe(item));
+      })();
+
+      // ── Services Section — Scroll-in Animation ──
+      // Cards and CTA strip fade + slide up once when scrolled into view.
+      (function () {
+        const cards = document.querySelectorAll('.svc-card');
+        const ctaStrip = document.querySelector('.svc-cta-strip');
+        const targets = [...cards, ctaStrip].filter(Boolean);
+        const seen = new Set();
+      
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting && !seen.has(entry.target)) {
+                seen.add(entry.target);
+                entry.target.classList.add('visible');
+              }
+            });
+          },
+          { threshold: 0.15 }
+        );
+      
+        targets.forEach((el) => observer.observe(el));
+      })();
 
       /* ── Testimonials carousel ── */
       (function () {

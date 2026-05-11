@@ -390,12 +390,193 @@
       </div>
     </section>
 
+    <section class="careers-section" id="careers">
+      <div class="container">
+        <div class="careers-wrap">
+          <div class="careers-text">
+            <h2>Join the CVR Team</h2>
+            <p>
+              We are always looking for driven and passionate individuals to
+              join our growing family. Whether you're a licensed broker, an
+              aspiring salesperson, or an administrative professional, we'd love
+              to meet you.
+            </p>
+          </div>
+
+          <div class="contact-form-wrap">
+            <form
+              id="careersForm"
+              action="https://formspree.io/f/xzdjkkjo"
+              method="POST"
+            >
+              <div class="form-row-2" style="margin-bottom: var(--space-4)">
+                <div class="form-group">
+                  <label class="form-label" for="careerName">Full name *</label>
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="careerName"
+                    name="name"
+                    placeholder="Juan dela Cruz"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="careerPhone"
+                    >Phone number *</label
+                  >
+                  <input
+                    class="form-input"
+                    type="tel"
+                    id="careerPhone"
+                    name="phone"
+                    placeholder="+63 912 345 6789"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-row-2" style="margin-bottom: var(--space-4)">
+                <div class="form-group">
+                  <label class="form-label" for="careerEmail"
+                    >Email address *</label
+                  >
+                  <input
+                    class="form-input"
+                    type="email"
+                    id="careerEmail"
+                    name="email"
+                    placeholder="juan@email.com"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="careerPosition"
+                    >Position of interest *</label
+                  >
+                  <select
+                    class="form-select"
+                    id="careerPosition"
+                    name="position"
+                    required
+                  >
+                    <option value="">Select a role</option>
+                    <option value="licensed-broker">
+                      Licensed Real Estate Broker
+                    </option>
+                    <option value="salesperson">Accredited Salesperson</option>
+                    <option value="admin">
+                      Administrative / Office Support
+                    </option>
+                    <option value="marketing">Marketing / Social Media</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group" style="margin-bottom: var(--space-4)">
+                <label class="form-label" for="careerResume"
+                  >Link to Resume or LinkedIn Profile *</label
+                >
+                <input
+                  class="form-input"
+                  type="url"
+                  id="careerResume"
+                  name="resume_link"
+                  placeholder="https://drive.google.com/... or https://linkedin.com/in/..."
+                  required
+                />
+              </div>
+
+              <div class="form-group" style="margin-bottom: var(--space-6)">
+                <label class="form-label" for="careerMessage"
+                  >Cover Letter / Message</label
+                >
+                <textarea
+                  class="form-textarea"
+                  id="careerMessage"
+                  name="message"
+                  placeholder="Tell us a bit about your experience and why you'd like to join Carbo Valencia Realty."
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn--primary btn--full btn--lg"
+                id="careerSubmit"
+              >
+                Submit Application
+              </button>
+            </form>
+
+            <div class="form-success" id="careerSuccess">
+              <div class="form-success__icon">💼</div>
+              <h3 class="form-success__title">Application received!</h3>
+              <p
+                class="text-muted"
+                style="max-width: 320px; text-align: center"
+              >
+                Thank you for your interest in joining CVR. Our team will review
+                your application and get back to you soon.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ═══════════════════════════════════
        FOOTER
   ═══════════════════════════════════ -->
     <div id="footer-placeholder"></div>
 
     <script>
+      // Form handling utility
+      function handleFormSubmission(formId, submitBtnId, successId) {
+        const form = document.getElementById(formId);
+        const success = document.getElementById(successId);
+
+        if (!form) return;
+
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const btn = document.getElementById(submitBtnId);
+          const originalText = btn.textContent;
+          btn.textContent = "Sending…";
+          btn.disabled = true;
+
+          try {
+            const res = await fetch(form.action, {
+              method: "POST",
+              body: new FormData(form),
+              headers: { Accept: "application/json" },
+            });
+
+            if (res.ok) {
+              form.style.display = "none";
+              success.classList.add("visible");
+              success.scrollIntoView({ behavior: "smooth", block: "center" });
+            } else {
+              btn.textContent = originalText;
+              btn.disabled = false;
+              alert(
+                "Something went wrong. Please try again or contact us directly.",
+              );
+            }
+          } catch (err) {
+            btn.textContent = originalText;
+            btn.disabled = false;
+            alert(
+              "Could not send. Please check your connection and try again.",
+            );
+          }
+        });
+      }
+
+      // Initialize both forms
+      handleFormSubmission("contactForm", "contactSubmit", "formSuccess");
+      handleFormSubmission("careersForm", "careerSubmit", "careerSuccess");
+
       /* Contact form */
       const form = document.getElementById("contactForm");
       const success = document.getElementById("formSuccess");
