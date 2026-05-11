@@ -866,9 +866,6 @@
   .svc-grid {
     grid-template-columns: 1fr;
   }
-  .svc-card {
-    aspect-ratio: 4 / 3;
-  }
   .svc-cta-strip {
     flex-direction: column;
     text-align: center;
