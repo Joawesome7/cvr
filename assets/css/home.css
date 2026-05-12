@@ -602,8 +602,8 @@
   display: flex;
   /* flex-direction: column;
   align-items: center; */
-  flex-wrap: nowrap;
-  /* justify-content: center; This is the magic that centers the bottom row! */
+  flex-wrap: wrap;
+  justify-content: center; /* This is the magic that centers the bottom row! */
   gap: var(--space-5);
   margin-bottom: var(--space-12);
 }
@@ -616,8 +616,9 @@
   aspect-ratio: 3 / 4; /* portrait — tall card fits single row nicely */
   cursor: pointer;
 
-  width: 100%;
-  max-width: 500px;
+  flex: 1 1 calc(20% - var(--space-5));
+  min-width: 220px; /* Forces wrap when the screen gets too narrow */
+  max-width: 280px; /* Keeps cards from getting too wide on desktop */
 
   opacity: 0;
   transform: translateY(32px);
@@ -855,29 +856,43 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .svc-grid {
+  /* .svc-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .svc-card {
     width: calc(50% - (var(--space-5) / 2));
     aspect-ratio: 4 / 3;
+  } */
+  svc-card {
+    /* Changes to roughly 3 cards per row */
+    flex: 1 1 calc(33.333% - var(--space-5));
+    max-width: 350px;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .svc-card {
+    /* Changes to 2 cards per row */
+    flex: 1 1 calc(50% - var(--space-5));
+    max-width: 400px;
   }
 }
 
 @media (max-width: 600px) {
   .svc-card {
     /* Changes to 1 card per row on mobile */
-    width: 100%;
+    flex: 1 1 100%;
+    max-width: 100%;
     aspect-ratio: 4 / 3;
   }
-  .svc-grid {
-    grid-template-columns: 1fr;
-  }
+
   .svc-cta-strip {
     flex-direction: column;
     text-align: center;
     padding: var(--space-8) var(--space-6);
   }
+
   .svc-cta-strip__actions {
     justify-content: center;
   }
