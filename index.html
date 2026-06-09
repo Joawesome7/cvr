@@ -203,7 +203,7 @@
                 <path d="M9 21V12h6v9" />
               </svg>
             </div>
-            <div class="stats__item-number">0</div>
+            <div class="stats__item-number">150+</div>
             <div class="stats__item-label">Properties Listed</div>
           </div>
 
@@ -216,7 +216,7 @@
                 />
               </svg>
             </div>
-            <div class="stats__item-number">0</div>
+            <div class="stats__item-number">12</div>
             <div class="stats__item-label">
               Cities in Cavite &amp; Metro Manila
             </div>
@@ -232,7 +232,7 @@
                 />
               </svg>
             </div>
-            <div class="stats__item-number">0</div>
+            <div class="stats__item-number">14</div>
             <div class="stats__item-label">Years in Business</div>
           </div>
 
@@ -245,7 +245,7 @@
                 <path d="M16 3.13a4 4 0 0 1 0 7.75" />
               </svg>
             </div>
-            <div class="stats__item-number">0</div>
+            <div class="stats__item-number">500+</div>
             <div class="stats__item-label">Families Helped</div>
           </div>
         </div>
@@ -994,6 +994,17 @@
         }
 
         const items = document.querySelectorAll(".stats__item");
+
+        // ─── FIX FOR SEO & SOCIAL SCRAPERS ───
+        // This instantly resets the visible numbers to 0 using code.
+        // Humans see 0 until they scroll down. Google reads the real numbers from your HTML.
+        items.forEach((item) => {
+          const numEl = item.querySelector(".stats__item-number");
+          const suffix = item.dataset.suffix || "";
+          if (numEl) numEl.textContent = "0" + suffix;
+        });
+        // ─────────────────────────────────────
+
         const observed = new Set();
 
         const observer = new IntersectionObserver(

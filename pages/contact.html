@@ -422,50 +422,50 @@
 
     <script>
       // Form handling utility
-      function handleFormSubmission(formId, submitBtnId, successId) {
-        const form = document.getElementById(formId);
-        const success = document.getElementById(successId);
+      // function handleFormSubmission(formId, submitBtnId, successId) {
+      //   const form = document.getElementById(formId);
+      //   const success = document.getElementById(successId);
 
-        if (!form) return;
+      //   if (!form) return;
 
-        form.addEventListener("submit", async (e) => {
-          e.preventDefault();
-          const btn = document.getElementById(submitBtnId);
-          const originalText = btn.textContent;
-          btn.textContent = "Sending…";
-          btn.disabled = true;
+      //   form.addEventListener("submit", async (e) => {
+      //     e.preventDefault();
+      //     const btn = document.getElementById(submitBtnId);
+      //     const originalText = btn.textContent;
+      //     btn.textContent = "Sending…";
+      //     btn.disabled = true;
 
-          try {
-            const res = await fetch(form.action, {
-              method: "POST",
-              body: new FormData(form),
-              headers: { Accept: "application/json" },
-            });
+      //     try {
+      //       const res = await fetch(form.action, {
+      //         method: "POST",
+      //         body: new FormData(form),
+      //         headers: { Accept: "application/json" },
+      //       });
 
-            if (res.ok) {
-              form.style.display = "none";
-              success.classList.add("visible");
-              success.scrollIntoView({ behavior: "smooth", block: "center" });
-            } else {
-              btn.textContent = originalText;
-              btn.disabled = false;
-              alert(
-                "Something went wrong. Please try again or contact us directly.",
-              );
-            }
-          } catch (err) {
-            btn.textContent = originalText;
-            btn.disabled = false;
-            alert(
-              "Could not send. Please check your connection and try again.",
-            );
-          }
-        });
-      }
+      //       if (res.ok) {
+      //         form.style.display = "none";
+      //         success.classList.add("visible");
+      //         success.scrollIntoView({ behavior: "smooth", block: "center" });
+      //       } else {
+      //         btn.textContent = originalText;
+      //         btn.disabled = false;
+      //         alert(
+      //           "Something went wrong. Please try again or contact us directly.",
+      //         );
+      //       }
+      //     } catch (err) {
+      //       btn.textContent = originalText;
+      //       btn.disabled = false;
+      //       alert(
+      //         "Could not send. Please check your connection and try again.",
+      //       );
+      //     }
+      //   });
+      // }
 
-      // Initialize both forms
-      handleFormSubmission("contactForm", "contactSubmit", "formSuccess");
-      handleFormSubmission("careersForm", "careerSubmit", "careerSuccess");
+      // // Initialize both forms
+      // handleFormSubmission("contactForm", "contactSubmit", "formSuccess");
+      // handleFormSubmission("careersForm", "careerSubmit", "careerSuccess");
 
       /* Contact form */
       const form = document.getElementById("contactForm");
