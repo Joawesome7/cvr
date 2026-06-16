@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Message Justine on Viber — CVR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --blue: #1e3a5f;
+        --blue-mid: #2a5080;
+        --yellow: #d4a017;
+        --yellow-light: #f0c84a;
+        --yellow-bg: #fbf4e0;
+        --white: #f8f7f4;
+        --gray: #6b7280;
+        --gray-light: #d1d5db;
+        --black: #111827;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        font-family: "DM Sans", system-ui, sans-serif;
+        background-color: var(--blue);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 24px;
+      }
+
+      .page-bg {
+        position: fixed;
+        inset: 0;
+        background-color: var(--blue);
+        z-index: 0;
+      }
+
+      .card {
+        position: relative;
+        z-index: 1;
+        background-color: var(--white);
+        border-radius: 16px;
+        padding: 40px 36px 32px;
+        width: 100%;
+        max-width: 340px;
+        text-align: center;
+      }
+
+      .brand-bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 28px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--gray-light);
+      }
+
+      .brand-name {
+        font-family: "DM Sans", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--blue);
+      }
+
+      .brand-dot {
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: var(--yellow);
+      }
+
+      .avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: var(--blue);
+        border: 3px solid var(--yellow);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--yellow);
+        letter-spacing: 1px;
+      }
+
+      .avatar img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .name {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--black);
+        line-height: 1.25;
+        margin-bottom: 4px;
+      }
+
+      .role {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--yellow);
+        margin-bottom: 6px;
+      }
+
+      .number {
+        font-size: 13px;
+        color: var(--gray);
+        margin-bottom: 28px;
+      }
+
+      .btn-viber {
+        width: 100%;
+        padding: 13px 20px;
+        background-color: var(--blue);
+        color: var(--white);
+        border: none;
+        border-radius: 8px;
+        font-family: "DM Sans", sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition:
+          background-color 150ms ease,
+          transform 150ms ease;
+      }
+
+      .btn-viber:hover {
+        background-color: var(--blue-mid);
+      }
+
+      .btn-viber:active {
+        transform: translateY(1px);
+      }
+
+      .viber-icon {
+        flex-shrink: 0;
+      }
+
+      .note {
+        font-size: 12px;
+        color: var(--gray);
+        margin-top: 14px;
+        min-height: 18px;
+        transition: opacity 200ms ease;
+      }
+
+      .footer-text {
+        position: relative;
+        z-index: 1;
+        margin-top: 24px;
+        font-size: 11px;
+        color: rgba(248, 247, 244, 0.35);
+        text-align: center;
+        letter-spacing: 0.04em;
+      }
+
+      @media (max-width: 400px) {
+        .card {
+          padding: 32px 24px 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-bg"></div>
+
+    <div class="card">
+      <div class="avatar">
+        <!-- Replace the initials below with an <img> tag once you have a photo -->
+        <!-- <img src="your-photo.jpg" alt="Justine Valencia" /> -->
+        JV
+      </div>
+
+      <p class="name">Justine Valencia</p>
+      <p class="role">CVR</p>
+      <p class="number">+63 915 462 1014</p>
+
+      <button
+        class="btn-viber"
+        onclick="handleViber()"
+        aria-label="Message Justine on Viber"
+      >
+        <svg
+          class="viber-icon"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="12" fill="#d4a017" />
+          <path
+            fill="#1e3a5f"
+            d="M17.9 7.1c-1.4-1.3-3.4-2-5.9-2.1C7.6 5 4.8 7.7 4.7 11.1c0 1.1.3 2.2.8 3.2l-.9 3.2 3.3-.9c.9.5 2 .7 3 .7 3.5 0 6.3-2.8 6.3-6.2.1-1.7-.5-3.3-1.3-4zM12 16.4c-.9 0-1.9-.3-2.7-.7l-.2-.1-2 .5.5-1.9-.1-.2c-.5-.8-.8-1.8-.8-2.8 0-2.9 2.4-5.3 5.3-5.3 1.4 0 2.8.6 3.7 1.5.9.9 1.5 2.2 1.5 3.7 0 2.9-2.4 5.3-5.2 5.3zm2.9-4c-.2-.1-1-.5-1.2-.5-.2-.1-.3-.1-.4.1-.1.2-.5.5-.6.7-.1.1-.2.1-.4.1-.2-.1-.7-.2-1.3-.8-.5-.5-.8-1-.9-1.2-.1-.2 0-.3.1-.4l.3-.3c.1-.1.1-.2.2-.3.1-.1 0-.2 0-.3l-.5-1.3c-.1-.3-.3-.3-.4-.3h-.4c-.1 0-.3.1-.5.2-.2.2-.6.6-.6 1.4 0 .8.6 1.6.7 1.8.1.1 1.2 1.9 3 2.6.4.2.7.3 1 .3.4 0 .7-.1 1-.3.3-.2.5-.5.5-.8.1-.2 0-.3-.2-.4z"
+          />
+        </svg>
+        Message on Viber
+      </button>
+
+      <p class="note" id="note"></p>
+    </div>
+
+    <script>
+      function handleViber() {
+        const number = "639154621014";
+        const note = document.getElementById("note");
+
+        const iframe = document.createElement("iframe");
+        iframe.style.display = "none";
+        iframe.src = "viber://add?number=" + number;
+        document.body.appendChild(iframe);
+
+        note.textContent = "Opening Viber app…";
+
+        setTimeout(function () {
+          document.body.removeChild(iframe);
+          if (document.hasFocus()) {
+            note.textContent = "Redirecting to Viber on web…";
+            window.open("https://invite.viber.com/?number=" + number, "_blank");
+          } else {
+            note.textContent = "Viber app opened.";
+          }
+          setTimeout(function () {
+            note.textContent = "";
+          }, 3000);
+        }, 1500);
+      }
+    </script>
+  </body>
+</html>
