@@ -46,11 +46,74 @@ async function init() {
        UPDATE PAGE META (title, OG tags)
     ═══════════════════════════════════════ */
 function updateMeta(p) {
-  document.title = `${p.identity.title} — CVR`;
+  const title = `${p.identity.title} — CVR`;
+  const desc = p.metadata.description.slice(0, 160);
+
+  document.title = title;
   document
     .querySelector('meta[name="description"]')
-    .setAttribute("content", p.metadata.description.slice(0, 160));
+    .setAttribute("content", desc);
+
+  // Dynamic OG tags for social sharing
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  const ogDesc = document.querySelector('meta[property="og:description"]');
+  const ogUrl = document.querySelector('meta[property="og:url"]');
+  const ogImage = document.querySelector('meta[property="og:image"]');
+
+  if (ogTitle) ogTitle.setAttribute("content", title);
+  if (ogDesc) ogDesc.setAttribute("content", desc);
+  if (ogUrl) ogUrl.setAttribute("content", window.location.href);
+  if (ogImage) {
+    ogImage.setAttribute(
+      "content",
+      p.media.thumbnail
+        ? window.location.origin + p.media.thumbnail
+        : "https://www.carbovalenciarealty.com/images/seo/og-cvr.jpg",
+    );
+  }
+
+  // JSON-LD structured data
+  injectStructuredData(p);
+
   $("breadcrumbTitle").textContent = p.identity.title;
+}
+
+function injectStructuredData(p) {
+  const existing = document.getElementById("ld-property");
+  if (existing) existing.remove();
+
+  const ld = document.createElement("script");
+  ld.id = "ld-property";
+  ld.type = "application/ld+json";
+  ld.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "RealEstateListing",
+    name: p.identity.title,
+    description: p.metadata.description,
+    url: window.location.href,
+    image: p.media.thumbnail
+      ? window.location.origin + p.media.thumbnail
+      : undefined,
+    offers: {
+      "@type": "Offer",
+      price: p.pricing.price,
+      priceCurrency: p.pricing.currency || "PHP",
+      availability: "https://schema.org/InStock",
+    },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: p.location.address,
+      addressLocality: p.location.city,
+      addressRegion: p.location.province,
+      addressCountry: "PH",
+    },
+    numberOfBedrooms: p.details.bedrooms,
+    numberOfBathrooms: p.details.bathrooms,
+    floorSize: p.details.floorArea
+      ? { "@type": "QuantitativeValue", value: p.details.floorArea, unitCode: "MTK" }
+      : undefined,
+  });
+  document.head.appendChild(ld);
 }
 
 /* ═══════════════════════════════════════

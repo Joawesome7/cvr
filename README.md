@@ -1,28 +1,28 @@
 # CVR Inc. Website
 
-Prototype website for Carbo-Valencia Realty Inc. - a residential real estate company based in Dasmariñas, Cavite, Philippines.
+Live site: [https://www.carbovalenciarealty.com](https://www.carbovalenciarealty.com)
 
-## Overview
-
-A static frontend website built as a client prototype for CVR Inc. It allows potential buyers send inquiries directly to agents - without requiring a backend.
-
-## Live demo
-
-[View prototype]
+Brand website for Carbo-Valencia Realty Inc. — a residential real estate company based in Dasmariñas, Cavite, Philippines.
 
 ## Pages
 
-- `/index.html` - Homepage with hero, featured listings, and search bar
-- `/pages/about.html` - Company story, team, and values
-- `/pages/contact.html` - Contact form, office info, and direct contact options
-- `/pages/404.html` - Custom not found page
+- `/` — Homepage with hero, stats, featured developers, services, testimonials
+- `/listings` — Filterable property listings with URL-synced filters
+- `/property` — Single property detail page (loaded via `?id=` param)
+- `/about` — Company story, team, and values
+- `/contact` — Contact form, office info, direct contact options
+- `/services` — Service offerings (brokerage, appraisal, titling, loans)
+- `/developers` — Partner developer cards loaded from JSON
+- `/pages/avida-properties` — Per-developer property pages (Avida, Axeia, etc.)
 
 ## Tech stack
 
-- HTML, CSS, Vanilla JavaScript - no frameworks
+- HTML, CSS, Vanilla JavaScript — no frameworks, no build step
+- Static JSON for data (`properties.json`, `developers.json`, `config.json`)
 - [Formspree](https://formspree.io) — contact and inquiry form handling
 - [Google Fonts](https://fonts.google.com) — Playfair Display + DM Sans
-- [Vercel](https://vercel.com) — hosting and URL redirects
+- [Tabler Icons](https://tabler-icons.io) — icon set
+- Vercel / Netlify — hosting and URL rewrites
 
 ## Client
 
@@ -31,5 +31,4 @@ Facebook: [CVR Inc.](https://www.facebook.com/CarboValenciaRealty)
 
 ## License
 
-This project was built for Carbo-Valencia Realty Inc. All rights reserved.
-Source code is shared for portfolio purposes only and may not be reused commercially.
+All rights reserved. Built for Carbo-Valencia Realty Inc.
