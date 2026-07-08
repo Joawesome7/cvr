@@ -119,6 +119,8 @@
   border-radius: var(--radius-xl);
   padding: var(--space-10);
   box-shadow: var(--shadow-md);
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .contact-form-wrap h2 {
@@ -169,6 +171,8 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-6);
+  grid-column: 2;
+  grid-row: 1 / 3;
 }
 
 .info-box {
@@ -327,36 +331,25 @@
 }
 
 /* ── Careers Section ── */
-.careers-section {
-  background-color: var(--color-light, #f8f7f4);
-  padding: var(--space-20) 0;
-  border-top: 1px solid var(--color-border);
-}
-
-.careers-wrap {
-  /* This prevents the text from stretching too far on giant screens */
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 var(--space-4); /* Ensures it doesn't touch the screen edges on mobile */
-}
-
-.careers-text {
+.careers-inline {
+  grid-column: 1;
+  grid-row: 2;
   text-align: center;
+  padding-top: var(--space-8);
 }
 
-.careers-text h2 {
+.careers-inline h2 {
   font-family: var(--font-heading);
-  font-size: var(--text-5xl); /* Uses your large heading size */
+  font-size: var(--text-4xl);
   color: var(--color-blue);
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-4);
 }
 
-.careers-text p {
-  /* Using a slightly larger text size for impact, but letting it wrap */
-  font-size: var(--text-xl);
+.careers-inline p {
+  font-size: var(--text-base);
   color: var(--color-text-secondary);
   line-height: var(--leading-normal);
-  max-width: 100%; /* Ensures it stays within the screen width */
+  max-width: 640px;
   margin: 0 auto;
 }
 
@@ -364,34 +357,23 @@
   color: var(--color-yellow);
   font-weight: var(--weight-bold);
   cursor: pointer;
-  word-break: break-all; /* Prevents long emails from breaking mobile layouts */
+  word-break: break-all;
   transition: color var(--transition-fast);
 }
-
 .careers-email:hover {
   color: var(--color-yellow-dark);
-}
-
-/* ── Responsive Adjustments for Mobile ── */
-@media (max-width: 768px) {
-  .careers-section {
-    padding: var(--space-12) 0;
-  }
-
-  .careers-text h2 {
-    font-size: var(--text-4xl); /* Shrinks heading on mobile */
-    margin-bottom: var(--space-6);
-  }
-
-  .careers-text p {
-    font-size: var(--text-base); /* Shrinks paragraph on mobile */
-  }
 }
 
 /* ── Responsive ── */
 @media (max-width: 960px) {
   .contact-layout {
     grid-template-columns: 1fr;
+  }
+  .contact-form-wrap,
+  .careers-inline,
+  .contact-sidebar {
+    grid-column: 1;
+    grid-row: auto;
   }
   .contact-cards {
     grid-template-columns: repeat(2, 1fr);
